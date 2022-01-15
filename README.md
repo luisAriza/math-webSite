@@ -1,2 +1,1 @@
-# mathematics_webPage
-Curso Practico de JavaScript
+# Curso Practico de JavaScript
