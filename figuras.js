@@ -14,6 +14,42 @@
 
 //Código del circulo
     //Circunferencia
-    const circunferencia = (radio) => (radio * 2) * Math.PI;
+    const circunferencia = (radio) => parseFloat( ((radio * 2) * Math.PI).toFixed(2) );
     //Area
-    const areaCirculo = (radio) => Math.pow(radio, 2) * Math.PI;
+    const areaCirculo = (radio) => parseFloat( (Math.pow(radio, 2) * Math.PI).toFixed(2) );
+
+//Código que interactuá con HTML
+    function calcularPerimetroCuadrado() {
+        let input = document.getElementById("inputCuadrado");
+        let value = input.value;
+        let Perimetro = perimetroCuadrado(value);
+        alert(Perimetro);
+    }
+    function calcularAreaCuadrado() {
+        let input = document.getElementById("inputCuadrado");
+        let value = input.value;
+        let Area = areaCuadrado(value);
+        alert(Area);
+    }
+    function calcularPerimetroTriangulo() {
+        
+        let Perimetro = perimetroTriangulo();
+        alert(Perimetro);
+    }
+    function calcularAreaTriangulo() {
+
+        let Area = areaTriangulo(value);
+        alert(Area);
+    }
+    function calcularCircunferencia() {
+        let input = document.getElementById("inputCirculo");
+        let value = input.value;
+        let perimetro = circunferencia(value);
+        alert(perimetro);
+    }
+    function calcularAreaCirculo() {
+        let input = document.getElementById("inputCirculo");
+        let value = input.value;
+        let Area = areaCirculo(value);
+        alert(Area);
+    }

@@ -12,8 +12,57 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        <h1>Figuras Geométricas</h1>
-        <h2>1234567890</h2>
+        <header>
+            <h1 class="tittle">Figuras Geométricas</h1>
+        </header>
+        <main class="figure-container">
+            <section class="square">
+                <h2>Calcula el perimetro y area de un cuadrado</h2>
+                <form>
+                    <label for="inputCuadrado">Cuanto mide cada <strong>lado</strong> del cuadrado:</label>
+                    <input id="inputCuadrado" type="number">
+                    <button  class="perimeter" type="button" onclick="calcularPerimetroCuadrado()">
+                        Calcular el perimetro
+                    </button>
+                    <button  class="area" type="button" onclick="calcularAreaCuadrado()">
+                        Calcular el area
+                    </button>
+                </form>
+            </section>
+            <section class="triangule">
+                <h2>Calcula el perimetro y area de un triangulo</h2>
+                <form>
+                    <!-- Lado #1 -->
+                    <label for="lado1">Lado A</label>
+                    <input id="lado1" type="number">
+                    <!-- Lado #2 -->
+                    <label for="lado2">Lado B</label>
+                    <input id="lado2" type="number">
+                    <!-- Base -->
+                    <label for="base">Base</label>
+                    <input id="base" type="number">
+                    <button class="perimeter" type="button" onclick="calcularPerimetroTriangulo()">
+                        Calcular el perimetro
+                    </button>
+                    <button class="area" type="button" onclick="calcularAreaTriangulo()">
+                        Calcular el area
+                    </button>
+                </form>
+            </section>
+            <section class="circle">
+                <h2>Calcula la circunferencia y area de un circulo</h2>
+                <form>
+                    <label for="inputCirculo">Cuanto mide el <strong>radio</strong> del circulo:</label>
+                    <input id="inputCirculo" type="number">
+                    <button class="perimeter" type="button" onclick="calcularCircunferencia()">
+                        Calcular Circunferencia
+                    </button>
+                    <button class="area" type="button" onclick="calcularAreaCirculo()">
+                        Calcular el area
+                    </button>
+                </form>
+            </section>
+        </main>
         <script src="./figuras.js"></script>
     </body>
 </html>
