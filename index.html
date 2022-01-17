@@ -32,15 +32,21 @@
             <section class="triangule">
                 <h2>Calcula el perimetro y area de un triangulo</h2>
                 <form>
-                    <!-- Lado #1 -->
-                    <label for="lado1">Lado A</label>
-                    <input id="lado1" type="number">
-                    <!-- Lado #2 -->
-                    <label for="lado2">Lado B</label>
-                    <input id="lado2" type="number">
+                    <!-- Lado A -->
+                    <label>
+                        Lado A
+                        <input id="inputTrianguloLadoA" type="number">
+                    </label>
+                    <!-- Lado B -->
+                    <label>
+                        Lado B
+                        <input id="inputTrianguloLadoB" type="number">
+                    </label>
                     <!-- Base -->
-                    <label for="base">Base</label>
-                    <input id="base" type="number">
+                    <label>
+                        Base
+                        <input id="inputTrianguloBase" type="number">
+                    </label>
                     <button class="perimeter" type="button" onclick="calcularPerimetroTriangulo()">
                         Calcular el perimetro
                     </button>
