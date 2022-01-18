@@ -1,4 +1,4 @@
-//Código super simplificado con las Arrow Functions
+//Código que hace los cálculos matemáticos
 //Código del cuadrado
     //Perimetro
     const perimetroCuadrado = (lado) => parseFloat( (lado * 4).toFixed(2) ) ;
@@ -8,9 +8,12 @@
 //Código del triangulo
     //Perimetro y semiperimetro
     const perimetroTriangulo = (ladoA, ladoB, base) => parseFloat( (ladoA + ladoB + base).toFixed(2) );
-    const semierimetroTriangulo = (ladoA, ladoB, base) => parseFloat( ((ladoA + ladoB + base)/2).toFixed(2) );
-    //Altura
-    const alturaTriangulo = (lado ,base) => Math.sqrt( (base/2) ** 2 + lado ** 2 );
+    const semiperimetroTriangulo = (ladoA, ladoB, base) => parseFloat( ((ladoA + ladoB + base)/2).toFixed(2) );
+    //Altura de los triángulos
+    const alturaTrianguloEquilatero = (lado) => Math.sqrt(3 * lado)/2;
+    const alturaTrianguloIsosceles = (lado,base) => Math.sqrt( lado ** 2 - ( (base ** 2)/4 ));
+    const alturaTrianguloRectangulo = (ladoA, ladoB, base) => (ladoA * ladoB)/base;
+    const alturaTrianguloEscaleno = (ladoA, ladoB, base, semiP) => (2/base) * ( Math.sqrt(semiP * (semiP - ladoA) * (semiP - ladoB) * (semiP - base)) );
     //Area
     const areaTriangulo = (base, altura) => parseFloat( ((base * altura) / 2).toFixed(2) );
 
@@ -39,31 +42,21 @@
     }
 //Triangulo
     function calcularPerimetroTriangulo() {
-        let input = {
-            ladoA: document.getElementById("inputTrianguloLadoA"),
-            ladoB: document.getElementById("inputTrianguloLadoB"),
-            base: document.getElementById("inputTrianguloBase")
-        }
         let lado = {
-            a: Number.parseFloat(input.ladoA.value),
-            b: Number.parseFloat(input.ladoB.value),
-            base: Number.parseFloat(input.base.value)
+            a: Number.parseFloat(document.getElementById("inputTrianguloLadoA").value),
+            b: Number.parseFloat(document.getElementById("inputTrianguloLadoB").value),
+            base: Number.parseFloat(document.getElementById("inputTrianguloBase").value)
         }
         let perimetro = perimetroTriangulo(lado.a, lado.b, lado.base);
         alert(perimetro);
     }
     function calcularAreaTriangulo() {
-        let input = {
-            ladoA: document.getElementById("inputTrianguloLadoA"),
-            ladoB: document.getElementById("inputTrianguloLadoB"),
-            base: document.getElementById("inputTrianguloBase")
-        }
         let lado = {
-            a: Number.parseFloat(input.ladoA.value),
-            b: Number.parseFloat(input.ladoB.value),
-            base: Number.parseFloat(input.base.value)
+            a: Number.parseFloat(document.getElementById("inputTrianguloLadoA").value),
+            b: Number.parseFloat(document.getElementById("inputTrianguloLadoB").value),
+            base: Number.parseFloat(document.getElementById("inputTrianguloBase").value)
         }
-        let altura = alturaTriangulo((lado.a || lado.b), lado.base);
+        let altura = alturaTrianguloIsosceles((lado.a || lado.b), lado.base);
         let area = areaTriangulo(lado.base, altura);
         alert(`Area: ${area}cm^2 \nAltura: ${parseFloat( altura.toFixed(2) )}cm`);
     }
