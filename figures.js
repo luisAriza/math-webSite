@@ -27,7 +27,7 @@ const areaTriangulo = (base, altura) => parseFloat( ((base * altura)/2).toFixed(
     //Perimetro
 const perimetroRombo = (lado) => parseFloat( (lado * 4).toFixed(2) );
     //Diagonal
-const diagonalRombo = (lado, diagonal) => Math.sqrt ( 4 * (lado ** 2) - (diagonal ** 2) );
+const diagonalRombo = (lado, diagonal) => parseFloat( Math.sqrt ( 4 * (lado ** 2) - (diagonal ** 2) ).toFixed(2) );
     //Area
 const areaRombo = (diagonalMayor, diagonalMenor) => parseFloat( ((diagonalMayor * diagonalMenor)/2).toFixed(2) );
 
@@ -72,9 +72,8 @@ function get(value) {
 //Cuadrado
 function calcularCuadrado() {
     let lado = get('cuaLado');
-    let perimetro = perimetroCuadrado(lado);
-    let area = areaCuadrado(lado);
-    alert(`Perimetro: ${perimetro}cm \nÁrea: ${area}cm^2`);
+    document.getElementById("perimetroCuadrado").innerHTML = perimetroCuadrado(lado);
+    document.getElementById("areaCuadrado").innerHTML = areaCuadrado(lado);
 }
 //Rectangulo
 function calcularRectangulo() {
@@ -82,9 +81,8 @@ function calcularRectangulo() {
         altura: get('recAltura'),
         base: get('recBase')
     };
-    let perimetro = perimetroRectangulo(long.base, long.altura);
-    let area = areaRectangulo(long.base, long.altura);
-    alert(`Perimetro: ${perimetro}cm \nÁrea: ${area}cm^2`);
+    document.getElementById("perimetroRectangulo").innerHTML = perimetroRectangulo(long.base, long.altura);
+    document.getElementById("areaRectangulo").innerHTML = areaRectangulo(long.base, long.altura);
 }
 //Triangulo
 function calcularTriangulo() {
@@ -105,39 +103,39 @@ function calcularTriangulo() {
     };
     if (triangulo.equilatero == true) {
         altura = alturaTrianguloEquilatero(lado.A);
-        alert(`Este es un triangulo equilatero`);
+        document.getElementById("tipoTriangulo").innerHTML = `Equilatero`;
     } 
     else if (triangulo.isoscelesAcutangulo == true) {
         altura = alturaTrianguloIsosceles(lado.A, lado.base);
-        alert(`Este es un triangulo isósceles-acutángulo`);
+        document.getElementById("tipoTriangulo").innerHTML = `Isósceles-acutángulo`;
     }
     else if (triangulo.isoscelesRectangulo == true) {
         altura = alturaTrianguloIsosceles(lado.A, lado.base);
-        alert(`Este es un triangulo rectángulo-isosceles`);
+        document.getElementById("tipoTriangulo").innerHTML = `Triangulo-rectángulo Isósceles`;
     }
     else if (triangulo.isoscelesObtusangulo == true) {
         altura = alturaTrianguloIsosceles(lado.A, lado.base);
-        alert(`Este es un triangulo isosceles-obtusángulo`);
+        document.getElementById("tipoTriangulo").innerHTML = `Isósceles-obtusángulo`;
     }
     else if (triangulo.escalenoAcutangulo == true) {
         let semiperimetro = semiperimetroTriangulo(lado.A, lado.B, lado.base);
         altura = alturaTrianguloEscaleno(lado.A, lado.B, lado.base, semiperimetro);
-        alert(`Este es un triangulo escaleno-acutángulo`);
+        document.getElementById("tipoTriangulo").innerHTML = `Escaleno-acutángulo`;
     }
     else if (triangulo.escalenoRectangulo == true) {
         altura = alturaTrianguloRectangulo(lado.A, lado.B, lado.base);
-        alert(`Este es un triangulo rectángulo-escaleno`);
+        document.getElementById("tipoTriangulo").innerHTML = `Triangulo-rectángulo Escaleno`;
     }
     else if (triangulo.escalenoObtusangulo == true) {
         let semiperimetro = semiperimetroTriangulo(lado.A, lado.B, lado.base);
         altura = alturaTrianguloEscaleno(lado.A, lado.B, lado.base, semiperimetro);
-        alert(`Este es un triangulo escaleno-obtusángulo`);
+        document.getElementById("tipoTriangulo").innerHTML = `Escaleno-obtusángulo`;
     } else {
         alert(`Ingresa correctamente todos los lados del triangulo, lee la guía`);
     }
-    let perimetro = perimetroTriangulo(lado.A, lado.B, lado.base);
-    let area = areaTriangulo(lado.base, altura);
-    alert(`Perimetro: ${perimetro}cm \nAltura: ${parseFloat( altura.toFixed(2) )}cm \nArea: ${area}cm^2`);
+    document.getElementById("perimetroTriangulo").innerHTML = perimetroTriangulo(lado.A, lado.B, lado.base);
+    document.getElementById("alturaTriangulo").innerHTML = parseFloat( altura.toFixed(2) );
+    document.getElementById("areaTriangulo").innerHTML = areaTriangulo(lado.base, altura);
 }
 //Rombo
 function calcularRombo() {
@@ -146,14 +144,13 @@ function calcularRombo() {
         diagonal: get('romDiagonal')
     };
     let Diagonal = diagonalRombo(long.lado, long.diagonal);
-    let perimetro = perimetroRombo(long.lado);
-    let area = areaRombo(Diagonal, long.diagonal);
-    alert(`Perimetro: ${perimetro}cm \nDiagonal: ${Diagonal}cm \nÁrea: ${area}cm^2`);
+    document.getElementById("perimetroRombo").innerHTML = perimetroRombo(long.lado);
+    document.getElementById("diagonalRombo").innerHTML = Diagonal;
+    document.getElementById("areaRombo").innerHTML = areaRombo(Diagonal, long.diagonal);
 }
 //Circulo
 function calcularCirculo() {
     let radio = get('cirRadio');
-    let perimetro = circunferencia(radio);
-    let area = areaCirculo(radio);
-    alert(`Circunferencia: ${perimetro}cm \nÁrea: ${area}cm^2`);
+    document.getElementById("circunferencia").innerHTML = circunferencia(radio);
+    document.getElementById("areaCirculo").innerHTML = areaCirculo(radio);
 }
