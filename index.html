@@ -23,7 +23,7 @@
                 <form>
                     <label for="inputCuadrado">Lado</label>
                     <input id="inputCuadrado" type="number">
-                    <button  class="calcular" type="button" onclick="calcularCuadrado()">
+                    <button  class="calcular" type="button" onclick="outputCuadrado()">
                         Calcular
                     </button>
                 </form>
@@ -42,7 +42,7 @@
                     <label>
                         Base <input id="inputRectanguloBase" type="number">
                     </label>
-                    <button  class="calcular" type="button" onclick="calcularRectangulo()">
+                    <button  class="calcular" type="button" onclick="outputRectangulo()">
                         Calcular
                     </button>
                 </form>
@@ -75,14 +75,14 @@
                     <label>
                         Base <input id="inputTrianguloBase" type="number">
                     </label>
-                    <button class="calcular" type="button" onclick="calcularTriangulo()">
+                    <button class="calcular" type="button" onclick="outputTriangulo()">
                         Calcular
                     </button>
                 </form>
                 <ul>
                     <li><strong>Tipo</strong> "<span id="tipoTriangulo"></span>"</li>
-                    <li><strong>Perimetro</strong> <span id="perimetroTriangulo">0</span>cm</li>
                     <li><strong>Altura</strong> <span id="alturaTriangulo">0</span>cm</li>
+                    <li><strong>Perimetro</strong> <span id="perimetroTriangulo">0</span>cm</li>
                     <li><strong>Área</strong> <span id="areaTriangulo">0</span>cm<sup>2</sup></li>
                 </ul>
             </section>
@@ -96,13 +96,13 @@
                     <label>
                         1° Diagonal <input id="inputRomboDiagonal" type="number">
                     </label>
-                    <button  class="calcular" type="button" onclick="calcularRombo()">
+                    <button  class="calcular" type="button" onclick="outputRombo()">
                         Calcular
                     </button>
                 </form>
                 <ul>
-                    <li><strong>Perimetro</strong> <span id="perimetroRombo">0</span>cm</li>
                     <li><strong>2° Diagonal</strong> <span id="diagonalRombo">0</span>cm</li>
+                    <li><strong>Perimetro</strong> <span id="perimetroRombo">0</span>cm</li>
                     <li><strong>Área</strong> <span id="areaRombo">0</span>cm<sup>2</sup></li>
                 </ul>
             </section>
@@ -112,7 +112,7 @@
                 <form>
                     <label for="inputCirculo">Radio</label>
                     <input id="inputCirculo" type="number">
-                    <button class="calcular" type="button" onclick="calcularCirculo()">
+                    <button class="calcular" type="button" onclick="outputCirculo()">
                         Calcular
                     </button>
                 </form>
