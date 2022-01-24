@@ -32,11 +32,10 @@ function getInput(preDes) {
 const calcularDescuento = (precio, descuento) => (precio * (100 - descuento))/100;
 //----------------------------------------------------------------------------------------------------
 /**
-* Calcular y mostrar en HTML el valor de los 'outputs' del precio
-* @param {string} outputPrecio 'Texto del precio' que se desea obtener
-* @return {number} EL valor del precio con el descuento aplicado
+* Calcular y enviar al archivo HTML el valor de salida
+* @return {number} EL valor del precio con el descuento aplicado al ID de salida
 */
-function getOutput() {
+function outputPrecioDescuento() {
     /**
     * Valores del precio y descuento, guardadas en las propiedades del objeto
     */
@@ -44,20 +43,45 @@ function getOutput() {
         precio: getInput('precio'),
         descuento: getInput('descuento')
     };
+    /**
+    * Calculo del precio menos el descuento
+    */
     const precioConDescuento = calcularDescuento(valor.precio, valor.descuento);
     /**
-    * Escribir en HTML el valor del calculo ingresado en 'outputPrecio'; 'outputPrecio' tiene el
-    * mismo nombre que el ID de HTML
+    * Escribir en el ID "precioDescuento" de HTML el precio con descuento
     */
-    const valorOutput = document.getElementById("precioConDescuento").innerHTML = precioConDescuento;
-
-    return valorOutput;
+    document.getElementById("precioDescuento").innerHTML = precioConDescuento;
 }
 //----------------------------------------------------------------------------------------------------
 /**
-* Enviar al archivo HTML el valor de salida
-* @return {number} Los valores de getOutput a los ID's de salida
+* Calcular y enviar al archivo HTML el valor de salida
+* @return {number} EL valor del precio con el descuento aplicado al ID de salida
 */
-function outputPrecio() {
-    getOutput();
+function checkCodigo() {
+    /**
+    * Codigo del ID "inputCodigo" convertido en 'String' con .value
+    */
+    const inputCodigo = document.getElementById("inputCodigo").value;
+    /**
+    * ID's de los outputs de HTML
+    */
+    const idOutput = {
+        'validacion': document.getElementById("validacion"),
+        'precio': document.getElementById("precioDescuentoCodigo")
+    };
+    if (inputCodigo == "awesomeGuitar30") {
+        idOutput.validacion.innerHTML = `Este codigo aplica el 30% de descuento`;
+        idOutput.precio.innerHTML = `<s>$800</s> <br> $${calcularDescuento(800, 30)}`;
+    }
+    else if (inputCodigo == "awesomeGuitar20") {
+        idOutput.validacion.innerHTML = `Este codigo aplica el 20% de descuento`;
+        idOutput.precio.innerHTML = `<s>$800</s> <br> $${calcularDescuento(800, 20)}`;
+    }
+    else if (inputCodigo == "awesomeGuitar15") {
+        idOutput.validacion.innerHTML = `Este codigo aplica el 15% de descuento`;
+        idOutput.precio.innerHTML = `<s>$800</s> <br> $${calcularDescuento(800, 15)}`;
+    } else {
+        idOutput.precio.innerHTML = `$800`;
+        idOutput.validacion.innerHTML = `Codigo invalido`;
+    }
 }

@@ -17,7 +17,7 @@
         </header>
         <main class="discount-container">
             <h2>Precios y descuentos</h2>
-            <section>
+            <section class="discount">
                 <h3>Calcula el descuento de productos</h3>
                 <form>
                     <label>
@@ -26,11 +26,36 @@
                     <label>
                         Descuento <input id="inputDescuento" type="number">%
                     </label>
-                    <button class="calcular" type="button" onclick="outputPrecio()">
+                    <button class="calcular" type="button" onclick="outputPrecioDescuento()">
                         Calcular
                     </button>
-                    <p><strong>Precio con descuento</strong> $<span id="precioConDescuento">0</span></p>
+                    <p><strong>Precio con descuento</strong> $<span id="precioDescuento">0</span></p>
                 </form>
+            </section>
+            <h2>Descuento con cupones</h2>
+            <section class="code-discount">
+                <h3>Calcula el descuento del producto aplicando el cupón</h3>
+                <div class="product">
+                    <img src="https://static.turbosquid.com/Preview/001210/504/9V/3D-fender-stratocaster-guitar_600.jpg" alt="Imagen del producto">
+                    <h4>Guitarra Fender Stratocaster American Standard</h4>
+                    <p><span id="precioDescuentoCodigo">$800</span></p>
+                    <p>Aprovecha ahora y aplica hasta un 30% de descuento con código de referido</p>
+                    <form>
+                        <label>
+                            Ingresa aquí el cogido de referido <input id="inputCodigo" type="text">
+                        </label>
+                        <button class="confirm" type="button"  onclick="checkCodigo()">
+                            Ingresar
+                        </button>
+                        <p id="validacion"></p>
+                    </form>
+                </div>
+                <p>Códigos</p>
+                    <ul>
+                        <li>awesomeGuitar30</li>
+                        <li>awesomeGuitar20</li>
+                        <li>awesomeGuitar15</li>
+                    </ul>
             </section>
         </main>
         <script src="./discounts.js"></script>
