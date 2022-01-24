@@ -21,8 +21,9 @@
                 <h3>Calcula el perimetro y area de un cuadrado</h3>
                 <p>Cuanto mide cada <strong><label for="inputCuadrado">lado</label></strong> del cuadrado.</p>
                 <form>
-                    <label for="inputCuadrado">Lado</label>
-                    <input id="inputCuadrado" type="number">
+                    <label>
+                        Lado <input id="inputCuadrado" type="number">cm
+                    </label>
                     <button  class="calcular" type="button" onclick="outputCuadrado()">
                         Calcular
                     </button>
@@ -37,10 +38,10 @@
                 <p>Cuanto mide la <strong><label for="inputRectanguloAltura">altura</label></strong> y la <strong><label for="inputRectanguloBase">base</label></strong> del rectángulo.</p>
                 <form>
                     <label>
-                        Altura <input id="inputRectanguloAltura" type="number">
+                        Altura <input id="inputRectanguloAltura" type="number">cm
                     </label>
                     <label>
-                        Base <input id="inputRectanguloBase" type="number">
+                        Base <input id="inputRectanguloBase" type="number">cm
                     </label>
                     <button  class="calcular" type="button" onclick="outputRectangulo()">
                         Calcular
@@ -65,15 +66,15 @@
                 <form>
                     <!-- Lado A -->
                     <label>
-                        Lado A <input id="inputTrianguloLadoA" type="number">
+                        Lado A <input id="inputTrianguloLadoA" type="number">cm
                     </label>
                     <!-- Lado B -->
                     <label>
-                        Lado B <input id="inputTrianguloLadoB" type="number">
+                        Lado B <input id="inputTrianguloLadoB" type="number">cm
                     </label>
                     <!-- Base -->
                     <label>
-                        Base <input id="inputTrianguloBase" type="number">
+                        Base <input id="inputTrianguloBase" type="number">cm
                     </label>
                     <button class="calcular" type="button" onclick="outputTriangulo()">
                         Calcular
@@ -91,10 +92,10 @@
                 <p>Cuanto miden los <strong><label for="inputRomboLado">lados</label></strong> del rombo(<em>tiene lados iguales</em>). La <strong><label for="inputRomboDiagonal">diagonal</label></strong> puede ser la menor o mayor.</p>
                 <form>
                     <label>
-                        Lado <input id="inputRomboLado" type="number">
+                        Lado <input id="inputRomboLado" type="number">cm
                     </label>
                     <label>
-                        1° Diagonal <input id="inputRomboDiagonal" type="number">
+                        1° Diagonal <input id="inputRomboDiagonal" type="number">cm
                     </label>
                     <button  class="calcular" type="button" onclick="outputRombo()">
                         Calcular
@@ -110,8 +111,9 @@
                 <h3>Calcula la circunferencia y area de un circulo</h2>
                 <p>Cuanto mide el <strong><label for="inputCirculo">radio</label></strong> del circulo.</p>
                 <form>
-                    <label for="inputCirculo">Radio</label>
-                    <input id="inputCirculo" type="number">
+                    <label>
+                        Radio <input id="inputCirculo" type="number">cm
+                    </label>
                     <button class="calcular" type="button" onclick="outputCirculo()">
                         Calcular
                     </button>
@@ -121,9 +123,7 @@
                     <li><strong>Área</strong> <span id="areaCirculo">0</span>cm<sup>2</sup></li>
                 </ul>
             </section>
-            <h2>Precios y descuentos</h2>
         </main>
         <script src="./figures.js"></script>
-        <script src="./discounts.js"></script>
     </body>
 </html>
