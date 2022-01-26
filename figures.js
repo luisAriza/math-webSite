@@ -4,9 +4,7 @@
 * @return {number} EL valor de la medida ingresada
 */
 function getInput(medidaFigura) {
-    /**
-    * Nombre de ID's de los elementos "input" de HTML, guardadas en las propiedades del objeto
-    */
+    /** Nombre de ID's de los elementos "input" de HTML, guardadas en las propiedades del objeto */
     const input = {
         ladoCuadrado: "inputCuadrado",
         alturaRectangulo: "inputRectanguloAltura",
@@ -18,13 +16,9 @@ function getInput(medidaFigura) {
         diagonalRombo: "inputRomboDiagonal",
         radioCirculo: "inputCirculo"
     };
-    /**
-    * Dato de 'input[]' obtenido por el parámetro 'medidaFigura'
-    */
+    /** Dato de 'input[]' obtenido por el parámetro 'medidaFigura' */
     const datoInput = document.getElementById(input[medidaFigura]);
-    /**
-    * Valor de 'datoInput' con decimales, convertido de tipo de dato 'String' a 'Number'
-    */
+    /** Valor de 'datoInput' con decimales, convertido de tipo de dato 'String' a 'Number' */
     const valorInputFiltrado = Number.parseFloat(datoInput.value);
 
     return valorInputFiltrado;
@@ -149,9 +143,7 @@ const calcularAreaCirculo = (r) => parseFloat( (Math.pow(r, 2) * Math.PI).toFixe
 * @return {number} EL valor del output ingresado
 */
 function getOutput(outputFigura) {
-    /**
-    * Valores de las longitudes de las figuras, guardadas en las propiedades del objeto
-    */
+    /** Valores de las longitudes de las figuras, guardadas en las propiedades del objeto */
     const valor = {
         lC: getInput('ladoCuadrado'),
         aR: getInput('alturaRectangulo'),
@@ -160,9 +152,7 @@ function getOutput(outputFigura) {
         dR: getInput('diagonalRombo'),
         rC: getInput('radioCirculo')
     };
-    /**
-    * Valor del calculo de la segunda diagonal del rombo para calcular su área
-    */
+    /** Valor del calculo de la segunda diagonal del rombo para calcular su área */
     const DiagonalRombo = calcularDiagonalRombo(valor.lR, valor.dR);
     /**
     * Valor del calculo de diagonal, perimetro y area de las figuras, guardadas en las propiedades
@@ -194,9 +184,7 @@ function getOutput(outputFigura) {
 * @return {number} EL valor del output ingresado
 */
 function getOutputTriangulo(output) {
-    /**
-    * Valores de los lados a, b y base del triangulo, guardadas en las propiedades del objeto
-    */
+    /** Valores de los lados a, b y base del triangulo, guardadas en las propiedades del objeto */
     const lado = {
         a: getInput('aLadoTriangulo'),
         b: getInput('bLadoTriangulo'),
@@ -217,13 +205,9 @@ function getOutputTriangulo(output) {
         * Mat.ceil redondea hacia arriba para reducir errores de calculo al ingresar el valor
         */
         'escaleno': Math.ceil( (lado.a ** 2) + (lado.b ** 2) ),
-        /**
-        * 1.7% menos ó igual a la hipotenusa
-        */
+        /** 1.7% menos ó igual a la hipotenusa */
         'maxEscaleno': lado.base ** 2,
-        /**
-        * Margen de error de menos 1.7%
-        */
+        /** Margen de error de menos 1.7% */
         'minEscaleno': (lado.base ** 2) * 0.983
     };
     /**
@@ -242,17 +226,11 @@ function getOutputTriangulo(output) {
         'escaRectangulo': lado.a < lado.b && hipo.escaleno > hipo.minEscaleno && hipo.escaleno <= hipo.maxEscaleno,
         'escaObtusangulo': lado.a < lado.b && lado.b < lado.base && hipo.escaleno < hipo.maxEscaleno
     };
-    /**
-    * Aquí guardamos el valor de la altura del tipo de triangulo que cumpla la condicion
-    */
+    /** Aquí guardamos el valor de la altura del tipo de triangulo que cumpla la condicion */
     let altura;
-    /**
-    * Output del ID "tipoTriangulo" del archivo HTML
-    */
+    /** Output del ID "tipoTriangulo" del archivo HTML */
     const outputTipoTriangulo = document.getElementById("tipoTriangulo");
-    /**
-    * Semi-perimetro del triangulo es igual a la mitad del perimetro
-    */
+    /** Semi-perimetro del triangulo es igual a la mitad del perimetro */
     const semiperimetro = calcularPerimetroTriangulo(lado.a, lado.b, lado.base)/2;
     //Validaciones de los tipos de triángulos
     if (triangulo.equilatero) {
@@ -300,9 +278,7 @@ function getOutputTriangulo(output) {
         //Si se ingresa un mal dato, mandar una alerta de verificación
         alert(`Ingresa correctamente todos los lados del triangulo, lee la guía`);
     }
-    /**
-    * Valor del calculo de altura, perimetro y area, guardadas en las propiedades del objeto
-    */
+    /**Valor del calculo de altura, perimetro y area, guardadas en las propiedades del objeto */
     const calculo = {
         'altura': parseFloat(altura.toFixed(2) ),
         'perimetro': calcularPerimetroTriangulo(lado.a, lado.b, lado.base),

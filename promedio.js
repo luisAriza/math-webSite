@@ -1,23 +1,22 @@
-const lista1 = [
-    100,
-    200,
-    300,
-    400,
-    500
-];
+const lista1 = [200, 100, 500, 400, 300];
 /**
-* Calcular el promedio del la lista de array
-* @param {string} lista 'Lista' que se va a calcular el promedio
-* @return {number} promedio de la lista
+* Calcular el promedio de la lista de array
+* @param {array} lista 'Lista de array' la cual se va a calcular el promedio
+* @return {number} El promedio de la lista, la suma de la lista sobre el tamaño de la lista
 */
 const calcularPromedio = (lista) => {
-    // let sumaLista = 0;
-
-    // for (let i = 0; i < lista.length; i++) {
-    //     sumaLista += lista[i];
-    // }
-
-    const sumaLista = lista.reduce((valorAcumulado = 0, nuevoElemento) => valorAcumulado + nuevoElemento);
+    /**
+    * Funcion para 'reduce', sumar todos los elementos array
+    * @param {number} acumulador numero acumulado o sumado, inicia en la posición 0 del array
+    * @param {number} numero siguiente elemento del array
+    * @return {number} La función de suma de todos los elementos del array
+    */
+    const acumular = (acumulador, numero) => acumulador + numero;
+    /**
+    * Suma de todos los elementos del array guardados en la variable 'sumaLista'.
+    * Si el tamaño del array es mayor a 0, hacer la suma del array con '.reduce'. si no, es = 0
+    */
+    const sumaLista = lista.length > 0 ? lista.reduce(acumular) : 0;
 
     return sumaLista / lista.length;
 }
