@@ -1,5 +1,15 @@
-//Ordenar esta vaina
-const lista1 = [100, 200, 500, 700, 900, 1100, 1300, 1500];
+//Lista desordenada
+const lista1 = [500, 1300, 900, 1500, 700, 1100, 100, 300];
+//Algoritmo de ordenamiento
+for (let i = 0; i < lista1.length - 1; i++) {
+    for (let j = 0; j < lista1.length - 1; j++) {
+        if (lista1[j] > lista1[j + 1]) {
+            const aux = lista1[j];
+            lista1[j] = lista1[j + 1];
+            lista1[j + 1] = aux;
+        }
+    }
+}
 /**
 * Calcular la mediana de la lista de array
 * @param {array} lista 'Lista de array' la cual se va a calcular la mediana
