@@ -13,7 +13,22 @@
     </head>
     <body>
         <h1>Promedio</h1>
-
+        <main>
+            <section>
+                <p>Ingresa los datos para calcular su promedio</p>
+                <form>
+                    <label>
+                        Datos <input class="input" id="inputDatos" type="number">
+                    </label>
+                    <button class="ingresar" type="button" onclick="ingresarDato()">
+                        Ingresar
+                    </button>
+                    <button class="calcular" type="button" onclick="calcularPromedio()">
+                        Calcular
+                    </button>
+                </form>
+            </section>
+        </main>
         <script src="promedio.js"></script>
     </body>
 </html>
