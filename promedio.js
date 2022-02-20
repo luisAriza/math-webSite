@@ -1,27 +1,25 @@
 /**
 * Procesar los "inputs" del archivo HTML y convertir a 'Number' el tipo de dato del valor de entrada
-* @param {string} medidaFigura 'Nombre de la medida y figura' que se desea obtener
+* @param {string} input 'Nombre del ID' del input
 * @return {number} EL valor de la medida ingresada
 */
-function getInput(medidaFigura) {
-    /** Nombre de ID's de los elementos "input" de HTML, guardadas en las propiedades del objeto */
-    const input = {
-        datoPromedio: "inputDatos"
-    };
-    /** Dato de 'input[]' obtenido por el parámetro 'medidaFigura' */
-    const datoInput = document.getElementById(input[medidaFigura]);
+const getInput = () => {
+    /** Dato de 'input[]' obtenido por el parámetro 'input' */
+    const datoInput = document.getElementById("inputDatos");
     /** Valor de 'datoInput' con decimales, convertido de tipo de dato 'String' a 'Number' */
     const valorInputFiltrado = Number.parseFloat(datoInput.value);
 
     return valorInputFiltrado;
 }
-function ingresarDato() {
-    const dato = getInput('datoPromedio');
-    const lista = [];
-    
+
+const lista = [];
+
+const ingresarDato = () => {
+    const dato = getInput();
+
     lista.push(dato);
 
-    return alert(lista);
+    return document.getElementById('outputDato').innerHTML = `{${lista}}`;
 }
 /**
 * Calcular el promedio de la lista de array
@@ -29,7 +27,6 @@ function ingresarDato() {
 * @return {number} El promedio de la lista, la suma de la lista sobre el tamaño de la lista
 */
 const calcularPromedio = () => {
-    const lista = ingresarDato();
     /**
     * Funcion para 'reduce', sumar todos los elementos array
     * @param {number} acumulador numero acumulado o sumado, inicia en la posición 0 del array
