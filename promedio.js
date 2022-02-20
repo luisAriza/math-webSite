@@ -1,29 +1,44 @@
+/** Lista de datos para calcular el promedio */
+const lista = [];
+
 /**
-* Procesar los "inputs" del archivo HTML y convertir a 'Number' el tipo de dato del valor de entrada
-* @param {string} input 'Nombre del ID' del input
-* @return {number} EL valor de la medida ingresada
+* Procesar el input del archivo HTML y convertir el tipo de dato
+* @return {number} EL valor de 'inputDato' convertido a 'Number'
 */
 const getInput = () => {
-    /** Dato de 'input[]' obtenido por el parámetro 'input' */
-    const datoInput = document.getElementById("inputDatos");
+    /** Dato de 'inputDato' obtenido por el ID del elemento HTML */
+    const datoInput = document.getElementById("inputDato");
     /** Valor de 'datoInput' con decimales, convertido de tipo de dato 'String' a 'Number' */
     const valorInputFiltrado = Number.parseFloat(datoInput.value);
 
     return valorInputFiltrado;
 }
 
-const lista = [];
-
+/**
+* Ingresar en la lista un nuevo valor e imprimirlo en el archivo HTML
+* @return {number} Nuevo dato ingresado e impreso en el ID 'outputDatos'
+*/
 const ingresarDato = () => {
+    /** Valor de 'inputDato' guardado en la variable "dato" */
     const dato = getInput();
-
+    /** Ingresar el valor de "dato" al final de la lista */
     lista.push(dato);
 
-    return document.getElementById('outputDato').innerHTML = `{${lista}}`;
+    return document.getElementById('outputDatos').innerHTML = `(${lista})`;
 }
 /**
+* Ingresar en la lista un nuevo valor e imprimirlo en el archivo HTML
+* @return {number} Ultimo dato de la lista eliminado e impreso en el ID 'outputDatos'
+*/
+const eliminarDato = () => {
+    /** Eliminar el ultimo valor de la lista */
+    lista.pop();
+
+    return document.getElementById('outputDatos').innerHTML = `(${lista})`;
+}
+
+/**
 * Calcular el promedio de la lista de array
-* @param {array} lista 'Lista de array' la cual se va a calcular el promedio
 * @return {number} El promedio de la lista, la suma de la lista sobre el tamaño de la lista
 */
 const calcularPromedio = () => {
