@@ -1,0 +1,4 @@
+#ignorar archivos PNG
+*.png
+#ignorar archivos JPG
+*.jpg
