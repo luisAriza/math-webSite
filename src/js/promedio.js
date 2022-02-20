@@ -3,11 +3,11 @@ const lista = [];
 
 /**
 * Procesar el input del archivo HTML y convertir el tipo de dato
-* @return {number} EL valor de 'inputDato' convertido a 'Number'
+* @return {number} EL valor de 'inputDatoPromedio' convertido a 'Number'
 */
 const getInput = () => {
     /** Dato de 'inputDato' obtenido por el ID del elemento HTML */
-    const datoInput = document.getElementById("inputDato");
+    const datoInput = document.getElementById("inputDatoPromedio");
     /** Valor de 'datoInput' con decimales, convertido de tipo de dato 'String' a 'Number' */
     const valorInputFiltrado = Number.parseFloat(datoInput.value);
 
@@ -27,7 +27,7 @@ const ingresarDato = () => {
     return document.getElementById('outputDatos').innerHTML = `(${lista})`;
 }
 /**
-* Ingresar en la lista un nuevo valor e imprimirlo en el archivo HTML
+* Eliminar en la lista el ultimo valor e imprimirlo en el archivo HTML
 * @return {number} Ultimo dato de la lista eliminado e impreso en el ID 'outputDatos'
 */
 const eliminarDato = () => {
@@ -39,7 +39,7 @@ const eliminarDato = () => {
 
 /**
 * Calcular el promedio de la lista de datos
-* @return {number} El promedio de la lista, la suma de la lista sobre el tamaño de la lista
+* @return {number} El promedio de la lista
 */
 const calcularPromedio = () => {
     /**
@@ -54,6 +54,8 @@ const calcularPromedio = () => {
     * Si el tamaño del array es mayor a 0, hacer la suma del array con '.reduce'. si no, es = 0
     */
     const sumaLista = lista.length > 0 ? lista.reduce(acumular) : 0;
+    /** El resultado de la suma de la 'lista' sobre el tamaño de la lista */
+    const promedio = sumaLista / lista.length;
 
-    return alert(sumaLista / lista.length);
+    return alert(promedio);
 }

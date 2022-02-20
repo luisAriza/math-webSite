@@ -278,7 +278,7 @@ function getOutputTriangulo(output) {
         //Si se ingresa un mal dato, mandar una alerta de verificación
         alert(`Ingresa correctamente todos los lados del triangulo, lee la guía`);
     }
-    /**Valor del calculo de altura, perimetro y area, guardadas en las propiedades del objeto */
+    /** Valor del calculo de altura, perimetro y area, guardadas en las propiedades del objeto */
     const calculo = {
         'altura': parseFloat(altura.toFixed(2) ),
         'perimetro': calcularPerimetroTriangulo(lado.a, lado.b, lado.base),

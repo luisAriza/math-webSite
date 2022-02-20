@@ -4,20 +4,14 @@
 * @return {number} EL valor del precio o descuento ingresado
 */
 function getInput(preDes) {
-    /**
-    * Nombre de ID's de los elementos "input" de HTML, guardadas en las propiedades del objeto
-    */
+    /** Nombre de ID's de los elementos "input" de HTML, guardadas en las propiedades del objeto */
     const input = {
         precio: "inputPrecio",
         descuento: "inputDescuento"
     };
-    /**
-    * Dato de 'input[]' obtenido por el parámetro 'preDes'
-    */
+    /** Dato de 'input[]' obtenido por el parámetro 'preDes' */
     const datoInput = document.getElementById(input[preDes]);
-    /**
-    * Valor de 'datoInput' convertido de tipo de dato 'String' a 'Number'
-    */
+    /** Valor de 'datoInput' convertido de tipo de dato 'String' a 'Number' */
     const valorInputFiltrado = Number.parseInt(datoInput.value);
 
     return valorInputFiltrado;
@@ -36,20 +30,14 @@ const calcularDescuento = (precio, descuento) => (precio * (100 - descuento))/10
 * @return {number} EL valor del precio con el descuento aplicado al ID de salida
 */
 function outputPrecioDescuento() {
-    /**
-    * Valores del precio y descuento, guardadas en las propiedades del objeto
-    */
+    /** Valores del precio y descuento, guardadas en las propiedades del objeto */
     const valor = {
         precio: getInput('precio'),
         descuento: getInput('descuento')
     };
-    /**
-    * Calculo del precio menos el descuento
-    */
+    /** Calculo del precio menos el descuento */
     const precioConDescuento = calcularDescuento(valor.precio, valor.descuento);
-    /**
-    * Escribir en el ID "precioDescuento" de HTML el precio con descuento
-    */
+    /** Escribir en el ID "precioDescuento" de HTML el precio con descuento */
     document.getElementById("precioDescuento").innerHTML = precioConDescuento;
 }
 //----------------------------------------------------------------------------------------------------
@@ -58,13 +46,9 @@ function outputPrecioDescuento() {
 * @return {number} EL valor del precio con el descuento aplicado al ID de salida
 */
 function checkCodigo() {
-    /**
-    * Codigo del ID "inputCodigo" convertido en 'String' con .value
-    */
+    /** Codigo del ID "inputCodigo" convertido en 'String' con .value */
     const inputCodigo = document.getElementById("inputCodigo").value;
-    /**
-    * ID's de los outputs de HTML
-    */
+    /** ID's de los outputs de HTML */
     const idOutput = {
         'validacion': document.getElementById("validacion"),
         'precio': document.getElementById("precioDescuentoCodigo")
