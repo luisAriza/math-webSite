@@ -1,5 +1,5 @@
-/** Lista de array desordenada */
-const lista = [500, 1300, 900, 1500, 700, 1100, 100, 300];
+/** Lista de datos para calcular la mediana desordenada */
+const lista = [];
 /**
 * Funcion de comparación para ordenamiento natural
 * https://lenguajejs.com/javascript/fundamentos/arrays/#funci%C3%B3n-de-comparaci%C3%B3n
@@ -12,7 +12,7 @@ const fc = (a, b) => a - b;
 //Ordenar lista de array con '.sort' mediante la función de comparación 'fc'
 lista.sort(fc);
 /**
-* Calcular la mediana de la lista de array
+* Calcular la mediana de la lista de datos
 * @return {number} La mediana de la lista
 */
 const calcularMediana = () => {

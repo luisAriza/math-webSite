@@ -38,7 +38,7 @@ const eliminarDato = () => {
 }
 
 /**
-* Calcular el promedio de la lista de array
+* Calcular el promedio de la lista de datos
 * @return {number} El promedio de la lista, la suma de la lista sobre el tamaño de la lista
 */
 const calcularPromedio = () => {

@@ -1,0 +1,23 @@
+{
+  "name": "javascript_math-website",
+  "version": "1.0.0",
+  "description": "Sitio web de matemáticas",
+  "main": "src/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisAriza/mathematics_webPage.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Matemáticas"
+  ],
+  "author": "Luis Ariza <luismanuelariza@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luisAriza/mathematics_webPage/issues"
+  },
+  "homepage": "https://github.com/luisAriza/mathematics_webPage#readme"
+}
