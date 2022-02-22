@@ -1,3 +1,5 @@
+const calcularDescuento = require('./module.js');
+
 /**
 * Procesar los "inputs" del archivo HTML y convertir a 'Number' el tipo de dato del valor de entrada
 * @param {string} preDes 'Texto de precio o descuento' que se desea obtener
@@ -23,7 +25,7 @@ function getInput(preDes) {
 * @param {number} descuento Porcentaje de 'Descuento' que se le debe aplicar
 * @return {number} El precio del producto con el descuento aplicado
 */
-const calcularDescuento = (precio, descuento) => (precio * (100 - descuento))/100;
+// const calcularDescuento = (precio, descuento) => (precio * (100 - descuento))/100;
 //----------------------------------------------------------------------------------------------------
 /**
 * Calcular y enviar al archivo HTML el valor de salida

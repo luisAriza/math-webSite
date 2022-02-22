@@ -2,7 +2,7 @@
   "name": "javascript_math-website",
   "version": "1.0.0",
   "description": "Sitio web de matemáticas",
-  "main": "src/js/index.js",
+  "main": "src/js/figures.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,10 @@
   },
   "keywords": [
     "JavaScript",
-    "Matemáticas"
+    "Matemáticas",
+    "Figuras",
+    "Descuentos",
+    "Estadística"
   ],
   "author": "Luis Ariza <luismanuelariza@hotmail.com>",
   "license": "MIT",

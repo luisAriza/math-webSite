@@ -226,51 +226,45 @@ function getOutputTriangulo(output) {
         'escaRectangulo': lado.a < lado.b && hipo.escaleno > hipo.minEscaleno && hipo.escaleno <= hipo.maxEscaleno,
         'escaObtusangulo': lado.a < lado.b && lado.b < lado.base && hipo.escaleno < hipo.maxEscaleno
     };
-    /** Aquí guardamos el valor de la altura del tipo de triangulo que cumpla la condicion */
+
     let altura;
+
     /** Output del ID "tipoTriangulo" del archivo HTML */
     const outputTipoTriangulo = document.getElementById("tipoTriangulo");
-    /** Semi-perimetro del triangulo es igual a la mitad del perimetro */
+
     const semiperimetro = calcularPerimetroTriangulo(lado.a, lado.b, lado.base)/2;
-    //Validaciones de los tipos de triángulos
+
     if (triangulo.equilatero) {
-        //Calcular la altura del triangulo equilatero-acutángulo
         altura = calcularAlturaTrianguloEquilatero(lado.a);
         //Escribir en HTML el tipo de triangulo
         outputTipoTriangulo.innerHTML = `Equilatero-acutángulo`;
     }
     else if (triangulo.isosAcutangulo) {
-        //Calcular la altura del triangulo isósceles-acutángulo
         altura = calcularAlturaTrianguloIsosceles(lado.a, lado.base);
         //Escribir en HTML el tipo de triangulo
         outputTipoTriangulo.innerHTML = `Isósceles-acutángulo`;
     }
     else if (triangulo.isosRectangulo) {
-        //Calcular la altura del triangulo-rectángulo isósceles
         altura = calcularAlturaTrianguloIsosceles(lado.a, lado.base);
         //Escribir en HTML el tipo de triangulo
         outputTipoTriangulo.innerHTML = `Triangulo-rectángulo Isósceles`;
     }
     else if (triangulo.isosObtusangulo) {
-        //Calcular la altura del triangulo isósceles-obtusángulo
         altura = calcularAlturaTrianguloIsosceles(lado.a, lado.base);
         //Escribir en HTML el tipo de triangulo
         outputTipoTriangulo.innerHTML = `Isósceles-obtusángulo`;
     }
     else if (triangulo.escaAcutangulo) {
-        //Calcular la altura del triangulo escaleno-acutángulo
         altura = calcularAlturaTrianguloEscaleno(lado.a, lado.b, lado.base, semiperimetro);
         //Escribir en HTML el tipo de triangulo
         outputTipoTriangulo.innerHTML = `Escaleno-acutángulo`;
     }
     else if (triangulo.escaRectangulo) {
-        //Calcular la altura del triangulo-rectángulo escaleno
         altura = calcularAlturaTrianguloRectangulo(lado.a, lado.b, lado.base);
         //Escribir en HTML el tipo de triangulo
         outputTipoTriangulo.innerHTML = `Triangulo-rectángulo Escaleno`;
     }
     else if (triangulo.escaObtusangulo) {
-        //Calcular la altura del triangulo escaleno-obtusángulo
         altura = calcularAlturaTrianguloEscaleno(lado.a, lado.b, lado.base, semiperimetro);
         //Escribir en HTML el tipo de triangulo
         outputTipoTriangulo.innerHTML = `Escaleno-obtusángulo`;

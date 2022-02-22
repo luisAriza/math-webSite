@@ -105,15 +105,32 @@ const calcularModa = () => {
     * @param {number} b Segundo elemento del array filtrado y tomando el tamaño de cuantos elementos hay
     * @return {number} la comparación de los 2 array-elementos
     */
-    const fc2 = (a, b) => lista.filter(v => v === a).length - lista.filter(v => v === b).length;
-    /** La moda obtenido del ultimo elemento del la lista (el más repetido) */
-    const moda = lista.sort(fc2).slice(lista.length - 1);
+    const fcl = (a, b) => lista.filter(e => e === a).length - lista.filter(e => e === b).length;
+    /** La moda ubicado al final de la lista (el más repetido) */
+    lista.sort(fcl);
+    
+    const moda = () => {
+        /** Copia del la lista original */
+        const lista2 = lista.slice();
+        /** Tamaño de la copia de la lista menos 1 */
+        const length = lista2.length - 1;
+        /**
+        * Filtro de grupo de elementos repetidos
+        * @param {*} def Valor del parámetro por defecto
+        * @returns {number} El tamaño del grupo de elementos repetidos
+        */
+        const filtro = (def = 0) => lista2.filter(e => e === lista2[length - def]).length;
 
-    return impCalculo('outputModa', moda) && lista.sort(fc);
+        if (filtro() > filtro( filtro() ))
+            impCalculo('outputModa', lista2.pop()) && lista.sort(fc);
+        else if (filtro() === filtro( filtro() ))
+            impCalculo('outputModa', [lista2.slice(filtro() - 1, filtro()), lista2.slice(length)]) && lista.sort(fc);
+    }
+    return moda();
 }
 
 /**
 * Enviar al HTML el valor del promedio, la mediana y la moda de la lista de datos ingresada
 * @return {number} Todos los calculos de la lista
 */
-const calcularTodo = () => calcularPromedio() && calcularMediana() && calcularModa();
+const calcularTodo = () => calcularPromedio() && calcularMediana() && calcularModa() && impLista();
