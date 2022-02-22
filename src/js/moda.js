@@ -8,7 +8,7 @@ const lista = [];
 * @return {number} La función se encargará de, si devuelve 'true' cambia el orden de a y b,
 * si devuelve 'false' los mantiene igual
 */
-const fce = (a, b) => a - b;
+const fc = (a, b) => a - b;
 
 /**
 * Procesar el input del archivo HTML y convertir el tipo de dato
@@ -52,7 +52,7 @@ const eliminarDato = () => {
 */
 function calcularModa() {
     /** Ordenar lista de datos con '.sort' mediante la función de comparación 'fce' */
-    lista.sort(fce);
+    lista.sort(fc);
     /**
     * Funcion de comparación para ordenación natural, la función se encargará de: si devuelve
     * 'true' cambia el orden de a y b, si devuelve 'false' los mantiene igual
@@ -61,9 +61,9 @@ function calcularModa() {
     * @param {number} b Segundo elemento del array filtrado y tomando el tamaño de cuantos elementos hay
     * @return {number} la comparación de los 2 array-elementos
     */
-    const fc = (a, b) => lista.filter(v => v === a).length - lista.filter(v => v === b).length;
+    const fc2 = (a, b) => lista.filter(v => v === a).length - lista.filter(v => v === b).length;
     /** La moda obtenido del ultimo elemento del la lista (el más repetido) */
-    const moda = lista.sort(fc).slice(lista.length - 1);
+    const moda = lista.sort(fc2).slice(lista.length - 1);
 
     return alert(moda);
 }

@@ -1,4 +1,4 @@
-/* :root {
+:root {
     --sm: 2.0rem;
     --md: 2.6rem;
     --lg: 3.2rem;
@@ -12,17 +12,5 @@
 html {
     font-size: 62.5%;
     font-family: 'Quicksand', sans-serif;
-    font-family: 'Nanum Pen Script', cursive;
+    /* font-family: 'Nanum Pen Script', cursive; */
 }
-h1 {
-    font-size: var(--lg);
-}
-p {
-    font-size: var(--sm);
-}
-h2 {
-    font-size: var(--md);
-}
-label {
-    font-size: var(--sm);
-} */
