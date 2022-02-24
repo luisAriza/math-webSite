@@ -1,64 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Descuentos | Matemáticas</title>
-        <link rel="shortcut icon" href="../assets/icons/shortcut_icon.png" type="img">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/discounts.css">
-    </head>
-    <body>
-        <header>
-            <h1 class="tittle">Proyecto de matemáticas</h1>
-        </header>
-        <main class="discount-container">
-            <h2>Precios y descuentos</h2>
-            <section class="discount">
-                <h3>Calcula el descuento de productos</h3>
-                <form>
-                    <label>
-                        Precio del producto $<input id="inputPrice" type="number">
-                    </label>
-                    <label>
-                        Descuento <input id="inputDiscount" type="number">
-                    </label>
-                    <button class="calculate" type="button">
-                        Calcular
-                    </button>
-                    <p><strong>Precio con descuento</strong> $<span id="priceDiscount">0</span></p>
-                </form>
-            </section>
-            <h1>Reto</h1>
-            <h2>Descuento con cupones</h2>
-            <section class="code-discount">
-                <h3>Calcula el descuento del producto aplicando el cupón</h3>
-                <div class="product">
-                    <img src="https://static.turbosquid.com/Preview/001210/504/9V/3D-fender-stratocaster-guitar_600.jpg" alt="Imagen del producto">
-                    <h4>Guitarra Fender Stratocaster American Standard</h4>
-                    <p><span id="codeDiscountPrice">$800</span></p>
-                    <p>Aprovecha ahora y aplica hasta un 30% de descuento con código de referido</p>
-                    <form>
-                        <label>
-                            Ingresa aquí el cogido de referido <input id="inputCode" type="text">
-                        </label>
-                        <button class="confirm" type="button">
-                            Ingresar
-                        </button>
-                        <p id="validation"></p>
-                    </form>
-                </div>
-                <p>Códigos</p>
-                    <ul>
-                        <li>awesomeGuitar30</li>
-                        <li>awesomeGuitar20</li>
-                        <li>awesomeGuitar15</li>
-                    </ul>
-            </section>
-        </main>
-        <script type="module" src="../js/discounts.js"></script>
-    </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descuentos | Matemáticas</title>
+  <link rel="shortcut icon" href="../assets/icons/shortcut_icon.png" type="img" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Quicksand:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/discounts.css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="tittle">Proyecto de matemáticas</h1>
+  </header>
+  <main class="discount-container">
+    <h2>Precios y descuentos</h2>
+    <section class="discount">
+      <h3>Calcula el descuento de productos</h3>
+      <form>
+        <label>
+          Precio del producto $<input id="inputPrice" type="number" />
+        </label>
+        <label> Descuento <input id="inputDiscount" type="number" /> </label>
+        <button class="calculate" type="button">Calcular</button>
+        <p>
+          <strong>Precio con descuento</strong> $<span id="priceDiscount">0</span>
+        </p>
+      </form>
+    </section>
+    <h1>Reto</h1>
+    <h2>Descuento con cupones</h2>
+    <section class="code-discount">
+      <h3>Calcula el descuento del producto aplicando el cupón</h3>
+      <div class="product">
+        <img src="https://static.turbosquid.com/Preview/001210/504/9V/3D-fender-stratocaster-guitar_600.jpg"
+          alt="Imagen del producto" />
+        <h4>Guitarra Fender Stratocaster American Standard</h4>
+        <p><span id="codeDiscountPrice">$800</span></p>
+        <p>
+          Aprovecha ahora y aplica hasta un 30% de descuento con código de
+          referido
+        </p>
+        <form>
+          <label>
+            Ingresa aquí el cogido de referido
+            <input id="inputCode" type="text" />
+          </label>
+          <button class="confirm" type="button">Ingresar</button>
+          <p id="validation"></p>
+        </form>
+      </div>
+      <p>Códigos</p>
+      <ul>
+        <li>awesomeGuitar30</li>
+        <li>awesomeGuitar20</li>
+        <li>awesomeGuitar15</li>
+      </ul>
+    </section>
+  </main>
+  <script type="module" src="../js/discounts.js"></script>
+</body>
+
 </html>

@@ -1,3 +1,5 @@
+node_modules
+
 #Ignorar la carpeta assets
 assets
 #ignorar archivos PNG

@@ -1,29 +1,28 @@
 :root {
-   --primary-color: #ffff32;
-   --secondary-color: #1d884b;
-   --white: #f2f3f4;
-   --gray-light: #d0d3d4;
-   --metal: #5d6d7e;
-   --primary-black: #141414;
-   --secondary-black: #2f3132;
-   --xs: 1.6rem;
-   --sm: 2rem;
-   --md: 2.4rem;
-   --lg: 3rem;
-   --xl: 3.6rem;
-   --box-sm: 80px;
-   --box-md: 160px;
-   --box-lg: 200px;
+  --primary-color: #ffff32;
+  --secondary-color: #1d884b;
+  --white: #f2f3f4;
+  --gray-light: #d0d3d4;
+  --metal: #5d6d7e;
+  --primary-black: #141414;
+  --secondary-black: #2f3132;
+  --xs: 1.6rem;
+  --sm: 2rem;
+  --md: 2.4rem;
+  --lg: 3rem;
+  --xl: 3.6rem;
+  --box-sm: 80px;
+  --box-md: 160px;
+  --box-lg: 200px;
 }
 
 * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 html {
-   font-size: 62.5%;
-   font-family: 'Quicksand', sans-serif;
-   /* font-family: 'Nanum Pen Script', cursive; */
+  font-size: 62.5%;
+  font-family: "Quicksand", sans-serif;
+  /* font-family: 'Nanum Pen Script', cursive; */
 }
-

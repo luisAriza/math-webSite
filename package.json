@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/luisAriza/mathematics_webPage/issues"
   },
-  "homepage": "https://github.com/luisAriza/mathematics_webPage#readme"
+  "homepage": "https://github.com/luisAriza/mathematics_webPage#readme",
+  "devDependencies": {
+    "prettier": "2.5.1"
+  }
 }
