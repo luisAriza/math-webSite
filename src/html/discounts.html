@@ -21,15 +21,15 @@
                 <h3>Calcula el descuento de productos</h3>
                 <form>
                     <label>
-                        Precio del producto $<input id="inputPrecio" type="number">
+                        Precio del producto $<input id="inputPrice" type="number">
                     </label>
                     <label>
-                        Descuento <input id="inputDescuento" type="number">%
+                        Descuento <input id="inputDiscount" type="number">
                     </label>
-                    <button class="calcular" type="button" onclick="outputPrecioDescuento()">
+                    <button class="calculate" type="button">
                         Calcular
                     </button>
-                    <p><strong>Precio con descuento</strong> $<span id="precioDescuento">0</span></p>
+                    <p><strong>Precio con descuento</strong> $<span id="priceDiscount">0</span></p>
                 </form>
             </section>
             <h1>Reto</h1>
@@ -39,16 +39,16 @@
                 <div class="product">
                     <img src="https://static.turbosquid.com/Preview/001210/504/9V/3D-fender-stratocaster-guitar_600.jpg" alt="Imagen del producto">
                     <h4>Guitarra Fender Stratocaster American Standard</h4>
-                    <p><span id="precioDescuentoCodigo">$800</span></p>
+                    <p><span id="codeDiscountPrice">$800</span></p>
                     <p>Aprovecha ahora y aplica hasta un 30% de descuento con código de referido</p>
                     <form>
                         <label>
-                            Ingresa aquí el cogido de referido <input id="inputCodigo" type="text">
+                            Ingresa aquí el cogido de referido <input id="inputCode" type="text">
                         </label>
-                        <button class="confirm" type="button"  onclick="checkCodigo()">
+                        <button class="confirm" type="button">
                             Ingresar
                         </button>
-                        <p id="validacion"></p>
+                        <p id="validation"></p>
                     </form>
                 </div>
                 <p>Códigos</p>
@@ -59,6 +59,6 @@
                     </ul>
             </section>
         </main>
-        <script src="../js/discounts.js"></script>
+        <script type="module" src="../js/discounts.js"></script>
     </body>
 </html>

@@ -4,6 +4,4 @@
 * @param {number} descuento Porcentaje de 'Descuento' que se le debe aplicar
 * @return {number} El precio del producto con el descuento aplicado
 */
-const calcularDescuento = (precio, descuento) => (precio * (100 - descuento))/100;
-
-module.exports = calcularDescuento;
+export const calcularDescuento = (precio, descuento) => (precio * (100 - descuento))/100;
