@@ -1,5 +1,5 @@
-import { discount as calcDiscount } from "./modules/calculations.js";
 import { getInput } from "./modules/inputFilter.js";
+import { discount as calcDiscount } from "./modules/calculations.js";
 
 //----------------------------------------------------------------------------------------------------
 document.querySelector(".calculate").onclick = () => {
@@ -8,7 +8,7 @@ document.querySelector(".calculate").onclick = () => {
     price: getInput("#inputPrice"),
     discount: getInput("#inputDiscount"),
   };
-  /** Escribir en el ID "priceDiscount" de HTML el precio con descuento */
+
   document.querySelector("#priceDiscount").textContent = calcDiscount(
     input.price,
     input.discount
@@ -24,7 +24,8 @@ document.querySelector(".confirm").onclick = () => {
    * @returns {string} Imprime en el ID del HTML los mensajes de validacion
    */
   const output = (ptg) => {
-    document.querySelector("#priceCode").innerHTML = `<s>$800</s> <br> $${calcDiscount(800, ptg)}`;
+    document.querySelector("#priceCode").innerHTML = `<s>$800</s> <br>
+    $${calcDiscount(800, ptg)}`;
     document.querySelector("#validation").textContent = `${ptg}% de descuento`;
   };
 

@@ -23,23 +23,23 @@
                 <p>Ingresa los datos para calcular el promedio, la mediana y la moda</p>
                 <form>
                     <label>
-                        <input class="input" id="inputDato" type="number">
+                        <input class="input" id="inputData" type="number">
                     </label>
-                    <button class="ingresar" type="button" onclick="ingresarDato()">
+                    <button class="insert" type="button">
                         Ingresar
                     </button>
-                    <button class="eliminar" type="button" onclick="eliminarDato()">
+                    <button class="remove" type="button">
                         Eliminar
                     </button>
-                    <button class="calcular" type="button" onclick="calcularTodo()">
+                    <button class="calculate" type="button">
                         Calcular
                     </button>
                 </form>
-                <p>Datos (<span id="outputDatos"></span>)</p>
+                <p>Datos (<span id="data"></span>)</p>
                 <ul>
-                    <li>Promedio <span id="outputPromedio"></span></li>
-                    <li>Mediana <span id="outputMediana"></span></li>
-                    <li>Moda <span id="outputModa"></span></li>
+                    <li>Promedio <span id="mean"></span></li>
+                    <li>Mediana <span id="median"></span></li>
+                    <li>Moda <span id="mode"></span></li>
                 </ul>
         </section>
     </main>
