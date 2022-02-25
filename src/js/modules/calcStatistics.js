@@ -1,12 +1,4 @@
 /**
- * Calcular el precio aplicando el descuento
- * @param {number} price 'Precio' del producto
- * @param {number} discount Porcentaje de 'Descuento' que se le debe aplicar
- * @return {number} El precio del producto con el descuento aplicado
- */
-export const discount = (price, discount) => (price * (100 - discount)) / 100;
-
-/**
  * Calcular el promedio de la lista de datos
  * @param {number} list Lista de datos que se va a calcular el promedio
  * @return {number} El promedio de la lista
@@ -20,7 +12,7 @@ export const mean = (list) => {
    */
   let accumulator = (accumulator, number) => accumulator + number;
   /**
-   * Suma de todos los elementos del array guardados en la variable 'sumaLista'.
+   * Suma de todos los elementos del array guardados en la variable 'listSum'.
    * Si el tamaño del array es mayor a 0, hacer la suma del array con '.reduce'. si no, es = 0
    */
   let listSum = list.length > 0 ? list.reduce(accumulator) : 0;
@@ -29,6 +21,7 @@ export const mean = (list) => {
 
   return calcMean;
 };
+
 /**
  * Funcion de comparación para ordenamiento natural
  * https://lenguajejs.com/javascript/fundamentos/arrays/#funci%C3%B3n-de-comparaci%C3%B3n

@@ -1,5 +1,5 @@
 import { getInput } from "./modules/inputFilter.js";
-import { mean, median, mode } from "./modules/calculations.js";
+import { mean, median, mode } from "./modules/calcStatistics.js";
 
 /** Lista de datos para calcular */
 const list = [];
@@ -15,15 +15,18 @@ const printList = () => (document.querySelector("#data").textContent = list);
  */
 const printCalc = (id, calc) => (document.querySelector(id).textContent = calc);
 
+//----------------------------------------------------------------------------------------------------
 document.querySelector(".insert").onclick = () => {
   /** Valor de 'inputData' guardado en la variable "data" */
   let data = getInput("#inputData");
   /** Ingresar nuevo valor al final de la lista */
   list.push(data) && printList();
 };
+//----------------------------------------------------------------------------------------------------
 
 document.querySelector(".remove").onclick = () => list.pop() && printList();
 
+//----------------------------------------------------------------------------------------------------
 document.querySelector(".calculate").onclick = () => {
   printCalc("#mean", mean(list));
   printCalc("#mode", mode(list));

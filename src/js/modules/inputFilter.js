@@ -1,7 +1,7 @@
 /**
  * Procesar el "input" del archivo HTML y convertir a 'Number' el tipo de dato de entrada
- * @param {string} data Selector (# ó .) y nombre del 'ID' del input que se desea obtener
- * @return {number} EL valor del input ingresado filtrado
+ * @param {string} data Selector (# ó .) + El nombre del input que se desea obtener
+ * @return {number} El valor filtrado del input ingresado
  */
 export function getInput(data) {
   /** Dato de input obtenido por el parámetro 'data' */

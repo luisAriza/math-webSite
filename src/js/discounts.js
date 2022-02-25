@@ -1,5 +1,12 @@
 import { getInput } from "./modules/inputFilter.js";
-import { discount as calcDiscount } from "./modules/calculations.js";
+
+/**
+ * Calcular el precio aplicando el descuento
+ * @param {number} price 'Precio' del producto
+ * @param {number} discount Porcentaje de 'Descuento' que se le debe aplicar
+ * @return {number} El precio del producto con el descuento aplicado
+ */
+const calcDiscount = (price, discount) => (price * (100 - discount)) / 100;
 
 //----------------------------------------------------------------------------------------------------
 document.querySelector(".calculate").onclick = () => {
