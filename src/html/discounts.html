@@ -26,7 +26,7 @@
         <label>
           Precio del producto $<input id="inputPrice" type="number" />
         </label>
-        <label> Descuento <input id="inputDiscount" type="number" /> </label>
+        <label> Descuento <input id="inputDiscount" type="number" /> %</label>
         <button class="calculate" type="button">Calcular</button>
         <p>
           <strong>Precio con descuento</strong> $<span id="priceDiscount">0</span>
@@ -35,16 +35,15 @@
     </section>
     <h1>Reto</h1>
     <h2>Descuento con cupones</h2>
-    <section class="code-discount">
+    <section class="code-container">
       <h3>Calcula el descuento del producto aplicando el cupón</h3>
       <div class="product">
         <img src="https://static.turbosquid.com/Preview/001210/504/9V/3D-fender-stratocaster-guitar_600.jpg"
           alt="Imagen del producto" />
         <h4>Guitarra Fender Stratocaster American Standard</h4>
-        <p><span id="codeDiscountPrice">$800</span></p>
+        <p id="priceCode">$800</p>
         <p>
-          Aprovecha ahora y aplica hasta un 30% de descuento con código de
-          referido
+          Aprovecha ahora y aplica hasta un 30% de descuento con código de referido
         </p>
         <form>
           <label>
