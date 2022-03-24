@@ -1,0 +1,18 @@
+extend components/template.pug
+
+block content
+  main
+    h1 Estadística
+    section.container
+      h3 Promedio, mediana y moda
+      p Ingresa los datos para calcular el promedio, la mediana y la moda
+      form
+        label: input#inputData.input(type='number')
+        button.insert(type='button') Ingresar
+        button.remove(type='button') Eliminar
+        button.calculate(type='button') Calcular
+      p Datos (#[span#data])
+      ul
+        li Promedio #[span#mean]
+        li Mediana #[span#median]
+        li Moda #[span#mode]

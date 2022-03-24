@@ -6,3 +6,5 @@ assets
 *.png
 #ignorar archivos JPG
 *.jpg
+#Ignorar la carpeta de produccion
+dist

@@ -1,0 +1,10 @@
+include globals.pug
+
+doctype html
+html(lang="es")
+  include head.pug
+  body
+    include header.pug
+    block content
+    include footer.pug
+    script(src="../app.js")

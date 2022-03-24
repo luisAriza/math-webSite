@@ -2,7 +2,7 @@
   "name": "javascript_math-website",
   "version": "1.0.0",
   "description": "Sitio web de matemáticas",
-  "main": "src/js/figures.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,11 +11,11 @@
     "url": "git+https://github.com/luisAriza/mathematics_webPage.git"
   },
   "keywords": [
-    "JavaScript",
-    "Matemáticas",
-    "Figuras",
-    "Descuentos",
-    "Estadística"
+    "javascript",
+    "math",
+    "figures",
+    "discount",
+    "statistic"
   ],
   "author": "Luis Ariza <luismanuelariza@hotmail.com>",
   "license": "MIT",
@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/luisAriza/mathematics_webPage#readme",
   "devDependencies": {
-    "prettier": "2.5.1"
+    "prettier": "2.5.1",
+    "pug": "^3.0.2",
+    "sass": "^1.49.9"
   }
 }
