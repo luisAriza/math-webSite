@@ -27,7 +27,7 @@ document.querySelector(".insert").onclick = () => {
 document.querySelector(".remove").onclick = () => list.pop() && printList();
 
 //----------------------------------------------------------------------------------------------------
-document.querySelector(".calculate").onclick = () => {
+document.querySelector(".calculateStatistic").onclick = () => {
   printCalc("#mean", mean(list));
   printCalc("#mode", mode(list));
   printCalc("#median", median(list));

@@ -9,7 +9,7 @@ import { getInput } from "./modules/inputFilter.js";
 const calcDiscount = (price, discount) => (price * (100 - discount)) / 100;
 
 //----------------------------------------------------------------------------------------------------
-document.querySelector(".calculate").onclick = () => {
+document.querySelector(".calculateDiscount").onclick = () => {
   /** Valores del precio y descuento, guardadas en las propiedades del objeto */
   const input = {
     price: getInput("#inputPrice"),
