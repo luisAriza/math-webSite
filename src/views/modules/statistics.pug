@@ -1,0 +1,14 @@
+section#statistics-container
+  h2.title Estadística
+    h3 Calcula el promedio, mediana y moda de una lista
+    p Ingresa los datos para calcular el promedio, la mediana y la moda
+    form
+      label: input#inputData.input(type='number')
+      button.insert(type='button') Ingresar
+      button.remove(type='button') Eliminar
+      button.calculateStatistic(type='button') Calcular
+    p Datos (#[span#data])
+    ul
+      li Promedio #[span#mean]
+      li Mediana #[span#median]
+      li Moda #[span#mode]

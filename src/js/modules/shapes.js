@@ -1,9 +1,12 @@
-import { getInput } from "./modules/inputFilter.js";
-import { squarePerimeter, squareArea } from "./modules/calcShapes/square.js";
+import { getInput } from "./inputFilter.js";
+import {
+  squarePerimeter,
+  squareArea,
+} from "../calc/calcShapes/square.js";
 import {
   rectanglePerimeter,
   rectangleArea,
-} from "./modules/calcShapes/rectangle.js";
+} from "../calc/calcShapes/rectangle.js";
 import {
   trianglePerimeter,
   equilateralTriangleHeight,
@@ -11,20 +14,20 @@ import {
   rightTriangleHeight,
   scaleneTriangleHeight,
   triangleArea,
-} from "./modules/calcShapes/triangle.js";
+} from "../calc/calcShapes/triangle.js";
 import {
   diamondPerimeter,
   diamondDiagonal,
   diamondArea,
-} from "./modules/calcShapes/diamond.js";
-import { circumference, circleArea } from "./modules/calcShapes/circle.js";
+} from "../calc/calcShapes/diamond.js";
+import { circumference, circleArea } from "../calc/calcShapes/circle.js";
 
 /**
  * Imprime en el 'ID' del HTML el resultado del calculo
  * @param {string} calc nombre del calculo que se desea obtener
  * @return {number} Mostrar en pantalla el resultado del calculo
  */
-const printCalc = (calc) => {
+const shape = (calc) => {
   /** Valores de las longitudes de las figuras, guardadas en las propiedades del objeto */
   const input = {
     sS: getInput("#inputSquare"),
@@ -55,39 +58,23 @@ const printCalc = (calc) => {
 
   return outputValue;
 };
-//----------------------------------------------------------------------------------------------------
-document.querySelector(".calculateSquare").onclick = () => {
-  printCalc("squarePerimeter");
-  printCalc("squareArea");
-};
-document.querySelector(".calculateRectangle").onclick = () => {
-  printCalc("rectanglePerimeter");
-  printCalc("rectangleArea");
-};
-document.querySelector(".calculateDiamond").onclick = () => {
-  printCalc("diamondDiagonal");
-  printCalc("diamondPerimeter");
-  printCalc("diamondArea");
-};
-document.querySelector(".calculateCircle").onclick = () => {
-  printCalc("circumference");
-  printCalc("circleArea");
-};
 
 //----------------------------------------------------------------------------------------------------
+
 /**
  * Filtrar el tipo de triangulo dependiendo de la longitud de sus lados, calcular y mostrar en HTML el
  * valor de los 'outputs'
  * @param {string} output 'Nombre de la salida' que se desea obtener
  * @return {number} EL valor del output ingresado
  */
-const printCalcTriangle = (calc) => {
+const shapeTriangule = (calc) => {
   /** Valores de los lados a, b y base del triangulo, guardadas en las propiedades del objeto */
   const side = {
     a: getInput("#inputTriangleSideA"),
     b: getInput("#inputTriangleSideB"),
     base: getInput("#inputTriangleBase"),
   };
+
   /** Calculo de la hipotenusa de los triángulos rectángulos (isosceles y escaleno) */
   const hypo = {
     isosceles: parseFloat(side.a * Math.sqrt(2).toFixed(1)),
@@ -97,7 +84,6 @@ const printCalcTriangle = (calc) => {
     /** Margen de error de menos 1.7% */
     minScalene: side.base ** 2 * 0.983,
   };
-  /** Condiciones que debe cumplir las longitudes de los lados para saber exactamente el tipo de triangulo */
   const triangle = {
     //Condiciones de tipo equilatero
     equilateral: side.a === side.b && side.b === side.base,
@@ -116,37 +102,38 @@ const printCalcTriangle = (calc) => {
       side.a < side.b && side.b < side.base && hypo.scalene < hypo.maxScalene,
   };
 
-  let height;
   const semiPerimeter = trianglePerimeter(side.a, side.b, side.base) / 2;
   /**
    * Imprime en el 'ID' del HTML el tipo de triangulo según sus lado
    * @param {string} type Nombre del tipo de triangulo
    * @return {number} Mostrar en pantalla el tipo de triangulo
    */
-  const triangleType = (type) =>
+  const type = (type) =>
     (document.querySelector("#triangleType").textContent = type);
+
+  let height;
 
   if (triangle.equilateral) {
     height = equilateralTriangleHeight(side.a);
-    triangleType("Triángulo equilatero-acutángulo");
+    type("Triángulo equilatero-acutángulo");
   } else if (triangle.isosAcute) {
     height = isoscelesTriangleHeight(side.a, side.base);
-    triangleType("Triángulo isósceles-acutángulo");
+    type("Triángulo isósceles-acutángulo");
   } else if (triangle.isosRight) {
     height = isoscelesTriangleHeight(side.a, side.base);
-    triangleType("Triángulo-rectángulo Isósceles");
+    type("Triángulo-rectángulo Isósceles");
   } else if (triangle.isosObtuse) {
     height = isoscelesTriangleHeight(side.a, side.base);
-    triangleType("Triángulo isósceles-obtusángulo");
+    type("Triángulo isósceles-obtusángulo");
   } else if (triangle.escaAcute) {
     height = scaleneTriangleHeight(side.a, side.b, side.base, semiPerimeter);
-    triangleType("Triángulo escaleno-acutángulo");
+    type("Triángulo escaleno-acutángulo");
   } else if (triangle.escaRight) {
     height = rightTriangleHeight(side.a, side.b, side.base);
-    triangleType("Triángulo-rectángulo Escaleno");
+    type("Triángulo-rectángulo Escaleno");
   } else if (triangle.escaObtuse) {
     height = scaleneTriangleHeight(side.a, side.b, side.base, semiPerimeter);
-    triangleType("Triángulo escaleno-obtusángulo");
+    type("Triángulo escaleno-obtusángulo");
   } else {
     //Si se ingresa un mal dato, mandar una alerta de verificación
     alert(`Ingresa correctamente todos los lados del triangulo, lee la guía`);
@@ -164,8 +151,4 @@ const printCalcTriangle = (calc) => {
   return outputValue;
 };
 
-document.querySelector(".calculateTriangle").onclick = () => {
-  printCalcTriangle("triangleHeight");
-  printCalcTriangle("trianglePerimeter");
-  printCalcTriangle("triangleArea");
-};
+export { shape, shapeTriangule };

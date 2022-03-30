@@ -26,7 +26,12 @@
   "devDependencies": {
     "prettier": "2.5.1",
     "pug": "^3.0.2",
+    "pug-plugin": "^1.5.0",
     "sass": "^1.49.9",
     "webpack": "^5.70.0"
+  },
+  "dependencies": {
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   }
 }

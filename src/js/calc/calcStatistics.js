@@ -3,7 +3,7 @@
  * @param {number} list Lista de datos que se va a calcular el promedio
  * @return {number} El promedio de la lista
  */
-export const mean = (list) => {
+const mean = (list) => {
   /**
    * Funcion para 'reduce', sumar todos los elementos array
    * @param {number} accumulator numero acumulado o sumado, inicia en la posición 0 del array
@@ -37,7 +37,7 @@ const comparativeFunction = (a, b) => a - b;
  * @param {number} list list Lista de datos que se va a calcular la mediana
  * @return {number} La mediana de la lista
  */
-export const median = (list) => {
+const median = (list) => {
   //Ordenar lista con la función 'sort'
   list.sort(comparativeFunction);
 
@@ -58,7 +58,7 @@ export const median = (list) => {
  * @param {number} list list Lista de datos que se va a calcular la moda
  * @return {number} La moda de la lista
  */
-export const mode = (list) => {
+const mode = (list) => {
   /**
    * Funcion de comparación para ordenación natural, la función se encargará de: si devuelve
    * 'true' cambia el orden de a y b, si devuelve 'false' los mantiene igual
@@ -74,3 +74,5 @@ export const mode = (list) => {
 
   return calcMode;
 };
+
+export { mean, median, mode };

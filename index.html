@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Web Site</title>
-    <link rel="shortcut icon" href="src/assets/icons/shortcut_icon.png" type="img">
+    <link rel="shortcut icon" href="src/assets/icons/shortcut_icon.svg" type="img">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&amp;family=Quicksand:wght@400;500;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="dist/stylesheets/main.css">
+    <link rel="stylesheet" href="build/bundle.css">
   </head>
   <body>
     <header>
@@ -22,10 +22,23 @@
       </nav>
     </header>
     <main>
-      <h1>Proyecto de matemáticas</h1>
-      <p>Este proyecto fue desarrollado por <strong><a href="https://github.com/luisAriza">Luis Ariza</a></strong></p>
+      <h1>Math web site</h1>
+      <p>Este proyecto fue diseñado y desarrollado por <strong><a href="https://github.com/luisAriza">Luis Ariza</a></strong></p>
+      <p>Tecnologías utilizadas:</p>
+      <ul>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+      </ul>
       <section id="shapes-container">
-        <h1>Figuras geométricas</h1>
+        <h2>Figuras geométricas</h2>
         <section class="square">
           <h3>Calcula el perimetro y area de un cuadrado</h3>
           <p>Cuanto mide cada <strong>lado</strong> del cuadrado.</p>
@@ -117,8 +130,8 @@
         </section>
       </section>
       <section id="discounts-container">
-        <h1 class="title">Precios y descuentos</h1>
         <section class="discount">
+          <h2 class="title">Precios y descuentos</h2>
           <h3>Calcula el descuento de productos</h3>
           <form>
             <label>Precio del producto $
@@ -131,9 +144,8 @@
             <p><strong>Precio con descuento</strong> $<span id="priceDiscount">0</span></p>
           </form>
         </section>
-        <h1>Reto</h1>
-        <h2>Descuento con cupones</h2>
         <section class="code-container">
+          <h2 class="title">Descuento con cupones</h2>
           <h3>Calcula el descuento del producto aplicando el cup&oacute;n</h3>
           <div class="product"><img src="https://static.turbosquid.com/Preview/001210/504/9V/3D-fender-stratocaster-guitar_600.jpg" alt="Imagen del producto">
             <h4>Guitarra Fender Stratocaster American Standard</h4>
@@ -143,11 +155,11 @@
               <label>Ingresa aquí el cogido de referido
                 <input id="inputCode" type="text">
               </label>
-              <button class="confirm" type="button">Ingresar</button>
+              <button class="confirmCupon" type="button">Ingresar</button>
               <p id="validation"></p>
             </form>
           </div>
-          <h4>Códigos</h4>
+          <p>Códigos</p>
           <ul>
             <li>awesomeGuitar30</li>
             <li>awesomeGuitar20</li>
@@ -156,8 +168,8 @@
         </section>
       </section>
       <section id="statistics-container">
-        <h1>Estadística
-          <h3>Promedio, mediana y moda</h3>
+        <h2 class="title">Estadística
+          <h3>Calcula el promedio, mediana y moda de una lista</h3>
           <p>Ingresa los datos para calcular el promedio, la mediana y la moda</p>
           <form>
             <label>
@@ -173,11 +185,9 @@
             <li>Mediana <span id="median"></span></li>
             <li>Moda <span id="mode"></span></li>
           </ul>
-        </h1>
+        </h2>
       </section>
     </main>
-    <script type="module" src="src/js/shapes.js"></script>
-    <script type="module" src="src/js/discounts.js"></script>
-    <script type="module" src="src/js/statistics.js"></script>
+    <script src="build/bundle.js"></script>
   </body>
 </html>

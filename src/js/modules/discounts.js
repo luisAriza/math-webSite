@@ -1,28 +1,20 @@
-import { getInput } from "./modules/inputFilter.js";
+import { getInput } from "./inputFilter.js";
+import { discount } from "../calc/calcDiscount.js";
 
-/**
- * Calcular el precio aplicando el descuento
- * @param {number} price 'Precio' del producto
- * @param {number} discount Porcentaje de 'Descuento' que se le debe aplicar
- * @return {number} El precio del producto con el descuento aplicado
- */
-const calcDiscount = (price, discount) => (price * (100 - discount)) / 100;
-
-//----------------------------------------------------------------------------------------------------
-document.querySelector(".calculateDiscount").onclick = () => {
+const resultDiscount = () => {
   /** Valores del precio y descuento, guardadas en las propiedades del objeto */
   const input = {
     price: getInput("#inputPrice"),
     discount: getInput("#inputDiscount"),
   };
 
-  document.querySelector("#priceDiscount").textContent = calcDiscount(
+  document.querySelector("#priceDiscount").textContent = discount(
     input.price,
     input.discount
   );
 };
 //----------------------------------------------------------------------------------------------------
-document.querySelector(".confirm").onclick = () => {
+const cupon = () => {
   /** Codigo del ID "inputCode" convertido en 'String' con .value */
   const inputCode = document.querySelector("#inputCode").value;
   /**
@@ -32,7 +24,7 @@ document.querySelector(".confirm").onclick = () => {
    */
   const output = (ptg) => {
     document.querySelector("#priceCode").innerHTML = `<s>$800</s> <br>
-    $${calcDiscount(800, ptg)}`;
+    $${discount(800, ptg)}`;
     document.querySelector("#validation").textContent = `${ptg}% de descuento`;
   };
 
@@ -52,3 +44,5 @@ document.querySelector(".confirm").onclick = () => {
       break;
   }
 };
+
+export { resultDiscount as discount, cupon };

@@ -6,6 +6,5 @@ html(lang="es")
   body
     include header.pug
     block content
-    script(type="module", src="src/js/shapes.js")
-    script(type="module", src="src/js/discounts.js")
-    script(type="module", src="src/js/statistics.js")
+    include footer.pug
+    script(src="build/bundle.js")
