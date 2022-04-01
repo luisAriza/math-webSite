@@ -4,7 +4,8 @@
   "description": "Sitio web de matemáticas",
   "main": "index.html",
   "scripts": {
-    "build": "webpack --mode production && pug src/views/index.pug -o ./",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
     "server:dev": "webpack-dev-server --mode development"
   },
   "repository": {
@@ -27,7 +28,9 @@
   "devDependencies": {
     "@webdiscus/pug-loader": "^1.8.0",
     "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.1.0",
     "mini-css-extract-plugin": "^2.6.0",
     "prettier": "2.5.1",
     "pug": "^3.0.2",

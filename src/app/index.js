@@ -1,4 +1,5 @@
 import "../sass/index.scss";
+import "../assets/icons/shortcut_icon.svg";
 
 import { shape, shapeTriangule } from "./modules/shapes.js";
 import { discount, cupon } from "./modules/discounts.js";
