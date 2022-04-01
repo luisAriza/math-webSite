@@ -3,4 +3,4 @@ node_modules
 #Ignorar la carpeta assets
 assets
 #Ignorar la carpeta de produccion
-dist
+build

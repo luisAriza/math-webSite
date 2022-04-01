@@ -4,4 +4,8 @@ module.exports = {
     path: __dirname + "/build",
     filename: "bundle.js",
   },
+  devServer: {
+    port: 5000,
+  },
+  
 };
