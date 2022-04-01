@@ -1,3 +1,5 @@
+import "../sass/index.scss";
+
 import { shape, shapeTriangule } from "./modules/shapes.js";
 import { discount, cupon } from "./modules/discounts.js";
 import { insert, remove, statistic } from "./modules/statistics.js";

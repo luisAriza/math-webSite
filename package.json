@@ -26,10 +26,14 @@
   "homepage": "https://github.com/luisAriza/mathematics_webPage#readme",
   "devDependencies": {
     "@webdiscus/pug-loader": "^1.8.0",
+    "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
     "prettier": "2.5.1",
     "pug": "^3.0.2",
     "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
     "webpack": "^5.70.0",
     "webpack-dev-server": "^4.7.4"
   },
