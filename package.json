@@ -4,11 +4,8 @@
   "description": "Sitio web de matemáticas",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "build:dev": "webpack --mode development",
-    "server": "webpack-dev-server",
-    "pug": "pug --pretty src/views/index.pug -o public/"
+    "build": "webpack --mode production && pug src/views/index.pug -o ./",
+    "server:dev": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
@@ -17,9 +14,9 @@
   "keywords": [
     "javascript",
     "math",
-    "figures",
-    "discount",
-    "statistic"
+    "shapes",
+    "discounts",
+    "statistics"
   ],
   "author": "Luis Ariza <luismanuelariza@hotmail.com>",
   "license": "MIT",
@@ -28,14 +25,15 @@
   },
   "homepage": "https://github.com/luisAriza/mathematics_webPage#readme",
   "devDependencies": {
+    "@webdiscus/pug-loader": "^1.8.0",
+    "html-webpack-plugin": "^5.5.0",
     "prettier": "2.5.1",
     "pug": "^3.0.2",
-    "pug-plugin": "^1.5.0",
     "sass": "^1.49.9",
-    "webpack": "^5.70.0"
+    "webpack": "^5.70.0",
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-cli": "^4.9.2"
   }
 }
