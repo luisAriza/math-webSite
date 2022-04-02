@@ -4,9 +4,10 @@
   "description": "Sitio web de matemáticas",
   "main": "index.html",
   "scripts": {
-    "build": "rimraf dist && webpack --mode production",
-    "build:dev": "rimraf dist && webpack --mode development",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development --config webpack.config.js",
+    "build:dev": "rimraf dist && webpack --mode development --config webpack.config.js",
+    "build": "rimraf dist && webpack --mode production --config webpack.config.js",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,6 @@
   "devDependencies": {
     "@webdiscus/pug-loader": "^2.0.0",
     "css-loader": "^6.7.1",
-    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
     "mini-css-extract-plugin": "^2.6.0",
@@ -41,6 +41,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "rimraf": "^3.0.2",
     "webpack-cli": "^4.9.2"
   }

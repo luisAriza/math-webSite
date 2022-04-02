@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist/"),
     filename: "js/bundle.js",
+    assetModuleFilename: "assets/[hash][ext][query]",
   },
   devServer: {
     static: {
@@ -21,7 +22,7 @@ module.exports = {
       filename: "index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "style/main-stylesheet.css",
+      filename: "style/stylesheet.main.css",
     }),
   ],
   module: {
@@ -35,17 +36,18 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "static/",
-              useRelativePath: true,
-            },
-          },
-        ],
+        type: "asset",
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        generator: {
+          filename: "static/[hash][ext][query]",
+        },
+      },
+      {
+        type: "asset/resource",
+        test: /shortcut_icon.svg$/i,
+        generator: {
+          filename: "static/[name][ext][query]",
+        },
       },
       {
         loader: "image-webpack-loader",
