@@ -9,15 +9,19 @@ module.exports = {
     filename: "js/bundle.js",
   },
   devServer: {
-    port: 5000,
+    static: {
+      directory: path.join(__dirname, "dist/"),
+    },
+    compress: true,
+    port: 9000,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src/views/index.pug"),
-      filename: "../index.html",
+      filename: "index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "style/main.css",
+      filename: "style/main-stylesheet.css",
     }),
   ],
   module: {
@@ -42,6 +46,27 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        loader: "image-webpack-loader",
+        options: {
+          mozjpeg: {
+            progressive: true,
+          },
+          optipng: {
+            enabled: true,
+          },
+          pngquant: {
+            quality: [0.65, 0.9],
+            speed: 4,
+          },
+          gifsicle: {
+            interlaced: false,
+          },
+          webp: {
+            quality: 75,
+          },
+        },
       },
     ],
   },

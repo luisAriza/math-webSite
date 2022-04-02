@@ -4,9 +4,9 @@
   "description": "Sitio web de matemáticas",
   "main": "index.html",
   "scripts": {
-    "build": "webpack --mode production",
-    "build:dev": "webpack --mode development",
-    "server:dev": "webpack-dev-server --mode development"
+    "build": "rimraf dist && webpack --mode production",
+    "build:dev": "rimraf dist && webpack --mode development",
+    "start": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
@@ -26,13 +26,13 @@
   },
   "homepage": "https://github.com/luisAriza/mathematics_webPage#readme",
   "devDependencies": {
-    "@webdiscus/pug-loader": "^1.8.0",
+    "@webdiscus/pug-loader": "^2.0.0",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
     "mini-css-extract-plugin": "^2.6.0",
-    "prettier": "2.5.1",
+    "prettier": "^2.6.1",
     "pug": "^3.0.2",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
@@ -41,6 +41,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "rimraf": "^3.0.2",
     "webpack-cli": "^4.9.2"
   }
 }
