@@ -11,8 +11,8 @@ import { discount } from "../calc/calcDiscount.js";
 const resultDiscount = () => {
   /** Valores del precio y descuento, guardadas en las propiedades del objeto */
   const input = {
-    price: getInput("#inputPrice"),
-    discount: getInput("#inputDiscount"),
+    price: getInput("#priceInput"),
+    discount: getInput("#discountInput"),
   };
 
   document.querySelector("#priceDiscount").textContent = discount(

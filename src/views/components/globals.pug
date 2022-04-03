@@ -5,23 +5,115 @@
 //- ╚██████╔╝███████╗╚██████╔╝██████╔╝██║  ██║███████╗███████║
 //-  ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 
--
-	var technologies = ["figma", "html", "css", "js",
-	"npm", "pug", "sass", "webpack", "git", "github"]
+- var projects = ["google_clone", "batatabit"]
+- var medias = ["linkedin", "github", "instagram", "blog"]
+- var technologies = ["figma", "html", "css", "js", "npm", "pug", "sass", "webpack", "git", "github"]
 
-mixin technologies-list
-	ul.technologies
+mixin projects
+	.projects
+		a.portfolio(href="https://luisariza.github.io/portfolio" target="_blank") Portafolio
+		ul
+			each item in projects
+				li: a.project(href="https://luisariza.github.io/" + item target="_blank")= item
+
+mixin medias
+	.medias
+		ul
+			each item in medias
+				li: img.icon-media(class= item src="assets/icons/" + item + ".svg" alt="Icon red")
+
+mixin technologies
+	figure.technologies
 		each item in technologies
-			li: i.icon-tech(class= item) i
+			img.icon-tech(class= item src="assets/icons/" + item + ".svg" alt="Icon tech")
 
-mixin themes-list
-	ul.themes
-		li.theme
-			i.icon-theme.shapes i
-			a(href='#shapes-container') Figuras
-		li.theme
-			i.icon-theme.discounts i
-			a(href='#discounts-container') Descuentos
-		li.theme
-			i.icon-theme.statistics i
-			a(href='#statistics-container') Estadisticas
+mixin themes
+	.themes
+		a.theme(href='#shapes-container') #[img.icon-theme.shapes(src="assets/icons/shape.svg")] Figuras
+		a.theme(href='#discounts-container') #[img.icon-theme.discounts(src="assets/icons/discount.svg")] Descuentos
+		a.theme(href='#statistics-container') #[img.icon-theme.statistics(src="assets/icons/statistic.svg")] Estadisticas
+
+mixin shape-box(title, shape)
+	section(class= shape)
+		h3.subsection= title
+		p.description Ingresa las siguientes medidas:
+		if shape== "square"
+			form
+				label Lado #[input#squareInput(type='number')] cm
+				button.squareCalc(type='button') Calcular
+		else if shape== "rectangle"
+			form
+				label Altura #[input#rectangleHeightInput(type='number')] cm
+				label Base #[input#rectangleBaseInput(type='number')] cm
+				button.rectangleCalc(type='button') Calcular
+		else if shape== "triangle"
+			ul
+				li Si el triangulo tiene 2 lados iguales, la #[strong base] es el valor diferente a los 2 lados.
+				li Si todos los lados del triangulo son desiguales, asegurate de colocar los valores de menor a mayor.
+			form
+				label Lado A #[input#triangleSideAInput(type='number')] cm
+				label Lado B #[input#triangleSideBInput(type='number')] cm
+				label Base #[input#triangleBaseInput(type='number')] cm
+				button.triangleCalc(type='button') Calcular
+		else if shape== "diamond"
+			p Cuanto miden los #[strong lados] del rombo (#[em tiene lados iguales]). La #[strong diagonal] puede ser la menor o mayor.
+			form
+				label Lado #[input#diamondSideInput(type='number')] cm
+				label 1° Diagonal #[input#diamondDiagonalInput(type='number')] cm
+				button.diamondCalc(type='button') Calcular
+		else if shape== "circle"
+			form
+				label Radio #[input#circleInput(type='number')] cm
+				button.circleCalc(type='button') Calcular
+		ul
+			if shape== "triangle"
+				li #[strong Tipo] "#[span#triangleType]"
+				li #[strong Altura] #[span#triangleHeight 0]cm
+			if shape== "diamond"
+				li #[strong 2° Diagonal] #[span#diamondDiagonal 0]cm
+			if shape== "circle"
+				li #[strong Circunferencia] #[span#circumference 0]cm
+			else
+				li #[strong Perimetro] #[span(id=shape + "Perimeter") 0]cm
+			li #[strong Área] #[span(id=shape + "Area") 0]cm#[sup 2]
+
+mixin discount-box
+	section.discount
+		form
+			label Precio del producto $#[input#priceInput(type='number')]
+			label Descuento #[input#discountInput(type='number')]%
+			button.discountCalc(type='button') Calcular
+			p #[strong Precio con descuento] $#[span#priceDiscount 0]
+
+mixin discount-cupon-box
+	section.discount-cupon
+		.discount-cupon__tittle
+			img.icon-cupon(src="assets/icons/cupon.png")
+			h3.subsection Descuento con cupones
+		p.description Calcula el descuento del producto aplicando el #[strong código]:
+		.product
+			.product-image imagen del producto
+			h4.product-title Guitarra Fender Stratocaster American Standard
+			p#priceCode $800
+			p Aprovecha ahora y aplica hasta un 30% de descuento con código de referido
+			form
+				label Ingresa aquí el cogido de referido #[input#inputCode(type='text')]
+				button.confirmCupon(type='button') Ingresar
+				p#validation
+		p: strong Códigos
+		ul: em
+			li awesomeGuitar30
+			li awesomeGuitar20
+			li awesomeGuitar15
+
+mixin statistic-box
+	form
+		label: input#dataInput(type='number')
+		button.insert(type='button') Ingresar
+		button.remove(type='button') Eliminar
+		button.statisticCalc(type='button') Calcular
+	p Datos (#[span#data])
+	ul
+		li #[strong Promedio] #[span#mean 0]
+		li #[strong Mediana] #[span#median 0]
+		li #[strong Moda] #[span#mode 0]

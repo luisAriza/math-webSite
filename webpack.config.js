@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/app/index.js",
+  entry: ["./src/app/index.js", "./src/app/assets.js"],
   output: {
     path: path.join(__dirname, "dist/"),
     filename: "js/bundle.js",
@@ -18,7 +18,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src/views/index.pug"),
+      template: path.join(__dirname, "src/index.pug"),
       filename: "index.html",
     }),
     new MiniCssExtractPlugin({
@@ -37,16 +37,16 @@ module.exports = {
       },
       {
         type: "asset",
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(jpg|jpeg|gif)$/i,
         generator: {
-          filename: "static/[hash][ext][query]",
+          filename: "assets/images/[hash][ext][query]",
         },
       },
       {
         type: "asset/resource",
-        test: /shortcut_icon.svg$/i,
+        test: /(png|svg)$/i,
         generator: {
-          filename: "static/[name][ext][query]",
+          filename: "assets/icons/[name][ext][query]",
         },
       },
       {

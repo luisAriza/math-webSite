@@ -5,15 +5,36 @@
 // ██║██║ ╚████║██████╔╝███████╗██╔╝ ██╗
 // ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 
+$primary-color: #d6f3ff;
+$secondary-color: #FFEE59;
+$light-color: #f6f6f6;
+$dark-color: #141414;
 $background-color: #192C34;
-$title-color: #FFFFFF;
-$workshop-color: #FFEE59;
 
-main {
-  // background: url("../assets/images/background.jpg") no-repeat;
-  // background-size: cover;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: $light-color;
+}
+
+.main {
+  // font-family: 'Nanum Pen Script', cursive;
+  font-family: 'Poppins', sans-serif;
+  color: $light-color;
   background-color: $background-color;
-  h1, h2, h3 {
-    color: $title-color;
+  h1, h2, h3, h4 {
+    text-transform: uppercase;
+    color: $primary-color;
   }
+}
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: $secondary-color;
 }

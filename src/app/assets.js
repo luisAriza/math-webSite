@@ -1,0 +1,25 @@
+import "../sass/index.scss";
+
+import "../assets/icons/linkedin.svg";
+import "../assets/icons/instagram.svg";
+import "../assets/icons/blog.svg";
+import "../assets/icons/logo.svg";
+// import "../assets/icons/logo-2.svg";
+import "../assets/icons/shape.svg";
+import "../assets/icons/discount.svg";
+import "../assets/icons/cupon.png";
+import "../assets/icons/statistic.svg";
+import "../assets/icons/figma.svg";
+import "../assets/icons/html.svg";
+import "../assets/icons/css.svg";
+import "../assets/icons/js.svg";
+import "../assets/icons/npm.svg";
+import "../assets/icons/pug.svg";
+import "../assets/icons/sass.svg";
+import "../assets/icons/webpack.svg";
+import "../assets/icons/git.svg";
+import "../assets/icons/github.svg";
+// import "../assets/icons/cancel.svg";
+// import "../assets/icons/replay.svg";
+// import "../assets/icons/left-arrow.svg";
+// import "../assets/icons/right-arrow.svg";

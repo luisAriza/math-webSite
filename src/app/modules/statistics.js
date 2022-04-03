@@ -17,8 +17,8 @@ const printList = () => (document.querySelector("#data").textContent = list);
 
 //----------------------------------------------------------------------------------------------------
 const insert = () => {
-  /** Valor de 'inputData' guardado en la variable "data" */
-  let data = getInput("#inputData");
+  /** Valor de 'dataInput' guardado en la variable "data" */
+  let data = getInput("#dataInput");
   /** Ingresar nuevo valor al final de la lista */
   list.push(data) && printList();
 };

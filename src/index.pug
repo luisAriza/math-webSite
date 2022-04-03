@@ -5,11 +5,11 @@
 //- ██║██║ ╚████║██████╔╝███████╗██╔╝ ██╗
 //- ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 
-extend components/template.pug
+extend views/components/template.pug
 
 block content
-	main
-		include modules/menu.pug
-		include modules/shapes.pug
-		include modules/discounts.pug
-		include modules/statistics.pug
+	main.main
+		include views/modules/menu.pug
+		include views/modules/shapes.pug
+		include views/modules/discounts.pug
+		include views/modules/statistics.pug

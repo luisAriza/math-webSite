@@ -6,59 +6,10 @@
 //- ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚══════╝╚══════╝
 
 section#shapes-container
-	h2 Figuras geométricas
-	section.square
-		h3 Calcula el perimetro y area de un cuadrado
-		p Cuanto mide cada #[strong lado] del cuadrado.
-		form
-			label Lado #[input#inputSquare(type='number')]cm
-			button.calculateSquare(type='button') Calcular
-		ul
-			li #[strong Perimetro] #[span#squarePerimeter 0]cm
-			li #[strong Área] #[span#squareArea 0]cm#[sup 2]
-	section.rectangle
-		h3 Calcula el perimetro y area de un rectángulo
-		p Cuanto mide la #[strong altura] y la #[strong base] del rectángulo.
-		form
-			label Altura #[input#inputRectangleHeight(type='number')]cm
-			label Base #[input#inputRectangleBase(type='number')]cm
-			button.calculateRectangle(type='button') Calcular
-		ul
-			li #[strong Perimetro] #[span#rectanglePerimeter 0]cm
-			li #[strong Área] #[span#rectangleArea 0]cm#[sup 2]
-	section.triangule
-		h3 Calcula el perimetro y area de un triangulo
-		ul
-			li Si el triangulo tiene 2 lados iguales, la #[strong base] es el valor diferente a los 2 lados.
-			li Si todos los lados del triangulo son desiguales, asegurate de colocar los valores de menor a mayor.
-		p Al calcular te hará saber el tipo de triangulo, según sus ángulos y longitud de sus lados.
-		form
-			label Lado A #[input#inputTriangleSideA(type='number')]cm
-			label Lado B #[input#inputTriangleSideB(type='number')]cm
-			label Base #[input#inputTriangleBase(type='number')]cm
-			button.calculateTriangle(type='button') Calcular
-		ul
-			li #[strong Tipo] "#[span#triangleType]"
-			li #[strong Altura] #[span#triangleHeight 0]cm
-			li #[strong Perimetro] #[span#trianglePerimeter 0]cm
-			li #[strong Área] #[span#triangleArea 0]cm#[sup 2]
-	section.diamond
-		h3 Calcula el perimetro y area de un rombo
-		p Cuanto miden los #[strong lados] del rombo (#[em tiene lados iguales]). La #[strong diagonal] puede ser la menor o mayor.
-		form
-			label Lado #[input#inputDiamondSide(type='number')]cm
-			label 1° Diagonal #[input#inputDiamondDiagonal(type='number')]cm
-			button.calculateDiamond(type='button') Calcular
-		ul
-			li #[strong 2° Diagonal] #[span#diamondDiagonal 0]cm
-			li #[strong Perimetro] #[span#diamondPerimeter 0]
-			li #[strong Área] #[span#diamondArea 0]cm#[sup 2]
-	section.circle
-		h3 Calcula la circunferencia y area de un circulo
-		p Cuanto mide el #[strong radio]
-		form
-			label Radio #[input#inputCircle(type='number')]cm
-			button.calculateCircle(type='button') Calcular
-		ul
-			li #[strong Circunferencia] #[span#circumference 0]cm
-			li #[strong Área] #[span#circleArea 0]cm#[sup 2]
+	h2.subtitle Figuras geométricas
+	p.description Calcula el #[strong perimetro, area, altura, diagonal] y #[strong circunferencia] de las figuras.
+	+shape-box("Cuadrado", "square")
+	+shape-box("Rectángulo", "rectangle")
+	+shape-box("Triángulo", "triangle")
+	+shape-box("Rombo", "diamond")
+	+shape-box("Circulo", "circle")

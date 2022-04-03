@@ -5,37 +5,34 @@
 // ██║██║ ╚████║██████╔╝███████╗██╔╝ ██╗
 // ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 
-import "../sass/index.scss";
-import "../assets/icons/shortcut_icon.svg";
-
 import { shape, shapeTriangule } from "./modules/shapes.js";
 import { discount, cupon } from "./modules/discounts.js";
 import { insert, remove, statistic } from "./modules/statistics.js";
 
-document.querySelector(".calculateSquare").onclick = () => {
+document.querySelector(".squareCalc").onclick = () => {
   shape("squarePerimeter");
   shape("squareArea");
 };
-document.querySelector(".calculateRectangle").onclick = () => {
+document.querySelector(".rectangleCalc").onclick = () => {
   shape("rectanglePerimeter");
   shape("rectangleArea");
 };
-document.querySelector(".calculateDiamond").onclick = () => {
+document.querySelector(".diamondCalc").onclick = () => {
   shape("diamondDiagonal");
   shape("diamondPerimeter");
   shape("diamondArea");
 };
-document.querySelector(".calculateCircle").onclick = () => {
+document.querySelector(".circleCalc").onclick = () => {
   shape("circumference");
   shape("circleArea");
 };
-document.querySelector(".calculateTriangle").onclick = () => {
+document.querySelector(".triangleCalc").onclick = () => {
   shapeTriangule("triangleHeight");
   shapeTriangule("trianglePerimeter");
   shapeTriangule("triangleArea");
 };
 //------------------------------------------------------------------
-document.querySelector(".calculateDiscount").onclick = () => {
+document.querySelector(".discountCalc").onclick = () => {
   discount();
 };
 document.querySelector(".confirmCupon").onclick = () => {
@@ -48,6 +45,6 @@ document.querySelector(".insert").onclick = () => {
 document.querySelector(".remove").onclick = () => {
   remove();
 };
-document.querySelector(".calculateStatistic").onclick = () => {
+document.querySelector(".statisticCalc").onclick = () => {
   statistic();
 };

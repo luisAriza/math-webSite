@@ -34,12 +34,12 @@ import { circumference, circleArea } from "../calc/calcShapes/circle.js";
 const shape = (calc) => {
   /** Valores de las longitudes de las figuras, guardadas en las propiedades del objeto */
   const input = {
-    sS: getInput("#inputSquare"),
-    rH: getInput("#inputRectangleHeight"),
-    rB: getInput("#inputRectangleBase"),
-    dS: getInput("#inputDiamondSide"),
-    dD: getInput("#inputDiamondDiagonal"),
-    cR: getInput("#inputCircle"),
+    sS: getInput("#squareInput"),
+    rH: getInput("#rectangleHeightInput"),
+    rB: getInput("#rectangleBaseInput"),
+    dS: getInput("#diamondSideInput"),
+    dD: getInput("#diamondDiagonalInput"),
+    cR: getInput("#circleInput"),
   };
   /** Segunda diagonal del rombo, para poder calcular su área */
   const diagonalDiamond = diamondDiagonal(input.dS, input.dD);
@@ -74,9 +74,9 @@ const shape = (calc) => {
 const shapeTriangule = (calc) => {
   /** Valores de los lados a, b y base del triangulo, guardadas en las propiedades del objeto */
   const side = {
-    a: getInput("#inputTriangleSideA"),
-    b: getInput("#inputTriangleSideB"),
-    base: getInput("#inputTriangleBase"),
+    a: getInput("#triangleSideAInput"),
+    b: getInput("#triangleSideBInput"),
+    base: getInput("#triangleBaseInput"),
   };
 
   /** Calculo de la hipotenusa de los triángulos rectángulos (isosceles y escaleno) */

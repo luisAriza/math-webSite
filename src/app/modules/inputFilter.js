@@ -12,9 +12,9 @@
  */
 export function getInput(data) {
   /** Dato de input obtenido por el parámetro 'data' */
-  const inputData = document.querySelector(data);
-  /** Valor de 'inputData' convertido de tipo de dato 'String' a 'Number' */
-  const filteredInput = Number.parseInt(inputData.value);
+  const dataInput = document.querySelector(data);
+  /** Valor de 'dataInput' convertido de tipo de dato 'String' a 'Number' */
+  const filteredInput = Number.parseInt(dataInput.value);
 
   return filteredInput;
 }
