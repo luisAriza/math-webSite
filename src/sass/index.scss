@@ -1,14 +1,12 @@
-$body-color: rgb(19, 27, 34);
+$background-color: #192C34;
+$title-color: #FFFFFF;
+$workshop-color: #FFEE59;
 
-body {
-  background: url("../assets/images/miles-morales.jpg") no-repeat;
-  background-size: cover;
-  color: whitesmoke;
+main {
+  // background: url("../assets/images/background.jpg") no-repeat;
+  // background-size: cover;
+  background-color: $background-color;
   h1, h2, h3 {
-    color: rgb(230, 245, 100);
-  }
-  .square {
-    background: url("../assets/icons/shapes.svg") no-repeat;
-    background-size: contain;
+    color: $title-color;
   }
 }

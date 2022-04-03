@@ -2,20 +2,7 @@ extend components/template.pug
 
 block content
 	main
-		h1 Math web site
-		p Este proyecto fue diseñado y desarrollado por #[strong: a(href="https://github.com/luisAriza") Luis Ariza]
-		p Tecnologías utilizadas:
-		ul
-			li: span
-			li: span
-			li: span
-			li: span
-			li: span
-			li: span
-			li: span
-			li: span
-			li: span
-			li: span
+		include modules/menu.pug
 		include modules/shapes.pug
 		include modules/discounts.pug
 		include modules/statistics.pug

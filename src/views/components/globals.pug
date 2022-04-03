@@ -1,0 +1,20 @@
+-
+	var technologies = ["figma", "html", "css", "js",
+	"npm", "pug", "sass", "webpack", "git", "github"]
+
+mixin technologies-list
+	ul.technologies
+		each item in technologies
+			li: i.icon-tech(class= item) i
+
+mixin themes-list
+	ul.themes
+		li.theme
+			i.icon-theme.shapes i
+			a(href='#shapes-container') Figuras
+		li.theme
+			i.icon-theme.discounts i
+			a(href='#discounts-container') Descuentos
+		li.theme
+			i.icon-theme.statistics i
+			a(href='#statistics-container') Estadisticas
