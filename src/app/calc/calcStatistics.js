@@ -1,3 +1,10 @@
+//   ██████╗ █████╗ ██╗      ██████╗
+//  ██╔════╝██╔══██╗██║     ██╔════╝
+//  ██║     ███████║██║     ██║
+//  ██║     ██╔══██║██║     ██║
+//  ╚██████╗██║  ██║███████╗╚██████╗
+//   ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝
+
 /**
  * Calcular el promedio de la lista de datos
  * @param {number} list Lista de datos que se va a calcular el promedio

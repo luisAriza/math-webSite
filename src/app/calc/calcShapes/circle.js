@@ -1,3 +1,10 @@
+//   ██████╗ █████╗ ██╗      ██████╗
+//  ██╔════╝██╔══██╗██║     ██╔════╝
+//  ██║     ███████║██║     ██║
+//  ██║     ██╔══██║██║     ██║
+//  ╚██████╗██║  ██║███████╗╚██████╗
+//   ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝
+
 /**
  * Calcular la circunferencia multiplicando por PI el diametro (doble del radio) del circulo
  * @param {number} r 'Radio'

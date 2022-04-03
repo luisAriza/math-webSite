@@ -1,3 +1,10 @@
+//   ██████╗ █████╗ ██╗      ██████╗
+//  ██╔════╝██╔══██╗██║     ██╔════╝
+//  ██║     ███████║██║     ██║
+//  ██║     ██╔══██║██║     ██║
+//  ╚██████╗██║  ██║███████╗╚██████╗
+//   ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝
+
 /**
  * Calcular el perimetro multiplicando por 4 cualquier lado del cuadrado
  * @param {number} side Cualquier 'lado'

@@ -1,3 +1,10 @@
+//  ███████╗██╗██╗  ████████╗███████╗██████╗
+//  ██╔════╝██║██║  ╚══██╔══╝██╔════╝██╔══██╗
+//  █████╗  ██║██║     ██║   █████╗  ██████╔╝
+//  ██╔══╝  ██║██║     ██║   ██╔══╝  ██╔══██╗
+//  ██║     ██║███████╗██║   ███████╗██║  ██║
+//  ╚═╝     ╚═╝╚══════╝╚═╝   ╚══════╝╚═╝  ╚═╝
+
 /**
  * Procesar el "input" del archivo HTML y convertir a 'Number' el tipo de dato de entrada
  * @param {string} data Selector (# ó .) + El nombre del input que se desea obtener

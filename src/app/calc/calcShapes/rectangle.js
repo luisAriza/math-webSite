@@ -1,3 +1,10 @@
+//   ██████╗ █████╗ ██╗      ██████╗
+//  ██╔════╝██╔══██╗██║     ██╔════╝
+//  ██║     ███████║██║     ██║
+//  ██║     ██╔══██║██║     ██║
+//  ╚██████╗██║  ██║███████╗╚██████╗
+//   ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝
+
 /**
  * Calcular el perimetro multiplicando por 2 la suma de la base mas la altura del rectángulo
  * @param {number} b 'Base'

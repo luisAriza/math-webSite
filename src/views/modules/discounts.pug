@@ -1,27 +1,34 @@
+//- ██████╗ ██╗███████╗ ██████╗ ██████╗ ██╗   ██╗███╗   ██╗████████╗███████╗
+//- ██╔══██╗██║██╔════╝██╔════╝██╔═══██╗██║   ██║████╗  ██║╚══██╔══╝██╔════╝
+//- ██║  ██║██║███████╗██║     ██║   ██║██║   ██║██╔██╗ ██║   ██║   ███████╗
+//- ██║  ██║██║╚════██║██║     ██║   ██║██║   ██║██║╚██╗██║   ██║   ╚════██║
+//- ██████╔╝██║███████║╚██████╗╚██████╔╝╚██████╔╝██║ ╚████║   ██║   ███████║
+//- ╚═════╝ ╚═╝╚══════╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝
+
 section#discounts-container
-  section.discount
-    h2.title Precios y descuentos
-    h3 Calcula el descuento de productos
-    form
-      label Precio del producto $#[input#inputPrice(type='number')]
-      label Descuento #[input#inputDiscount(type='number')]%
-      button.calculateDiscount(type='button') Calcular
-      p #[strong Precio con descuento] $#[span#priceDiscount 0]
-  section.code-container
-    h2.title Descuento con cupones
-    h3 Calcula el descuento del producto aplicando el cup&oacute;n
-    .product
-      img(src='https://static.turbosquid.com/Preview/001210/504/9V/3D-fender-stratocaster-guitar_600.jpg' alt='Imagen del producto')
-      h4 Guitarra Fender Stratocaster American Standard
-      p#priceCode $800
-      p Aprovecha ahora y aplica hasta un 30% de descuento con código de referido
-      form
-        label Ingresa aquí el cogido de referido
-          input#inputCode(type='text')
-        button.confirmCupon(type='button') Ingresar
-        p#validation
-    p Códigos
-    ul
-      li awesomeGuitar30
-      li awesomeGuitar20
-      li awesomeGuitar15
+	section.discount
+		h2.title Precios y descuentos
+		h3 Calcula el descuento de productos
+		form
+			label Precio del producto $#[input#inputPrice(type='number')]
+			label Descuento #[input#inputDiscount(type='number')]%
+			button.calculateDiscount(type='button') Calcular
+			p #[strong Precio con descuento] $#[span#priceDiscount 0]
+	section.code-container
+		h2.title Descuento con cupones
+		h3 Calcula el descuento del producto aplicando el cup&oacute;n
+		.product
+			img(src='https://static.turbosquid.com/Preview/001210/504/9V/3D-fender-stratocaster-guitar_600.jpg' alt='Imagen del producto')
+			h4 Guitarra Fender Stratocaster American Standard
+			p#priceCode $800
+			p Aprovecha ahora y aplica hasta un 30% de descuento con código de referido
+			form
+				label Ingresa aquí el cogido de referido
+					input#inputCode(type='text')
+				button.confirmCupon(type='button') Ingresar
+				p#validation
+		p Códigos
+		ul
+			li awesomeGuitar30
+			li awesomeGuitar20
+			li awesomeGuitar15

@@ -1,8 +1,12 @@
+//  ███████╗██╗  ██╗ █████╗ ██████╗ ███████╗███████╗
+//  ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔════╝██╔════╝
+//  ███████╗███████║███████║██████╔╝█████╗  ███████╗
+//  ╚════██║██╔══██║██╔══██║██╔═══╝ ██╔══╝  ╚════██║
+//  ███████║██║  ██║██║  ██║██║     ███████╗███████║
+//  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚══════╝╚══════╝
+
 import { getInput } from "./inputFilter.js";
-import {
-  squarePerimeter,
-  squareArea,
-} from "../calc/calcShapes/square.js";
+import { squarePerimeter, squareArea } from "../calc/calcShapes/square.js";
 import {
   rectanglePerimeter,
   rectangleArea,
