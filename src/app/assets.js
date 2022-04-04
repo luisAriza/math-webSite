@@ -4,7 +4,7 @@ import "../assets/icons/linkedin.svg";
 import "../assets/icons/instagram.svg";
 import "../assets/icons/blog.svg";
 import "../assets/icons/logo.svg";
-// import "../assets/icons/logo-2.svg";
+import "../assets/icons/logo-footer.svg";
 import "../assets/icons/shape.svg";
 import "../assets/icons/discount.svg";
 import "../assets/icons/cupon.png";

@@ -5,16 +5,31 @@
 // ██║██║ ╚████║██████╔╝███████╗██╔╝ ██╗
 // ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 
+$primary-font:'Poppins', sans-serif;
+$variation-font: 'Nanum Pen Script', cursive;
 $primary-color: #d6f3ff;
 $secondary-color: #FFEE59;
-$light-color: #f6f6f6;
+$light-color: #ffffff;
 $dark-color: #141414;
-$background-color: #192C34;
+$variation-color: #192C34;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.small-icon {
+  width: 30px;
+  height: 30px;
+}
+.medium-icon {
+  width: 50px;
+  height: 50px;
+}
+.big-icon {
+  width: 70px;
+  height: 70px;
 }
 
 .header {
@@ -24,10 +39,9 @@ $background-color: #192C34;
 }
 
 .main {
-  // font-family: 'Nanum Pen Script', cursive;
-  font-family: 'Poppins', sans-serif;
+  font-family: $primary-font;
   color: $light-color;
-  background-color: $background-color;
+  background-color: $variation-color;
   h1, h2, h3, h4 {
     text-transform: uppercase;
     color: $primary-color;

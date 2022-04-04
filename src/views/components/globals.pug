@@ -5,30 +5,32 @@
 //- ╚██████╔╝███████╗╚██████╔╝██████╔╝██║  ██║███████╗███████║
 //-  ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 
-- var projects = ["google_clone", "batatabit"]
+- var projects = ["google_clone", "batatabit", "project_calories_counter"]
 - var medias = ["linkedin", "github", "instagram", "blog"]
 - var technologies = ["figma", "html", "css", "js", "npm", "pug", "sass", "webpack", "git", "github"]
 
 mixin projects
-	.projects
-		a.portfolio(href="https://luisariza.github.io/portfolio" target="_blank") Portafolio
-		ul
-			each item in projects
-				li: a.project(href="https://luisariza.github.io/" + item target="_blank")= item
-
+	h3.portfolio: a(href="https://luisariza.github.io/portfolio" target="_blank") Portafolio
+	ul
+		each item in projects
+			li.project: a(href="https://luisariza.github.io/" + item target="_blank")
+				case item
+					when "batatabit": | Batatabit
+					when "google_clone": | Clon de Google
+					when "project_calories_counter": | Contador de calorías
 mixin medias
-	.medias
-		ul
-			each item in medias
-				li: img.icon-media(class= item src="assets/icons/" + item + ".svg" alt="Icon red")
+	ul
+		each item in medias
+			li: a(href="#")
+				img.small-icon(src="assets/icons/" + item + ".svg" alt="Icon red")
 
 mixin technologies
-	figure.technologies
+	figure.menu__technologies
 		each item in technologies
-			img.icon-tech(class= item src="assets/icons/" + item + ".svg" alt="Icon tech")
+			.tech: img.medium-icon(class= item src="assets/icons/" + item + ".svg" alt="Icon tech")
 
 mixin themes
-	.themes
+	.menu__themes
 		a.theme(href='#shapes-container') #[img.icon-theme.shapes(src="assets/icons/shape.svg")] Figuras
 		a.theme(href='#discounts-container') #[img.icon-theme.discounts(src="assets/icons/discount.svg")] Descuentos
 		a.theme(href='#statistics-container') #[img.icon-theme.statistics(src="assets/icons/statistic.svg")] Estadisticas
@@ -37,40 +39,42 @@ mixin shape-box(title, shape)
 	section(class= shape)
 		h3.subsection= title
 		p.description Ingresa las siguientes medidas:
-		if shape== "square"
-			form
-				label Lado #[input#squareInput(type='number')] cm
-				button.squareCalc(type='button') Calcular
-		else if shape== "rectangle"
-			form
-				label Altura #[input#rectangleHeightInput(type='number')] cm
-				label Base #[input#rectangleBaseInput(type='number')] cm
-				button.rectangleCalc(type='button') Calcular
-		else if shape== "triangle"
-			ul
-				li Si el triangulo tiene 2 lados iguales, la #[strong base] es el valor diferente a los 2 lados.
-				li Si todos los lados del triangulo son desiguales, asegurate de colocar los valores de menor a mayor.
-			form
-				label Lado A #[input#triangleSideAInput(type='number')] cm
-				label Lado B #[input#triangleSideBInput(type='number')] cm
-				label Base #[input#triangleBaseInput(type='number')] cm
-				button.triangleCalc(type='button') Calcular
-		else if shape== "diamond"
-			p Cuanto miden los #[strong lados] del rombo (#[em tiene lados iguales]). La #[strong diagonal] puede ser la menor o mayor.
-			form
-				label Lado #[input#diamondSideInput(type='number')] cm
-				label 1° Diagonal #[input#diamondDiagonalInput(type='number')] cm
-				button.diamondCalc(type='button') Calcular
-		else if shape== "circle"
-			form
-				label Radio #[input#circleInput(type='number')] cm
-				button.circleCalc(type='button') Calcular
+		case shape
+			when "square"
+				form
+					label Lado #[input#squareInput(type='number')] cm
+					button.squareCalc(type='button') Calcular
+			when "rectangle"
+				form
+					label Altura #[input#rectangleHeightInput(type='number')] cm
+					label Base #[input#rectangleBaseInput(type='number')] cm
+					button.rectangleCalc(type='button') Calcular
+			when "triangle"
+				ul
+					li Si el triangulo tiene 2 lados iguales, la #[strong base] es el valor diferente a los 2 lados.
+					li Si todos los lados del triangulo son desiguales, asegurate de colocar los valores de menor a mayor.
+				form
+					label Lado A #[input#triangleSideAInput(type='number')] cm
+					label Lado B #[input#triangleSideBInput(type='number')] cm
+					label Base #[input#triangleBaseInput(type='number')] cm
+					button.triangleCalc(type='button') Calcular
+			when "diamond"
+				p La #[strong 1° diagonal] puede ser la menor o mayor.
+				form
+					label Lado #[input#diamondSideInput(type='number')] cm
+					label 1° Diagonal #[input#diamondDiagonalInput(type='number')] cm
+					button.diamondCalc(type='button') Calcular
+			when "circle"
+				form
+					label Radio #[input#circleInput(type='number')] cm
+					button.circleCalc(type='button') Calcular
 		ul
-			if shape== "triangle"
-				li #[strong Tipo] "#[span#triangleType]"
-				li #[strong Altura] #[span#triangleHeight 0]cm
-			if shape== "diamond"
-				li #[strong 2° Diagonal] #[span#diamondDiagonal 0]cm
+			case shape
+				when "triangle"
+					li #[strong Tipo] "#[span#triangleType]"
+					li #[strong Altura] #[span#triangleHeight 0]cm
+				when "diamond"
+					li #[strong 2° Diagonal] #[span#diamondDiagonal 0]cm
 			if shape== "circle"
 				li #[strong Circunferencia] #[span#circumference 0]cm
 			else
