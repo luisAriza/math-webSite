@@ -7,5 +7,8 @@
 
 header.header
 	include navbar.pug
-	.header__logo: img(src="assets/icons/logo.svg" alt="Logo del la pagina")
-	.header__about-me: a(href="https://www.linkedin.com/in/luisariza-dev/" target="_blank") Sobre mi
+	.header__logo
+		figure.big__icon
+			img.big__icon--logo-header(src="assets/icons/logo.svg" alt="Logo del la pagina")
+			img.big__icon--title-logo-header(src="assets/icons/title-logo.svg" alt="Titulo del logo")
+	//- .header__about-me: a(href="https://www.linkedin.com/in/luisariza-dev/" target="_blank") Sobre mi
