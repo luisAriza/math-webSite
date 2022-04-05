@@ -1,0 +1,67 @@
+
+$primary-font:'Poppins', sans-serif;
+$variation-font: 'Nanum Pen Script', cursive;
+$primary-color: #FFEE59;
+$secondary-color: #D6F3FF;
+$background-color: #192C34;
+$card-color: #42819B;
+$input-color: #5AA4C4;
+$form-shadow-color:#2C5A6C;
+$border-line: #32444D;
+$error-color: #FF3E3E;
+$add-color: #4CF376;
+$light-color: #FFFFFF;
+$dark-color: #1b1b1b;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.small__icon {
+	width: 24px;
+	height: 24px;
+}
+
+.medium__icon {
+	width: 32px;
+	height: 32px;
+}
+
+.medium__icon--logo-header {
+	background: url(../assets/icons/shortcut-logo.svg) no-repeat;
+	background-size: contain;
+	padding: 0 16px 11px;
+}
+
+.big__icon {
+	width: 40px;
+	height: 40px;
+}
+
+.header {
+	width: 100%;
+	height: 100px;
+	background-color: $light-color;
+}
+
+.main {
+	font-family: $primary-font;
+	color: $light-color;
+	background-color: $background-color;
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		text-transform: uppercase;
+		color: $secondary-color;
+	}
+}
+
+.footer {
+	width: 100%;
+	height: 100px;
+	background-color: $secondary-color;
+}
