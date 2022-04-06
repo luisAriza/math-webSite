@@ -1,17 +1,37 @@
 
+//   ██████╗ ██╗      ██████╗ ██████╗  █████╗ ██╗     ███████╗
+//  ██╔════╝ ██║     ██╔═══██╗██╔══██╗██╔══██╗██║     ██╔════╝
+//  ██║  ███╗██║     ██║   ██║██████╔╝███████║██║     ███████╗
+//  ██║   ██║██║     ██║   ██║██╔══██╗██╔══██║██║     ╚════██║
+//  ╚██████╔╝███████╗╚██████╔╝██████╔╝██║  ██║███████╗███████║
+//   ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+
+// Estructura de bloque
+
+// Display
+// Modelo de caja
+// Posición
+// Tipografía
+// Decoración
+// Variables
+// Mixins
+
+// Mixins para tamaño, estilos y valores numéricos de fuentes.
+
 $primary-font:'Poppins', sans-serif;
 $variation-font: 'Nanum Pen Script', cursive;
+
 $primary-color: #FFEE59;
-$secondary-color: #D6F3FF;
-$background-color: #192C34;
-$card-color: #42819B;
-$input-color: #5AA4C4;
-$form-shadow-color:#2C5A6C;
-$border-line: #32444D;
-$error-color: #FF3E3E;
-$add-color: #4CF376;
+$secondary-color: #42819B;
+$in-color: #5EBF79;
+$out-color: #DA5454;
 $light-color: #FFFFFF;
-$dark-color: #1b1b1b;
+$dark-color: #1B1B1B;
+$input-color: #5AA4C4;
+$border-line-color: #32444D;
+$background-color: #192C34;
+$shadow-form-color:#2C5A6C;
+$variation-color: #E3F7FF;
 
 * {
 	margin: 0;
@@ -19,49 +39,20 @@ $dark-color: #1b1b1b;
 	box-sizing: border-box;
 }
 
-.small__icon {
-	width: 24px;
-	height: 24px;
-}
-
-.medium__icon {
-	width: 32px;
-	height: 32px;
-}
-
-.medium__icon--logo-header {
-	background: url(../assets/icons/shortcut-logo.svg) no-repeat;
-	background-size: contain;
-	padding: 0 16px 11px;
-}
-
-.big__icon {
-	width: 40px;
-	height: 40px;
-}
-
-.header {
-	width: 100%;
-	height: 100px;
-	background-color: $light-color;
-}
-
-.main {
+body {
 	font-family: $primary-font;
 	color: $light-color;
 	background-color: $background-color;
-
-	h1,
-	h2,
-	h3,
-	h4 {
-		text-transform: uppercase;
-		color: $secondary-color;
+	.main {
+		padding: 0 20px;
 	}
-}
-
-.footer {
-	width: 100%;
-	height: 100px;
-	background-color: $secondary-color;
+	.theme__bar {
+		@extend .main;
+	}
+	.header {
+		@extend .main;
+	}
+	.footer {
+		@extend .main;
+	}
 }

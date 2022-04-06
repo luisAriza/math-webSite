@@ -5,56 +5,45 @@
 //- ╚██████╔╝███████╗╚██████╔╝██████╔╝██║  ██║███████╗███████║
 //-  ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 
-- var projects = ["google_clone", "batatabit", "project_calories_counter"]
+- var themes = ["shapes", "discounts", "statistics"]
 - var medias = ["linkedin", "github", "instagram", "blog"]
 - var technologies = ["figma", "html", "css", "js", "npm", "pug", "sass", "webpack", "git", "github"]
 
 //- --------------------------------------------------------------------------------------
 //- Navbar
 
-mixin projects
-	h3.portfolio: a(href="https://luisariza.github.io/portfolio" target="_blank") Portafolio
-	ul
-		each item in projects
-			li.project: a(href="https://luisariza.github.io/" + item target="_blank")
-				case item
-					when "batatabit": | Batatabit
-					when "google_clone": | Clon de Google
-					when "project_calories_counter": | Contador de calorías
-
 mixin medias
 	each item in medias
 		.small__icon
-			a(href="#"): i(class= "small__icon--" + item) i
+			a.small__icon--media(href="#") i
 
 //- --------------------------------------------------------------------------------------
 //- Menu
 
-mixin themes
-	.menu__themes.themes
-		.themes__bar.themes__bar--anime
-			a(href='#shapes-container')
-				figure.big__icon: i.big__icon--shape i
-				| Figuras
-		.themes__bar.themes__bar--anime
-			a(href='#discounts-container')
-				figure.big__icon: i.big__icon--discount i
-				| Descuentos
-		.themes__bar.themes__bar--anime
-			a(href='#statistics-container')
-				figure.big__icon: i.big__icon--statistic i
-				| Estadisticas
+mixin themes(theme, title)
+	.menu__themes.theme
+		each item in themes
+			.theme__bar.theme__bar--anime
+				figure.big__icon: i.big__icon--theme i
+				a(href='#' + item + '-container')
+					case item
+						when "shapes"
+							| Figuras
+						when "discounts"
+							| Descuentos
+						when "statistics"
+							| Estadisticas
 
 mixin technologies
 	figure.menu__technologies
-		each item in technologies
-			.big__icon: i(class="big__icon--" + item) i
+		- for (var x = 0; x < 10; x++)
+			.big__icon: i(class="big__icon--tech") i
 
 //- --------------------------------------------------------------------------------------
 //- Shapes
 
 mixin shape-box(title, shape)
-	section(class="shapes__" + shape).card
+	section(class="shape__" + shape).card
 		h3.card__title= title
 		p.card__description Ingresa las medidas en #[strong centímetros]:
 		case shape
@@ -68,15 +57,16 @@ mixin shape-box(title, shape)
 					label Base#[input.card__input#rectangleBaseInput(type='number')]
 					button.card__button.rectangleCalc(type='button') Calcular
 			when "triangle"
-				p.card__info Si el triangulo tiene 2 lados iguales, la #[strong base] es el valor diferente a los 2 lados.
-				p.card__info Si todos los lados del triangulo son desiguales, asegurate de colocar los valores de menor a mayor.
+				ul
+					li.card__info Si el triangulo tiene 2 lados iguales, la #[strong base] es el valor diferente a los 2 lados.
+					li.card__info Si todos los lados del triangulo son desiguales, asegurate de colocar los valores de menor a mayor.
 				form.triangle__form
 					label Lado A#[input.card__input#triangleSideAInput(type='number')]
 					label Lado B#[input.card__input#triangleSideBInput(type='number')]
 					label Base#[input.card__input#triangleBaseInput(type='number')]
 					button.card__button.triangleCalc(type='button') Calcular
 			when "diamond"
-				p.card__info La #[strong 1° diagonal] puede ser la menor o mayor.
+				li.card__info La #[strong 1° diagonal] puede ser la menor o mayor.
 				form.card__form
 					label Lado#[input.card__input#diamondSideInput(type='number')]
 					label 1° Diagonal#[input.card__input#diamondDiagonalInput(type='number')]
@@ -88,15 +78,15 @@ mixin shape-box(title, shape)
 		ul.card__results
 			case shape
 				when "triangle"
-					li #[strong Altura] #[span#triangleHeight 0]cm
-					li #[strong Tipo] "#[span#triangleType]"
+					li #[strong Tipo]"#[span#triangleType]"
+					li #[strong Altura]#[span.result#triangleHeight 0]cm
 				when "diamond"
-					li #[strong 2° Diagonal] #[span#diamondDiagonal 0]cm
+					li #[strong 2° Diagonal]#[span.result#diamondDiagonal 0]cm
 			if shape== "circle"
-				li #[strong Circunferencia] #[span#circumference 0]cm
+				li #[strong Circunferencia]#[span.result#circumference 0]cm
 			else
-				li #[strong Perimetro] #[span(id=shape + "Perimeter") 0]cm
-			li #[strong Área] #[span(id=shape + "Area") 0]cm#[sup 2]
+				li #[strong Perimetro]#[span.result(id=shape + "Perimeter") 0]cm
+			li #[strong Área]#[span.result(id=shape + "Area") 0]cm#[sup 2]
 
 //- --------------------------------------------------------------------------------------
 //- Discounts
@@ -104,25 +94,23 @@ mixin shape-box(title, shape)
 mixin discount-price-box
 	section.discounts__price.card
 		form.card__form
-			label Precio del producto#[input.card__input#priceInput(type='number')]
-			label Descuento#[input.card__input#discountInput(type='number')]
+			label Precio del producto $#[input.card__input#priceInput(type='number')]
+			label Descuento %#[input.card__input#discountInput(type='number')]
 			button.card__button.discountCalc(type='button') Calcular
-		p.card__results #[strong Precio con descuento] $#[span#priceDiscount 0]
+		p.card__results.result #[strong Precio con descuento]#[span#priceDiscount $0]
 
 mixin discount-cupon-box
 	section.discounts__cupon.card
-		.card__title-container
-			figure.small__icon: i.small__icon--cupon i
-			h3.card__title Descuento con cupon
+		h3.card__title Descuento con cupon
 		.card__product
-			.card__product-image imagen del producto
-			h4.card__product-title Guitarra Fender Stratocaster American Standard
-			p.card__product-price#priceCode $800
-			p.card__product-info Aprovecha ahora y aplica hasta un 30% de descuento con código de referido
-			form.card__product-form
-				label Ingresa aquí tu cogido#[input.card__product-input#inputCode(type='text')]
-				button.card__product-button.confirmCupon(type='button') Ingresar
-			p.card__product-info#validation
+			.card__product--image imagen del producto
+			h4.card__product--title Guitarra Fender Stratocaster American Standard
+			p.card__product--price#priceCode $800
+			p.card__product--info Aprovecha ahora y aplica hasta un 30% de descuento con código de referido
+			form.card__product--form
+				label Ingresa aquí tu cogido#[input.card__product--input#inputCode(type='text')]
+				button.card__product--button.confirmCupon(type='button') Confirmar
+			p.card__product--validation.result#validation
 		h4.card__code Códigos
 		ul.card__code-list: em
 			li awesomeGuitar30
@@ -138,9 +126,9 @@ mixin statistic-box
 		form.card__form
 			label: input.card__input#dataInput(type='number')
 			button.card__button--insert.insert(type='button') Ingresar
-			button.card__button--remove.remove(type='button') Eliminar
+			button.card__button--remove.remove(type='button') Remover
 			button.card__button.statisticCalc(type='button') Calcular
 		ul.card__results--MMM
-			li #[strong Promedio] #[span#mean 0]
-			li #[strong Mediana] #[span#median 0]
-			li #[strong Moda] #[span#mode 0]
+			li #[strong Promedio]#[span.result#mean 0]
+			li #[strong Mediana]#[span.result#median 0]
+			li #[strong Moda]#[span.result#mode 0]
