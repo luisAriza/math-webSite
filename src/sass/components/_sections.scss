@@ -1,0 +1,40 @@
+.sections {
+	padding-top: 36px;
+	padding-bottom: 56px;
+
+	&__title {
+		width: 180px;
+		margin: 0 auto;
+		text-align: center;
+		font-family: $head-font;
+		font-size: 36px;
+		font-weight: bold;
+		line-height: 120%;
+		text-transform: uppercase;
+		text-shadow: 4px 4px 4px $dark-color;
+	}
+
+	&__subtitle {
+		width: 220px;
+		margin: 0 auto;
+		text-align: center;
+		font-family: $head-font;
+		font-size: 28px;
+		font-weight: bold;
+		line-height: 130%;
+		text-transform: uppercase;
+		text-shadow: 4px 4px 4px $dark-color;
+	}
+	&__description {
+		margin: 20px 0 16px;
+		letter-spacing: .46px;
+	}
+	&__description a {
+		color: $variation-color;
+	}
+	&__description a:active {
+		color: $out-color;
+		text-decoration: none;
+	}
+
+}

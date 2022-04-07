@@ -7,27 +7,48 @@
 //  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
 .small__icon {
-	width: 24px;
-	height: 24px;
+	display: flex;
+	place-content: center;
+	width: 32px;
+	height: 32px;
 }
 
 .medium__icon {
-	width: 32px;
-	height: 32px;
+	display: flex;
+	place-content: center;
+	width: 40px;
+	height: 40px;
 	&--header {
 		background: url(../assets/icons/shortcut-logo.svg) no-repeat;
 		background-size: contain;
-		padding: 0 16px 9px;
+		padding: 0 20px 21px;
+	}
+	&--theme-shapes {
+		background: url(../assets/icons/shape.svg) no-repeat;
+		background-size: contain;
+		padding: 0 20px 21px;
+	}
+	&--theme-discounts {
+		background: url(../assets/icons/discount.svg) no-repeat;
+		background-size: contain;
+		padding: 0 20px 21px;
+	}
+	&--theme-statistics {
+		background: url(../assets/icons/statistic.svg) no-repeat;
+		background-size: contain;
+		padding: 0 20px 21px;
 	}
 }
 
 .big__icon {
-	width: 40px;
-	height: 40px;
+	display: flex;
+	place-content: center;
+	width: 52px;
+	height: 52px;
 	&--footer {
 		background: url(../assets/icons/shortcut-logo.svg) no-repeat;
 		background-size: contain;
-		padding: 0 20px 17px;
+		padding: 0 26px 33px;
 	}
 }
 

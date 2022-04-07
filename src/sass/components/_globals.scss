@@ -15,12 +15,13 @@
 // Tipografía
 // Decoración
 // Variables
+// Extends
 // Mixins
 
 // Mixins para tamaño, estilos y valores numéricos de fuentes.
 
-$primary-font:'Poppins', sans-serif;
-$variation-font: 'Nanum Pen Script', cursive;
+$head-font: 'Poppins', sans-serif;
+$body-font: 'Raleway', sans-serif;
 
 $primary-color: #FFEE59;
 $secondary-color: #42819B;
@@ -32,7 +33,7 @@ $input-color: #5AA4C4;
 $border-line-color: #32444D;
 $background-color: #192C34;
 $shadow-form-color:#2C5A6C;
-$variation-color: #E3F7FF;
+$variation-color: #D6F2FC;
 
 * {
 	margin: 0;
@@ -44,8 +45,10 @@ body {
 	width: 100vw;
 	min-width: 320px;
 	max-width: 428px;
-	font-family: $primary-font;
-	line-height: 150%;
+	font-family: $body-font;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 140%;
 	color: $light-color;
 	background-color: $background-color;
 	.header {
@@ -62,29 +65,3 @@ body {
 		@extend .main;
 	}
 }
-
-.section {
-	padding-top: 32px;
-	padding-bottom: 48px;
-	&__title {
-		width: 160px;
-		margin: 0 auto;
-		text-align: center;
-		font-size: 32px;
-		font-weight: bold;
-		line-height: 120%;
-		text-transform: uppercase;
-		text-shadow: 4px 4px 4px $dark-color;
-	}
-	&__subtitle {
-		width: 200px;
-		margin: 0 auto;
-		text-align: center;
-		font-size: 24px;
-		font-weight: bold;
-		line-height: 120%;
-		text-transform: uppercase;
-		text-shadow: 4px 4px 4px $dark-color;
-	}
-}
-

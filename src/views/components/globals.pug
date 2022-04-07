@@ -15,29 +15,28 @@
 mixin medias
 	each item in medias
 		.small__icon
-			a.small__icon--media(href="#") i
+			a.small__icon--media(href="#")
 
 //- --------------------------------------------------------------------------------------
 //- Menu
 
 mixin themes(theme, title)
-	.menu__themes.theme
+	.menu__themes.themes
 		each item in themes
-			.theme__bar.theme__bar--anime
-				figure.big__icon: i.big__icon--theme i
-				a(href='#' + item + '-container')
-					case item
-						when "shapes"
-							| Figuras
-						when "discounts"
-							| Descuentos
-						when "statistics"
-							| Estadisticas
+			a.themes__bar.themes__bar--anime(href='#' + item + '-container')
+				figure.medium__icon: i(class="medium__icon--theme-" + item)
+				case item
+					when "shapes"
+						| Figuras
+					when "discounts"
+						| Descuentos
+					when "statistics"
+						| Estadisticas
 
 mixin technologies
 	figure.menu__technologies
 		- for (var x = 0; x < 10; x++)
-			.big__icon: i(class="big__icon--tech") i
+			.big__icon: i(class="big__icon--tech")
 
 //- --------------------------------------------------------------------------------------
 //- Shapes
