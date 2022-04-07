@@ -14,15 +14,21 @@
 .medium__icon {
 	width: 32px;
 	height: 32px;
-}
-
-.medium__icon--header {
-	background: url(../assets/icons/shortcut-logo.svg) no-repeat;
-	background-size: contain;
-	padding: 0 16px 11px;
+	&--header {
+		background: url(../assets/icons/shortcut-logo.svg) no-repeat;
+		background-size: contain;
+		padding: 0 16px 9px;
+	}
 }
 
 .big__icon {
 	width: 40px;
 	height: 40px;
+	&--footer {
+		background: url(../assets/icons/shortcut-logo.svg) no-repeat;
+		background-size: contain;
+		padding: 0 20px 17px;
+	}
 }
+
+

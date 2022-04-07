@@ -9,6 +9,7 @@
 // Estructura de bloque
 
 // Display
+// Medidas
 // Modelo de caja
 // Posición
 // Tipografía
@@ -40,19 +41,50 @@ $variation-color: #E3F7FF;
 }
 
 body {
+	width: 100vw;
+	min-width: 320px;
+	max-width: 428px;
 	font-family: $primary-font;
+	line-height: 150%;
 	color: $light-color;
 	background-color: $background-color;
-	.main {
-		padding: 0 20px;
-	}
-	.theme__bar {
+	.header {
 		@extend .main;
 	}
-	.header {
+	.main {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.theme__bar {
 		@extend .main;
 	}
 	.footer {
 		@extend .main;
 	}
 }
+
+.section {
+	padding-top: 32px;
+	padding-bottom: 48px;
+	&__title {
+		width: 160px;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 32px;
+		font-weight: bold;
+		line-height: 120%;
+		text-transform: uppercase;
+		text-shadow: 4px 4px 4px $dark-color;
+	}
+	&__subtitle {
+		width: 200px;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 120%;
+		text-transform: uppercase;
+		text-shadow: 4px 4px 4px $dark-color;
+	}
+}
+
