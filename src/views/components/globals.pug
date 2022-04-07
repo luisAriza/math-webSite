@@ -35,8 +35,8 @@ mixin themes(theme, title)
 
 mixin technologies
 	figure.menu__technologies
-		- for (var x = 0; x < 10; x++)
-			.big__icon: i(class="big__icon--tech")
+		each item in technologies
+			.medium__icon: i(class="medium__icon--tech-" + item)
 
 //- --------------------------------------------------------------------------------------
 //- Shapes
@@ -65,7 +65,8 @@ mixin shape-box(title, shape)
 					label Base#[input.card__input#triangleBaseInput(type='number')]
 					button.card__button.triangleCalc(type='button') Calcular
 			when "diamond"
-				li.card__info La #[strong 1° diagonal] puede ser la menor o mayor.
+				ul
+					li.card__info La #[strong 1° diagonal] puede ser la menor o mayor.
 				form.card__form
 					label Lado#[input.card__input#diamondSideInput(type='number')]
 					label 1° Diagonal#[input.card__input#diamondDiagonalInput(type='number')]

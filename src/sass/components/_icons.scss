@@ -21,22 +21,83 @@
 	&--header {
 		background: url(../assets/icons/shortcut-logo.svg) no-repeat;
 		background-size: contain;
-		padding: 0 20px 21px;
+		width: 100%;
 	}
 	&--theme-shapes {
 		background: url(../assets/icons/shape.svg) no-repeat;
 		background-size: contain;
-		padding: 0 20px 21px;
+		width: 100%;
 	}
 	&--theme-discounts {
 		background: url(../assets/icons/discount.svg) no-repeat;
 		background-size: contain;
-		padding: 0 20px 21px;
+		width: 100%;
 	}
 	&--theme-statistics {
 		background: url(../assets/icons/statistic.svg) no-repeat;
 		background-size: contain;
-		padding: 0 20px 21px;
+		width: 100%;
+	}
+	&--tech-figma {
+		background: url(../assets/icons/figma.svg) no-repeat;
+		background-size: contain;
+		width: 67%;
+	}
+	
+	&--tech-html {
+		background: url(../assets/icons/html.svg) no-repeat;
+		background-size: contain;
+		width: 71%;
+	}
+	
+	&--tech-css {
+		background: url(../assets/icons/css.svg) no-repeat;
+		background-size: contain;
+		width: 71%;
+	}
+	
+	&--tech-js {
+		background: url(../assets/icons/js.svg) no-repeat;
+		background-size: contain;
+		width: 100%;
+	}
+	
+	&--tech-npm {
+		background: url(../assets/icons/npm.svg) no-repeat;
+		background-size: contain;
+		width: 100%;
+		margin-top: 36%;
+	}
+	
+	&--tech-pug {
+		background: url(../assets/icons/pug.svg) no-repeat;
+		background-size: contain;
+		width: 100%;
+	}
+	
+	&--tech-sass {
+		background: url(../assets/icons/sass.svg) no-repeat;
+		background-size: contain;
+		width: 100%;
+		margin-top: 12%;
+	}
+	
+	&--tech-webpack {
+		background: url(../assets/icons/webpack.svg) no-repeat;
+		background-size: contain;
+		width: 89%;
+	}
+	
+	&--tech-git {
+		background: url(../assets/icons/git.svg) no-repeat;
+		background-size: contain;
+		width: 100%;
+	}
+	
+	&--tech-github {
+		background: url(../assets/icons/github.svg) no-repeat;
+		background-size: contain;
+		width: 100%;
 	}
 }
 
@@ -48,7 +109,7 @@
 	&--footer {
 		background: url(../assets/icons/shortcut-logo.svg) no-repeat;
 		background-size: contain;
-		padding: 0 26px 33px;
+		width: 100%;
 	}
 }
 

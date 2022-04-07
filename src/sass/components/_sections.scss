@@ -1,7 +1,14 @@
+
+//  ███████╗███████╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗███████╗
+//  ██╔════╝██╔════╝██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+//  ███████╗█████╗  ██║        ██║   ██║██║   ██║██╔██╗ ██║███████╗
+//  ╚════██║██╔══╝  ██║        ██║   ██║██║   ██║██║╚██╗██║╚════██║
+//  ███████║███████╗╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
+//  ╚══════╝╚══════╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+
 .sections {
 	padding-top: 36px;
 	padding-bottom: 56px;
-
 	&__title {
 		width: 180px;
 		margin: 0 auto;
@@ -26,15 +33,47 @@
 		text-shadow: 4px 4px 4px $dark-color;
 	}
 	&__description {
+		display: inline-block;
 		margin: 20px 0 16px;
-		letter-spacing: .46px;
 	}
 	&__description a {
 		color: $variation-color;
+		font-weight: bold;
 	}
 	&__description a:active {
 		color: $out-color;
 		text-decoration: none;
 	}
+}
 
+.sections:not(:last-child) {
+		border-bottom: 2px solid $border-line-color;
+}
+
+.menu {
+	&__source {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		padding-left: 32px;
+	}
+	&__source a {
+		color: $variation-color;
+		font-weight: bold;
+	}
+	&__source a:active {
+		color: $out-color;
+		text-decoration: none;
+	}
+	&__technologies {
+		display: grid;
+		grid-template-columns: repeat(5, 40px);
+		grid-template-rows: repeat(2, 40px);
+		gap: 20px;
+		justify-content: center;
+		width: 100vw;
+		margin-top: 8px;
+		position: relative;
+		left: -20px;
+	}
 }
