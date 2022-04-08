@@ -7,109 +7,63 @@
 //  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
 .small__icon {
-	display: flex;
-	place-content: center;
-	width: 32px;
-	height: 32px;
+	@include icon-size( unit(4) );
 }
 
 .medium__icon {
-	display: flex;
-	place-content: center;
-	width: 40px;
-	height: 40px;
+	@include icon-size( unit(5) );
 	&--header {
-		background: url(../assets/icons/shortcut-logo.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
+		@include icon-source("shortcut-logo", 100%);
 	}
+
 	&--theme-shapes {
-		background: url(../assets/icons/shape.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
+		@include icon-source("shape", 100%);
 	}
 	&--theme-discounts {
-		background: url(../assets/icons/discount.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
+		@include icon-source("discount", 100%);
 	}
 	&--theme-statistics {
-		background: url(../assets/icons/statistic.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
+		@include icon-source("statistic", 100%);
 	}
+
 	&--tech-figma {
-		background: url(../assets/icons/figma.svg) no-repeat;
-		background-size: contain;
-		width: 67%;
+		@include icon-source("figma", 67%);
 	}
-	
 	&--tech-html {
-		background: url(../assets/icons/html.svg) no-repeat;
-		background-size: contain;
-		width: 71%;
+		@include icon-source("html", 71%);
 	}
-	
 	&--tech-css {
-		background: url(../assets/icons/css.svg) no-repeat;
-		background-size: contain;
-		width: 71%;
+		@include icon-source("css", 71%);
 	}
-	
 	&--tech-js {
-		background: url(../assets/icons/js.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
+		@include icon-source("js", 100%);
 	}
-	
 	&--tech-npm {
-		background: url(../assets/icons/npm.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
 		margin-top: 36%;
+		@include icon-source("npm", 100%);
 	}
-	
 	&--tech-pug {
-		background: url(../assets/icons/pug.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
+		@include icon-source("pug", 100%);
 	}
-	
 	&--tech-sass {
-		background: url(../assets/icons/sass.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
 		margin-top: 12%;
+		@include icon-source("sass", 100%);
 	}
-	
 	&--tech-webpack {
-		background: url(../assets/icons/webpack.svg) no-repeat;
-		background-size: contain;
-		width: 89%;
+		@include icon-source("webpack", 89%);
 	}
-	
 	&--tech-git {
-		background: url(../assets/icons/git.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
+		@include icon-source("git", 100%);
 	}
-	
 	&--tech-github {
-		background: url(../assets/icons/github.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
+		@include icon-source("github", 100%);
 	}
 }
 
 .big__icon {
-	display: flex;
-	place-content: center;
-	width: 52px;
-	height: 52px;
+	@include icon-size( unit(6.5) );
 	&--footer {
-		background: url(../assets/icons/shortcut-logo.svg) no-repeat;
-		background-size: contain;
-		width: 100%;
+		@include icon-source("shortcut-logo", 100%);
 	}
 }
 

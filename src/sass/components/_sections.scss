@@ -7,34 +7,12 @@
 //  ╚══════╝╚══════╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
 .sections {
-	padding-top: 36px;
-	padding-bottom: 56px;
-	&__title {
-		width: 180px;
-		margin: 0 auto;
-		text-align: center;
-		font-family: $head-font;
-		font-size: 36px;
-		font-weight: bold;
-		line-height: 120%;
-		text-transform: uppercase;
-		text-shadow: 4px 4px 4px $dark-color;
-	}
-
-	&__subtitle {
-		width: 220px;
-		margin: 0 auto;
-		text-align: center;
-		font-family: $head-font;
-		font-size: 28px;
-		font-weight: bold;
-		line-height: 130%;
-		text-transform: uppercase;
-		text-shadow: 4px 4px 4px $dark-color;
-	}
+	padding-top: unit(5);
+	padding-bottom: unit(7);
 	&__description {
 		display: inline-block;
-		margin: 20px 0 16px;
+		margin-top: unit(2.5);
+		margin-bottom: unit(2);
 	}
 	&__description a {
 		color: $variation-color;
@@ -44,18 +22,17 @@
 		color: $out-color;
 		text-decoration: none;
 	}
-}
-
-.sections:not(:last-child) {
+	&:not(:last-child) {
 		border-bottom: 2px solid $border-line-color;
+	}
 }
 
 .menu {
 	&__source {
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
-		padding-left: 32px;
+		gap: unit(1.5);
+		padding-left: unit(4);
 	}
 	&__source a {
 		color: $variation-color;
@@ -67,13 +44,13 @@
 	}
 	&__technologies {
 		display: grid;
-		grid-template-columns: repeat(5, 40px);
-		grid-template-rows: repeat(2, 40px);
-		gap: 20px;
+		grid-template-columns: repeat(5, auto);
+		grid-template-rows: repeat(2, auto);
+		gap: unit(2.5);
 		justify-content: center;
 		width: 100vw;
-		margin-top: 8px;
+		margin-top: unit(1);
 		position: relative;
-		left: -20px;
+		left: calc(-1 * $PD-body);
 	}
 }

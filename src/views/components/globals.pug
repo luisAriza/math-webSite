@@ -112,7 +112,7 @@ mixin discount-cupon-box
 				button.card__product--button.confirmCupon(type='button') Confirmar
 			p.card__product--validation.result#validation
 		h4.card__code Códigos
-		ul.card__code-list: em
+		em: ul.card__code-list
 			li awesomeGuitar30
 			li awesomeGuitar20
 			li awesomeGuitar15
@@ -124,7 +124,7 @@ mixin statistic-box
 	section.statistics__MMM.card
 		p.card__data Lista: #[span#data]
 		form.card__form
-			label: input.card__input#dataInput(type='number')
+			label Ingresa aquí los datos de la lista:#[input.card__input#dataInput(type='number')]
 			button.card__button--insert.insert(type='button') Ingresar
 			button.card__button--remove.remove(type='button') Remover
 			button.card__button.statisticCalc(type='button') Calcular

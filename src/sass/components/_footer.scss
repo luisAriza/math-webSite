@@ -10,7 +10,9 @@
 	display: flex;
 	place-content: center;
 	width: 100vw;
-	padding: 12px 0;
+	height: unit(10);
+	padding-top: unit(1);
+	padding-bottom: unit(1);
 	background-color: $light-color;
 	&__logo {
 		display: flex;

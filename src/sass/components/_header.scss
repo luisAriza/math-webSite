@@ -10,8 +10,9 @@
 	display: flex;
 	place-content: center space-between;
 	width: 100vw;
-	height: 60px;
-	padding: 8px 0;
+	height: unit(8);
+	padding-top: unit(1);
+	padding-bottom: unit(1);
 	background-color: $light-color;
 	&__navbar {
 		display: none;

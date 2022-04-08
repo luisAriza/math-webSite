@@ -35,6 +35,52 @@ $background-color: #192C34;
 $shadow-form-color:#2C5A6C;
 $variation-color: #D6F2FC;
 
+@mixin icon-size($size) {
+	display: flex;
+	justify-content: center;
+	width: $size;
+	height: $size;
+}
+
+@mixin icon-source($name, $fixed) {
+		background: url("../assets/icons/#{$name}.svg") no-repeat;
+		background-size: contain;
+		width: $fixed;
+}
+
+@mixin text($size, $weight, $height) {
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $height;
+	letter-spacing: calc($size * .04);
+}
+
+//Unidad de medida y espaciado
+@function unit($units) {
+	@return calc($units * 8px);
+}
+
+@function get-opacity($color, $transparency) {
+	@return rgba($color, $transparency);
+}
+
+@each $title, $size in (h1: 36px, h2: 28px, h3: 20px) {
+	#{$title} {
+		margin: 0 auto;
+		text-align: center;
+		font-family: $head-font;
+		text-transform: uppercase;
+		text-shadow: 4px 4px 4px get-opacity($dark-color, .8);
+		@include text($size, 700, 120%);
+		@if $title == h1 {
+			width: 200px;
+		}
+	}
+}
+
+//Padding del body: para mantener la consistencia
+$PD-body: unit(2.5);
+
 * {
 	margin: 0;
 	padding: 0;
@@ -46,18 +92,15 @@ body {
 	min-width: 320px;
 	max-width: 428px;
 	font-family: $body-font;
-	font-size: 16px;
-	font-weight: 500;
-	letter-spacing: .46px;
-	line-height: 140%;
 	color: $light-color;
 	background-color: $background-color;
+	@include text(16px, 400, 150%);
 	.header {
 		@extend .main;
 	}
 	.main {
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-left: $PD-body;
+		padding-right: $PD-body;
 	}
 	.theme__bar {
 		@extend .main;

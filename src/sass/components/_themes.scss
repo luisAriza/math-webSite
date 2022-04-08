@@ -9,24 +9,24 @@
 .themes {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
-	padding: 32px 0 12px;
+	gap: unit(2.5);
+	padding-top: unit(4);
+	padding-bottom: unit(1.5);
 	&__bar {
 		display: flex;
 		align-items: center;
-		gap: 16px;
-		width: 250px;
-		padding: 8px 20px;
+		gap: unit(2);
+		width: 260px;
+		padding: unit(1) $PD-body;
 		position: relative;
-		left: -20px;
+		left: calc(-1 * $PD-body);
 		text-decoration: none;
 		font-family: $head-font;
-		font-size: 20px;
-		font-weight: bold;
-		letter-spacing: .8px;
+		text-transform: uppercase;
 		color: $dark-color;
-		border-radius: 0 40px 40px 0;
+		border-radius: 0 unit(5) unit(5) 0;
 		background-color: $primary-color;
-		box-shadow: 4px 8px 4px $dark-color;
+		box-shadow: 4px 8px 4px get-opacity($dark-color, 1);
+		@include text(20px, 700, 120%);
 	}
 }
