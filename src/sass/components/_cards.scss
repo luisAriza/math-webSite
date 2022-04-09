@@ -9,18 +9,19 @@
 .card {
 	display: flex;
 	flex-direction: column;
-	padding: unit(3) unit(2) unit(4);
+	padding: unit(4) unit(2) unit(5);
 	background-color: $secondary-color;
 	border-radius: unit(2);
 	box-shadow: 4px 8px 4px get-opacity($dark-color, .8);
 	@include text(13px, 400, 150%);
 	&__description {
 		display: inline-block;
-		margin-top: unit(1.5);
+		margin-top: unit(2);
 		margin-bottom: unit(1);
 	}
-	&__info:not(:first-child) {
-		margin-bottom: unit(1);
+	&__info {
+		margin-left: unit(3);
+		margin-bottom: unit(2);
 	}
 	&__data {
 		font-size: 16px;
@@ -35,11 +36,17 @@
 		list-style: none;
 		@include text(16px, 400, 150%);
 	}
-	&__results .result {
-		@include text(20px, 400, 150%);
-	}
-	&__results .result span {
+	&__results span {
 		@include text(13px, 400, 150%);
+	}
+	&__results--triangle {
+		grid-template-columns: repeat(3, auto);
+		grid-template-rows: repeat(2, auto);
+		@extend .card__results
+	}
+	&__results--triangle li:nth-child(1) {
+		grid-column: 1 / 4;
+		margin-bottom: unit(3);
 	}
 }
 
@@ -48,6 +55,7 @@
 	flex-direction: column;
 	&--image {
 		width: calc( 100vw - ($PD-body * 2) );
+		max-width: 428px;
 		height: 220px;
 		margin-top: unit(2);
 		position: relative;
@@ -81,9 +89,6 @@
 	}
 	&--code {
 		@extend .card__product--validation;
-	}
-	&--code:active {
-		color: $out-color;
 	}
 	&--code-list {
 		margin-bottom: unit(2);

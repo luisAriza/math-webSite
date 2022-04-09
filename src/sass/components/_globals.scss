@@ -65,7 +65,7 @@ $variation-color: #D6F2FC;
 	@return rgba($color, $transparency);
 }
 
-@each $title, $size in (h1: 36px, h2: 28px, h3: 20px) {
+@each $title, $size in (h1: 40px, h2: 32px, h3: 24px) {
 	#{$title} {
 		margin: 0 auto;
 		text-align: center;
@@ -75,6 +75,9 @@ $variation-color: #D6F2FC;
 		@include text($size, 700, 120%);
 		@if $title == h1 {
 			width: 200px;
+		}
+		@if $title == h3 {
+			width: 180px;
 		}
 	}
 }

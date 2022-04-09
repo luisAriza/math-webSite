@@ -12,4 +12,4 @@
  * @return {number} El precio del producto con el descuento aplicado
  */
 export const discount = (price, discount) =>
-  parseInt((price * (100 - discount)) / 100);
+  parseFloat(((price * (100 - discount)) / 100).toFixed(2));

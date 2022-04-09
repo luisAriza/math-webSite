@@ -51,23 +51,23 @@ mixin shape-box(title, shape)
 					label #[strong Lado]#[input.form__input#squareInput(type='number')]
 					button.button.squareCalc(type='button') Calcular
 			when "rectangle"
-				form.form--container
+				form.form--content-2
 					label #[strong Altura]#[input.form__input#rectangleHeightInput(type='number')]
 					label #[strong Base]#[input.form__input#rectangleBaseInput(type='number')]
 					button.button.rectangleCalc(type='button') Calcular
 			when "triangle"
-				ul
-					li.card__info Si el triangulo tiene 2 lados iguales, la #[strong base] es el valor diferente a los 2 lados.
-					li.card__info Si todos los lados del triangulo son desiguales, asegurate de colocar los valores de menor a mayor.
-				form.form--container
+				ul.card__info
+					li Si el triangulo tiene 2 lados iguales, la #[strong base] es el valor diferente a los 2 lados.
+					li Si todos los lados del triangulo son desiguales, asegurate de colocar los valores de menor a mayor.
+				form.form--content-3
 					label #[strong Lado A]#[input.form__input#triangleSideAInput(type='number')]
 					label #[strong Lado B]#[input.form__input#triangleSideBInput(type='number')]
 					label #[strong Base]#[input.form__input#triangleBaseInput(type='number')]
 					button.button.triangleCalc(type='button') Calcular
 			when "diamond"
-				ul
-					li.card__info La #[strong 1° diagonal] puede ser la menor o mayor.
-				form.form--container
+				ul.card__info
+					li La #[strong 1° diagonal] puede ser la menor o mayor.
+				form.form--content-2
 					label #[strong Lado]#[input.form__input#diamondSideInput(type='number')]
 					label #[strong 1° Diagonal]#[input.form__input#diamondDiagonalInput(type='number')]
 					button.button.diamondCalc(type='button') Calcular
@@ -75,30 +75,33 @@ mixin shape-box(title, shape)
 				form.form
 					label #[strong Radio]#[input.form__input#circleInput(type='number')]
 					button.button.circleCalc(type='button') Calcular
-		ul.card__results
-			case shape
-				when "triangle"
-					li #[strong Tipo]#[p.result#triangleType]
-					li #[strong Altura]#[p.result#triangleHeight 0#[span cm]]
-				when "diamond"
-					li #[strong 2° Diagonal]#[p.result#diamondDiagonal 0#[span cm]]
-			if shape== "circle"
-				li #[strong Circunferencia]#[p.result#circumference 0#[span cm]]
-			else
-				li #[strong Perimetro]#[p.result(id=shape + "Perimeter") 0#[span cm]]
-			li #[strong Área]#[p.result(id=shape + "Area") 0#[span cm#[sup 2]]]
+		if shape== "triangle"
+			ul.card__results--triangle
+				li #[strong Tipo]#[p#triangleType]
+				li #[strong Altura]#[p#triangleHeight 0#[span cm]]
+				li #[strong Perimetro]#[p(id=shape + "Perimeter") 0#[span cm]]
+				li #[strong Área]#[p(id=shape + "Area") 0#[span cm#[sup 2]]]
+		else
+			ul.card__results
+				if shape== "diamond"
+					li #[strong 2° Diagonal]#[p#diamondDiagonal 0#[span cm]]
+				if shape== "circle"
+					li #[strong Circunferencia]#[p#circumference 0#[span cm]]
+				else
+					li #[strong Perimetro]#[p(id=shape + "Perimeter") 0#[span cm]]
+				li #[strong Área]#[p(id=shape + "Area") 0#[span cm#[sup 2]]]
 
 //- --------------------------------------------------------------------------------------
 //- Discounts
 
 mixin discount-price-box
 	section.discounts__price.card
-		form.form--container
+		form.form--content-2
 			label #[strong Precio del producto $]#[input.form__input#priceInput(type='number')]
 			label #[strong Descuento %]#[input.form__input#discountInput(type='number')]
 			button.button.discountCalc(type='button') Calcular
 		ul.card__results
-			li #[strong Precio con descuento]#[p.result#priceDiscount #[span $]0]
+			li #[strong Precio con descuento]#[p#priceDiscount #[span $]0]
 
 mixin discount-cupon-box
 	section.discounts__cupon.card
@@ -132,6 +135,6 @@ mixin statistic-box
 				button.button--remove.remove(type='button') Remover
 			button.button.statisticCalc(type='button') Calcular
 		ul.card__results
-			li #[strong Promedio]#[p.result#mean 0]
-			li #[strong Mediana]#[p.result#median 0]
-			li #[strong Moda]#[p.result#mode 0]
+			li #[strong Promedio]#[p#mean 0]
+			li #[strong Mediana]#[p#median 0]
+			li #[strong Moda]#[p#mode 0]
