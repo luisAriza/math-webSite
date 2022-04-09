@@ -7,11 +7,11 @@
 //  ╚══════╝╚══════╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
 .sections {
-	padding-top: unit(5);
-	padding-bottom: unit(7);
+	padding-top: unit(6);
+	padding-bottom: unit(8);
 	&__description {
 		display: inline-block;
-		margin-top: unit(2.5);
+		margin-top: unit(3);
 		margin-bottom: unit(2);
 	}
 	&__description a {

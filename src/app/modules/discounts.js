@@ -15,10 +15,9 @@ const resultDiscount = () => {
     discount: getInput("#discountInput"),
   };
 
-  document.querySelector("#priceDiscount").textContent = discount(
-    input.price,
-    input.discount
-  );
+  document.querySelector(
+    "#priceDiscount"
+  ).innerHTML = `<span>$</span>${discount(input.price, input.discount)}`;
 };
 //----------------------------------------------------------------------------------------------------
 const cupon = () => {
@@ -30,9 +29,15 @@ const cupon = () => {
    * @returns {string} Imprime en el ID del HTML los mensajes de validacion
    */
   const output = (ptg) => {
-    document.querySelector("#priceCode").innerHTML = `<s>$800</s> <br>
-    $${discount(800, ptg)}`;
-    document.querySelector("#validation").textContent = `${ptg}% de descuento`;
+    document.querySelector(
+      "#priceCode"
+    ).innerHTML = `<s class="card__product--price-discount"><span>$</span>950</s> <span>$</span>${discount(
+      950,
+      ptg
+    )}`;
+    document.querySelector(
+      "#validation"
+    ).textContent = `Este código aplica un ${ptg}% de descuento`;
   };
 
   switch (inputCode) {
@@ -46,7 +51,7 @@ const cupon = () => {
       output(15);
       break;
     default:
-      document.querySelector("#priceCode").textContent = `$800`;
+      document.querySelector("#priceCode").innerHTML = `<span>$</span>950`;
       document.querySelector("#validation").textContent = `Codigo invalido`;
       break;
   }

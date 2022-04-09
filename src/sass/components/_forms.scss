@@ -1,0 +1,28 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: unit(2);
+	margin-bottom: unit(4);
+	text-align: center;
+	&--container {
+		display: grid;
+		@extend .form;
+	}
+	&__input {
+		width: 100%;
+		height: unit(4);
+		margin-top: unit(.5);
+		padding: unit(.5) unit(2);
+		font-family: $body-font;
+		text-align: center;
+		color: $variation-color;
+		background-color: $input-color;
+		border: none;
+		border-radius: unit(1);
+		box-shadow: inset 2px 4px 8px get-opacity($shadow-form-color, 1);
+		@include text(16px, 600, 150%);
+		// &:focus-visible {
+			// border: none;
+		// }
+	}
+}

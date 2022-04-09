@@ -42,10 +42,11 @@ $variation-color: #D6F2FC;
 	height: $size;
 }
 
-@mixin icon-source($name, $fixed) {
-		background: url("../assets/icons/#{$name}.svg") no-repeat;
-		background-size: contain;
-		width: $fixed;
+@mixin icon-source($name) {
+	width: 100%;
+	background: url("../assets/icons/#{$name}.svg") no-repeat;
+	background-size: contain;
+	background-position: center;
 }
 
 @mixin text($size, $weight, $height) {

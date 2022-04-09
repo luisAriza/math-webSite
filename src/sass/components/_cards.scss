@@ -1,0 +1,93 @@
+
+//   ██████╗ █████╗ ██████╗ ██████╗ ███████╗
+//  ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔════╝
+//  ██║     ███████║██████╔╝██║  ██║███████╗
+//  ██║     ██╔══██║██╔══██╗██║  ██║╚════██║
+//  ╚██████╗██║  ██║██║  ██║██████╔╝███████║
+//   ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝
+
+.card {
+	display: flex;
+	flex-direction: column;
+	padding: unit(3) unit(2) unit(4);
+	background-color: $secondary-color;
+	border-radius: unit(2);
+	box-shadow: 4px 8px 4px get-opacity($dark-color, .8);
+	@include text(13px, 400, 150%);
+	&__description {
+		display: inline-block;
+		margin-top: unit(1.5);
+		margin-bottom: unit(1);
+	}
+	&__info:not(:first-child) {
+		margin-bottom: unit(1);
+	}
+	&__data {
+		font-size: 16px;
+		text-align: center;
+		margin-bottom: unit(1);
+		font-weight: 700;
+	}
+	&__results {
+		display: grid;
+		grid-auto-flow: column;
+		text-align: center;
+		list-style: none;
+		@include text(16px, 400, 150%);
+	}
+	&__results .result {
+		@include text(20px, 400, 150%);
+	}
+	&__results .result span {
+		@include text(13px, 400, 150%);
+	}
+}
+
+.card__product {
+	display: flex;
+	flex-direction: column;
+	&--image {
+		width: calc( 100vw - ($PD-body * 2) );
+		height: 220px;
+		margin-top: unit(2);
+		position: relative;
+		left: calc(-1 * unit(2));
+		background: url("../assets/images/fender-stratocaster-guitar.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	&--title {
+		margin-top: unit(1);
+		@include text(16px, 700, 130%);
+	}
+	&--price {
+		margin-bottom: unit(.5);
+		@include text(28px, 300, 150%);
+	}
+	&--price-discount {
+		@include text(16px, 300, 150%);
+		@extend .card__product--price;
+	}
+	&--price-discount span, &--price span {
+		@include text(16px, 300, 150%);
+	}
+	&--description {
+		margin-bottom: unit(1.5);
+	}
+	&--validation {
+		text-align: center;
+		color: $variation-color;
+		@include text(16px, 600, 150%);
+	}
+	&--code {
+		@extend .card__product--validation;
+	}
+	&--code:active {
+		color: $out-color;
+	}
+	&--code-list {
+		margin-bottom: unit(2);
+		list-style: none;
+		@extend .card__product--validation;
+	}
+}

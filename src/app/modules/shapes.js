@@ -46,18 +46,27 @@ const shape = (calc) => {
 
   /** Resultados del calculo de las figuras, guardadas en las propiedades del objeto */
   const result = {
-    squarePerimeter: squarePerimeter(input.sS),
-    squareArea: squareArea(input.sS),
-    rectanglePerimeter: rectanglePerimeter(input.rB, input.rH),
-    rectangleArea: rectangleArea(input.rB, input.rH),
-    diamondDiagonal: diagonalDiamond,
-    diamondPerimeter: diamondPerimeter(input.dS),
-    diamondArea: diamondArea(diagonalDiamond, input.dD),
-    circumference: circumference(input.cR),
-    circleArea: circleArea(input.cR),
+    squarePerimeter: `${squarePerimeter(input.sS)}<span>cm</span>`,
+    squareArea: `${squareArea(input.sS)}<span>cm<sup>2</sup></span>`,
+    rectanglePerimeter: `${rectanglePerimeter(
+      input.rB,
+      input.rH
+    )}<span>cm</span>`,
+    rectangleArea: `${rectangleArea(
+      input.rB,
+      input.rH
+    )}<span>cm<sup>2</sup></span>`,
+    diamondDiagonal: `${diagonalDiamond}<span>cm</span>`,
+    diamondPerimeter: `${diamondPerimeter(input.dS)}<span>cm</span>`,
+    diamondArea: `${diamondArea(
+      diagonalDiamond,
+      input.dD
+    )}<span>cm<sup>2</sup></span>`,
+    circumference: `${circumference(input.cR)}<span>cm</span>`,
+    circleArea: `${circleArea(input.cR)}<span>cm<sup>2</sup></span>`,
   };
 
-  let outputValue = (document.querySelector("#" + calc).textContent =
+  let outputValue = (document.querySelector("#" + calc).innerHTML =
     result[calc]);
 
   return outputValue;
@@ -113,40 +122,47 @@ const shapeTriangule = (calc) => {
    * @return {number} Mostrar en pantalla el tipo de triangulo
    */
   const type = (type) =>
-    (document.querySelector("#triangleType").textContent = type);
+    (document.querySelector("#triangleType").innerHTML = ` ${type}`);
 
   let height;
 
   if (triangle.equilateral) {
     height = equilateralTriangleHeight(side.a);
-    type("Triángulo equilatero-acutángulo");
+    type("Equilatero acutángulo");
   } else if (triangle.isosAcute) {
     height = isoscelesTriangleHeight(side.a, side.base);
-    type("Triángulo isósceles-acutángulo");
+    type("Isósceles acutángulo");
   } else if (triangle.isosRight) {
     height = isoscelesTriangleHeight(side.a, side.base);
-    type("Triángulo-rectángulo Isósceles");
+    type("Rectángulo isósceles");
   } else if (triangle.isosObtuse) {
     height = isoscelesTriangleHeight(side.a, side.base);
-    type("Triángulo isósceles-obtusángulo");
+    type("Isósceles obtusángulo");
   } else if (triangle.escaAcute) {
     height = scaleneTriangleHeight(side.a, side.b, side.base, semiPerimeter);
-    type("Triángulo escaleno-acutángulo");
+    type("Escaleno acutángulo");
   } else if (triangle.escaRight) {
     height = rightTriangleHeight(side.a, side.b, side.base);
-    type("Triángulo-rectángulo Escaleno");
+    type("Rectángulo escaleno");
   } else if (triangle.escaObtuse) {
     height = scaleneTriangleHeight(side.a, side.b, side.base, semiPerimeter);
-    type("Triángulo escaleno-obtusángulo");
+    type("Escaleno obtusángulo");
   } else {
     //Si se ingresa un mal dato, mandar una alerta de verificación
     alert(`Ingresa correctamente todos los lados del triangulo, lee la guía`);
   }
   /** Resultados del calculo del triángulo, guardadas en las propiedades del objeto */
   const result = {
-    triangleHeight: parseFloat(height.toFixed(2)),
-    trianglePerimeter: trianglePerimeter(side.a, side.b, side.base),
-    triangleArea: triangleArea(side.base, height),
+    triangleHeight: `${parseFloat(height.toFixed(2))}<span>cm</span>`,
+    trianglePerimeter: `${trianglePerimeter(
+      side.a,
+      side.b,
+      side.base
+    )}<span>cm</span>`,
+    triangleArea: `${triangleArea(
+      side.base,
+      height
+    )}<span>cm<sup>2</sup></span>`,
   };
 
   let outputValue = (document.querySelector("#" + calc).innerHTML =

@@ -13,57 +13,55 @@
 .medium__icon {
 	@include icon-size( unit(5) );
 	&--header {
-		@include icon-source("shortcut-logo", 100%);
+		@include icon-source("shortcut-logo");
 	}
 
 	&--theme-shapes {
-		@include icon-source("shape", 100%);
+		@include icon-source("shape");
 	}
 	&--theme-discounts {
-		@include icon-source("discount", 100%);
+		@include icon-source("discount");
 	}
 	&--theme-statistics {
-		@include icon-source("statistic", 100%);
+		@include icon-source("statistic");
 	}
 
 	&--tech-figma {
-		@include icon-source("figma", 67%);
+		@include icon-source("figma");
 	}
 	&--tech-html {
-		@include icon-source("html", 71%);
+		@include icon-source("html");
 	}
 	&--tech-css {
-		@include icon-source("css", 71%);
+		@include icon-source("css");
 	}
 	&--tech-js {
-		@include icon-source("js", 100%);
+		@include icon-source("js");
 	}
 	&--tech-npm {
-		margin-top: 36%;
-		@include icon-source("npm", 100%);
+		@include icon-source("npm");
 	}
 	&--tech-pug {
-		@include icon-source("pug", 100%);
+		@include icon-source("pug");
 	}
 	&--tech-sass {
-		margin-top: 12%;
-		@include icon-source("sass", 100%);
+		@include icon-source("sass");
 	}
 	&--tech-webpack {
-		@include icon-source("webpack", 89%);
+		@include icon-source("webpack");
 	}
 	&--tech-git {
-		@include icon-source("git", 100%);
+		@include icon-source("git");
 	}
 	&--tech-github {
-		@include icon-source("github", 100%);
+		@include icon-source("github");
 	}
 }
 
 .big__icon {
 	@include icon-size( unit(6.5) );
 	&--footer {
-		@include icon-source("shortcut-logo", 100%);
+		@include icon-source("shortcut-logo");
 	}
 }
 

@@ -1,0 +1,34 @@
+
+//  ██████╗ ██╗   ██╗████████╗████████╗ ██████╗ ███╗   ██╗███████╗
+//  ██╔══██╗██║   ██║╚══██╔══╝╚══██╔══╝██╔═══██╗████╗  ██║██╔════╝
+//  ██████╔╝██║   ██║   ██║      ██║   ██║   ██║██╔██╗ ██║███████╗
+//  ██╔══██╗██║   ██║   ██║      ██║   ██║   ██║██║╚██╗██║╚════██║
+//  ██████╔╝╚██████╔╝   ██║      ██║   ╚██████╔╝██║ ╚████║███████║
+//  ╚═════╝  ╚═════╝    ╚═╝      ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+
+.button {
+	width: auto;
+	padding: unit(1) 0;
+	font-family: $body-font;
+	color: $dark-color;
+	background-color: $primary-color;
+	border: none;
+	border-radius: unit(1);
+	box-shadow: 2px 4px 8px get-opacity($shadow-form-color, 1);
+	@include text (16px, 700, 150%);
+	&__container {
+		display: flex;
+		justify-content: center;
+		gap: unit(2);
+	}
+	&--insert {
+		width: 40%;
+		color: $light-color;
+		background-color: $in-color;
+		@extend .button;
+	}
+	&--remove {
+		background-color: $out-color;
+		@extend .button--insert;
+	}
+}

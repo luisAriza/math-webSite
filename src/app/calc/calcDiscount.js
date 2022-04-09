@@ -11,4 +11,5 @@
  * @param {number} discount Porcentaje de 'Descuento' que se le debe aplicar
  * @return {number} El precio del producto con el descuento aplicado
  */
-export const discount = (price, discount) => (price * (100 - discount)) / 100;
+export const discount = (price, discount) =>
+  parseInt((price * (100 - discount)) / 100);
