@@ -49,10 +49,10 @@ $variation-color: #D6F2FC;
 	background-position: center;
 }
 
-@mixin text($size, $weight, $height) {
+@mixin text($size, $weight) {
 	font-size: $size;
 	font-weight: $weight;
-	line-height: $height;
+	line-height: 150%;
 	letter-spacing: calc($size * .04);
 }
 
@@ -72,7 +72,7 @@ $variation-color: #D6F2FC;
 		font-family: $head-font;
 		text-transform: uppercase;
 		text-shadow: 4px 4px 4px get-opacity($dark-color, .8);
-		@include text($size, 700, 120%);
+		@include text($size, 700);
 		@if $title == h1 {
 			width: 200px;
 		}
@@ -98,7 +98,7 @@ body {
 	font-family: $body-font;
 	color: $light-color;
 	background-color: $background-color;
-	@include text(16px, 400, 150%);
+	@include text(16px, 400);
 	.header {
 		@extend .main;
 	}

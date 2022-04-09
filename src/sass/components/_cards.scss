@@ -9,11 +9,13 @@
 .card {
 	display: flex;
 	flex-direction: column;
+	width: calc( 100vw - ($PD-body * 2) );
+	max-width: 428px;
 	padding: unit(4) unit(2) unit(5);
 	background-color: $secondary-color;
 	border-radius: unit(2);
 	box-shadow: 4px 8px 4px get-opacity($dark-color, .8);
-	@include text(13px, 400, 150%);
+	@include text(13px, 400);
 	&__description {
 		display: inline-block;
 		margin-top: unit(2);
@@ -34,10 +36,10 @@
 		grid-auto-flow: column;
 		text-align: center;
 		list-style: none;
-		@include text(16px, 400, 150%);
+		@include text(16px, 400);
 	}
 	&__results span {
-		@include text(13px, 400, 150%);
+		@include text(13px, 400);
 	}
 	&__results--triangle {
 		grid-template-columns: repeat(3, auto);
@@ -66,18 +68,18 @@
 	}
 	&--title {
 		margin-top: unit(1);
-		@include text(16px, 700, 130%);
+		@include text(16px, 700);
 	}
 	&--price {
 		margin-bottom: unit(.5);
-		@include text(28px, 300, 150%);
+		@include text(28px, 300);
 	}
 	&--price-discount {
-		@include text(16px, 300, 150%);
+		@include text(16px, 300);
 		@extend .card__product--price;
 	}
 	&--price-discount span, &--price span {
-		@include text(16px, 300, 150%);
+		@include text(16px, 300);
 	}
 	&--description {
 		margin-bottom: unit(1.5);
@@ -85,7 +87,7 @@
 	&--validation {
 		text-align: center;
 		color: $variation-color;
-		@include text(16px, 600, 150%);
+		@include text(16px, 600);
 	}
 	&--code {
 		@extend .card__product--validation;

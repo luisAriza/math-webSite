@@ -15,7 +15,7 @@
 	border: none;
 	border-radius: unit(1);
 	box-shadow: 2px 4px 8px get-opacity($shadow-form-color, 1);
-	@include text (16px, 700, 150%);
+	@include text (16px, 700);
 	&__container {
 		display: flex;
 		justify-content: center;

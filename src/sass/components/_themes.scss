@@ -27,6 +27,6 @@
 		border-radius: 0 unit(5) unit(5) 0;
 		background-color: $primary-color;
 		box-shadow: 4px 8px 4px get-opacity($dark-color, 1);
-		@include text(20px, 700, 120%);
+		@include text(20px, 700);
 	}
 }

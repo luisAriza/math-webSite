@@ -8,5 +8,18 @@
 
 .cards__container {
 	display: grid;
-	gap: $PD-body;
+	grid-auto-flow: column;
+	gap: unit(2.5);
+	padding-bottom: unit(3);
+	align-items: center;
+	overflow-x: scroll;
+	scroll-behavior: smooth;
+	overscroll-behavior-x: contain;
+	scroll-snap-type: both mandatory;
+	& .card {
+		scroll-snap-align: center;
+	}
+// 	&::-webkit-scrollbar {
+// 		-webkit-appearance: none;
+// 	}
 }
