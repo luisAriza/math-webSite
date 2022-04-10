@@ -12,10 +12,19 @@
 	font-family: $body-font;
 	color: $dark-color;
 	background-color: $primary-color;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	outline: none;
 	border: none;
-	border-radius: unit(1);
-	box-shadow: 2px 4px 8px get-opacity($shadow-form-color, 1);
+	border-radius: unit(3);
+	box-shadow: 2px 8px 4px get-opacity($shadow-form-color, 1), -2px -2px 4px get-opacity($variation-color, 1);
 	@include text (16px, 700);
+	// &:hover {
+	// 	box-shadow: 2px 2px 4px get-opacity($shadow-form-color, 1), -1px -1px 4px get-opacity($variation-color, 1);
+	// }
+	&:active {
+		box-shadow: inset 2px 2px 4px get-opacity($shadow-form-color, 1), inset -1px -1px 4px get-opacity($variation-color, 1);
+	}
 	&__container {
 		display: flex;
 		justify-content: center;

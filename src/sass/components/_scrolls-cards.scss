@@ -23,3 +23,12 @@
 // 		-webkit-appearance: none;
 // 	}
 }
+
+#data {
+	margin: 0;
+	@include text(16px, 300);
+	overflow-x: scroll;
+	&::-webkit-scrollbar {
+		-webkit-appearance: none;
+	}
+}

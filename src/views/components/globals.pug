@@ -48,32 +48,32 @@ mixin shape-box(title, shape)
 		case shape
 			when "square"
 				form.form
-					label #[strong Lado]#[input.form__input#squareInput(type='number')]
+					label #[strong Lado]#[input.form__input#squareInput(type='number' placeholder='0')]
 					button.button.squareCalc(type='button') Calcular
 			when "rectangle"
 				form.form--content-2
-					label #[strong Altura]#[input.form__input#rectangleHeightInput(type='number')]
-					label #[strong Base]#[input.form__input#rectangleBaseInput(type='number')]
+					label #[strong Altura]#[input.form__input#rectangleHeightInput(type='number' placeholder='0')]
+					label #[strong Base]#[input.form__input#rectangleBaseInput(type='number' placeholder='0')]
 					button.button.rectangleCalc(type='button') Calcular
 			when "triangle"
 				ul.card__info
 					li Si el triangulo tiene 2 lados iguales, la #[strong base] es el valor diferente a los 2 lados.
 					li Si todos los lados del triangulo son desiguales, asegurate de colocar los valores de menor a mayor.
 				form.form--content-3
-					label #[strong Lado A]#[input.form__input#triangleSideAInput(type='number')]
-					label #[strong Lado B]#[input.form__input#triangleSideBInput(type='number')]
-					label #[strong Base]#[input.form__input#triangleBaseInput(type='number')]
+					label #[strong Lado A]#[input.form__input#triangleSideAInput(type='number' placeholder='0')]
+					label #[strong Lado B]#[input.form__input#triangleSideBInput(type='number' placeholder='0')]
+					label #[strong Base]#[input.form__input#triangleBaseInput(type='number' placeholder='0')]
 					button.button.triangleCalc(type='button') Calcular
 			when "diamond"
 				ul.card__info
 					li La #[strong 1° diagonal] puede ser la menor o mayor.
 				form.form--content-2
-					label #[strong Lado]#[input.form__input#diamondSideInput(type='number')]
-					label #[strong 1° Diagonal]#[input.form__input#diamondDiagonalInput(type='number')]
+					label #[strong Lado]#[input.form__input#diamondSideInput(type='number' placeholder='0')]
+					label #[strong 1° Diagonal]#[input.form__input#diamondDiagonalInput(type='number' placeholder='0')]
 					button.button.diamondCalc(type='button') Calcular
 			when "circle"
 				form.form
-					label #[strong Radio]#[input.form__input#circleInput(type='number')]
+					label #[strong Radio]#[input.form__input#circleInput(type='number' placeholder='0')]
 					button.button.circleCalc(type='button') Calcular
 		if shape== "triangle"
 			ul.card__results--triangle
@@ -97,8 +97,8 @@ mixin shape-box(title, shape)
 mixin discount-price-box
 	section.discounts__price.card
 		form.form--content-2
-			label #[strong Precio del producto $]#[input.form__input#priceInput(type='number')]
-			label #[strong Descuento %]#[input.form__input#discountInput(type='number')]
+			label #[strong Precio del producto]#[input.form__input#priceInput(type='number' placeholder='$')]
+			label #[strong Descuento]#[input.form__input#discountInput(type='number' placeholder='%')]
 			button.button.discountCalc(type='button') Calcular
 		ul.card__results
 			li #[strong Precio con descuento]#[p#priceDiscount #[span $]0]
@@ -111,13 +111,8 @@ mixin discount-cupon-box
 			h4.card__product--title Guitarra Fender Stratocaster American Standard
 			p.card__product--price#priceCode #[span $]950
 			p.card__product--description Aprovecha ahora y aplica hasta un 30% de descuento con tu código de referido.
-			p.card__product--code Códigos
-			em: ul.card__product--code-list
-				li awesomeGuitar30
-				li awesomeGuitar20
-				li awesomeGuitar15
 			form.form
-				label #[strong Ingresa aquí tu cogido]#[input.form__input.card__product--input#inputCode(type='text')]
+				label #[strong Ingresa aquí tu cogido]#[input.form__input.card__product--input#inputCode(type='text' placeholder='awesomeGuitar30')]
 				button.button.card__product--button.confirmCupon(type='button') Confirmar
 			p.card__product--validation#validation
 
@@ -129,7 +124,7 @@ mixin statistic-box
 		p.card__data Lista
 		p.card__info#data
 		form.form
-			label Ingresa aquí los datos de la lista#[input.form__input#dataInput(type='number')]
+			label Ingresa aquí los datos de la lista#[input.form__input#dataInput(type='number' placeholder='0')]
 			.button__container
 				button.button--insert.insert(type='button') Ingresar
 				button.button--remove.remove(type='button') Remover

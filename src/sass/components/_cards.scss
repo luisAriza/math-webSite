@@ -89,12 +89,4 @@
 		color: $variation-color;
 		@include text(16px, 600);
 	}
-	&--code {
-		@extend .card__product--validation;
-	}
-	&--code-list {
-		margin-bottom: unit(2);
-		list-style: none;
-		@extend .card__product--validation;
-	}
 }

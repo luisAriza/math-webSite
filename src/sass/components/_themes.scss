@@ -24,9 +24,16 @@
 		font-family: $head-font;
 		text-transform: uppercase;
 		color: $dark-color;
+		transition: all 0.2s ease-in-out;
 		border-radius: 0 unit(5) unit(5) 0;
 		background-color: $primary-color;
-		box-shadow: 4px 8px 4px get-opacity($dark-color, 1);
+		box-shadow: 4px 8px 4px get-opacity($dark-color, 1), -2px -2px 4px get-opacity($variation-color, 1);
 		@include text(20px, 700);
+	}
+	// &__bar:hover {
+	// 	box-shadow: 2px 4px 4px get-opacity($dark-color, 1), -2px -1px 4px get-opacity($variation-color, 1);
+	// }
+	&__bar:active {
+		box-shadow: inset 0px 4px 4px get-opacity($dark-color, 1), inset 0px -2px 8px get-opacity($variation-color, 1);
 	}
 }
