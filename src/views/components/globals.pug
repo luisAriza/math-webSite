@@ -13,9 +13,11 @@
 //- Navbar
 
 mixin medias
-	each item in medias
-		.small__icon
-			a.small__icon--media(href="#")
+	//- h4.name Luis Ariza
+	//- a.navbar__portfolio(href="https://luisariza.github.io/portfolio" target="_blank") Portafolio
+	ul.navbar__medias
+		each item in medias
+			li.small__icon: a(class="small__icon--media-" + item href="#")
 
 //- --------------------------------------------------------------------------------------
 //- Menu

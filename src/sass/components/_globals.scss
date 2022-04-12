@@ -42,17 +42,17 @@ $variation-color: #D6F2FC;
 	height: $size;
 }
 
-@mixin icon-source($name) {
+@mixin icon-source($name: "shortcut-logo") {
 	width: 100%;
 	background: url("../assets/icons/#{$name}.svg") no-repeat;
 	background-size: contain;
 	background-position: center;
 }
 
-@mixin text($size, $weight) {
+@mixin text($size, $weight, $height: 150%) {
 	font-size: $size;
 	font-weight: $weight;
-	line-height: 150%;
+	line-height: $height;
 	letter-spacing: calc($size * .04);
 }
 
@@ -72,7 +72,7 @@ $variation-color: #D6F2FC;
 		font-family: $head-font;
 		text-transform: uppercase;
 		text-shadow: 4px 4px 4px get-opacity($dark-color, .8);
-		@include text($size, 700);
+		@include text($size, 700, 120%);
 		@if $title == h1 {
 			width: 200px;
 		}

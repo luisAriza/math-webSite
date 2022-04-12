@@ -14,16 +14,16 @@
 	padding-top: unit(1);
 	padding-bottom: unit(1);
 	background-color: $light-color;
-	&__navbar {
-		display: none;
-		// align-items: center;
-		// justify-content: right;
-		// width: 50%;
-	}
 	&__logo {
 		display: flex;
 		align-items: center;
 		justify-content: left;
-		width: 50%;
+		width: 30%;
+	}
+	&__navbar {
+		display: flex;
+		align-items: center;
+		justify-content: right;
+		width: 70%;
 	}
 }

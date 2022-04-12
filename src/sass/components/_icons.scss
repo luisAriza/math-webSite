@@ -7,13 +7,28 @@
 //  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
 .small__icon {
-	@include icon-size( unit(4) );
+	@include icon-size( unit(3.5) );
+	&--burger {
+		@include icon-source("burger-nav");
+	}
+	&--media-linkedin {
+		@include icon-source("linkedin");
+	}
+	&--media-github {
+		@include icon-source("github");
+	}
+	&--media-instagram {
+		@include icon-source("instagram");
+	}
+	&--media-blog {
+		@include icon-source("blog");
+	}
 }
 
 .medium__icon {
 	@include icon-size( unit(5) );
 	&--header {
-		@include icon-source("shortcut-logo");
+		@include icon-source();
 	}
 
 	&--theme-shapes {
@@ -55,13 +70,15 @@
 	}
 	&--tech-github {
 		@include icon-source("github");
+		border-radius: 50%;
+		background-color: $light-color;
 	}
 }
 
 .big__icon {
 	@include icon-size( unit(6.5) );
 	&--footer {
-		@include icon-source("shortcut-logo");
+		@include icon-source();
 	}
 }
 

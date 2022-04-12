@@ -6,3 +6,49 @@
 //  ██║ ╚████║██║  ██║ ╚████╔╝ ██████╔╝██║  ██║██║  ██║
 //  ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
+.navbar {
+	flex-wrap: wrap;
+	height: unit(3.5);
+	font-family: $head-font;
+	text-transform: uppercase;
+	& label {
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+	}
+	&__menu{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: unit(3);
+		width: 100%;
+		padding: unit(2);
+		border-radius: unit(2);
+		background-color: $light-color;
+		overflow: hidden;
+	}
+	// & .name {
+	// 	color: $dark-color;
+	// 	border-bottom: 1px solid $border-line-color;
+	// 	@include text(20px, 700);
+	// }
+	// &__portfolio {
+	// 	color: $dark-color;
+	// 	text-decoration: none;
+	// 	@include text(16px, 600);
+	// }
+	&__medias {
+		display: flex;
+		align-items: center;
+		// justify-content: space-around;
+		gap: unit(2);
+		width: 100%;
+	}
+}
+
+#toggler {
+	display: none;
+	&:checked ~ .navbar__menu {
+		max-height: 100%;
+	}
+}
