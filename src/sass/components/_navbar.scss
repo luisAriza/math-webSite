@@ -124,6 +124,12 @@
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 		box-shadow: 0px 2px 15px get-opacity($dark-color, .5);
 	}
+	&__menu a {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		gap: unit(2);
+	}
 	&__menu li {
 		text-align: end;
 		padding: unit(2) 0;
