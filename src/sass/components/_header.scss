@@ -10,20 +10,14 @@
 	display: flex;
 	place-content: center space-between;
 	width: 100vw;
-	height: unit(8);
+	height: unit(9);
 	padding-top: unit(1);
 	padding-bottom: unit(1);
 	background-color: $light-color;
 	&__logo {
 		display: flex;
 		align-items: center;
-		justify-content: left;
-		width: 30%;
-	}
-	&__navbar {
-		display: flex;
-		align-items: center;
 		justify-content: right;
-		width: 70%;
+		width: 50%;
 	}
 }

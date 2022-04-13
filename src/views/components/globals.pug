@@ -5,19 +5,18 @@
 //- ╚██████╔╝███████╗╚██████╔╝██████╔╝██║  ██║███████╗███████║
 //-  ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 
+- var medias = ["Linkedin", "Github", "Instagram", "Blog"]
 - var themes = ["shapes", "discounts", "statistics"]
-- var medias = ["linkedin", "github", "instagram", "blog"]
 - var technologies = ["figma", "html", "css", "js", "npm", "pug", "sass", "webpack", "git", "github"]
 
 //- --------------------------------------------------------------------------------------
 //- Navbar
 
 mixin medias
-	//- h4.name Luis Ariza
-	//- a.navbar__portfolio(href="https://luisariza.github.io/portfolio" target="_blank") Portafolio
-	ul.navbar__medias
+	ul#navbar__menu
+		a(href="https://luisariza.github.io/portfolio" target="_blank") #[li Portafolio]
 		each item in medias
-			li.small__icon: a(class="small__icon--media-" + item href="#")
+			a(href="#") #[li= item]
 
 //- --------------------------------------------------------------------------------------
 //- Menu

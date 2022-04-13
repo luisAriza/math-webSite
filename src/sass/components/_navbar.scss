@@ -6,49 +6,134 @@
 //  ██║ ╚████║██║  ██║ ╚████╔╝ ██████╔╝██║  ██║██║  ██║
 //  ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
-.navbar {
-	flex-wrap: wrap;
-	height: unit(3.5);
-	font-family: $head-font;
-	text-transform: uppercase;
-	& label {
-		display: inline-flex;
-		align-items: center;
+#navbar {
+	display: flex;
+	justify-content: left;
+	width: 50%;
+	position: relative;
+	&__menuToggle {
+		display: block;
+		position: relative;
+		top: 18px;
+		z-index: 1;
+	}
+	&__menuToggle input {
+		display: block;
+		width: 40px;
+		height: 34px;
+		position: absolute;
+		top: -6px;
+		right: -4px;
 		cursor: pointer;
+		opacity: 0;
+		z-index: 2;
 	}
-	&__menu{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: unit(3);
-		width: 100%;
-		padding: unit(2);
-		border-radius: unit(2);
-		background-color: $light-color;
-		overflow: hidden;
+	&__menuToggle span {
+		display: block;
+		width: 33.3px;
+		height: 4px;
+		margin-bottom: 5px;
+		position: relative;
+		border-radius: 4px;
+		z-index: 1;
+		background: $dark-color;
+		transform-origin: 4px 0px;
+		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+								background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+								opacity 0.55s ease;
 	}
-	// & .name {
-	// 	color: $dark-color;
-	// 	border-bottom: 1px solid $border-line-color;
-	// 	@include text(20px, 700);
+	&__menuToggle span:first-child {
+		transform-origin: 0% 0%;
+	}
+	&__menuToggle span:nth-last-child(2) {
+		transform-origin: 0% 100%;
+	}
+	&__menuToggle input:checked~span {
+		opacity: 1;
+		transform: rotate(45deg) translate(-2px, -1px);
+		// background: $out-color;
+	}
+	&__menuToggle input:checked~span:nth-last-child(2) {
+		transform: rotate(-45deg) translate(0, -1px);
+	}
+	&__menuToggle input:checked~span:nth-last-child(3) {
+		animation: moveFromPosition 0.4s forwards;
+	}
+	&__menuToggle input~span:nth-last-child(3) {
+		animation: backToPosition 0.4s forwards;
+	}
+	@keyframes backToPosition {
+		100% {
+			transform: translateX(0px);
+		}
+	
+		70% {
+			transform: translateX(-40px);
+		}
+	
+		30% {
+			transform: translate(-10px, -15px) rotate(90deg);
+		}
+	
+		0% {
+			transform: translate(-10px, -100px) rotate(90deg);
+		}
+	}
+	@keyframes moveFromPosition {
+		0% {
+			transform: translateX(0px);
+		}
+	
+		30% {
+			transform: translateX(-40px);
+		}
+	
+		60% {
+			transform: translate(-10px, -15px) rotate(90deg);
+		}
+	
+		100% {
+			transform: translate(-10px, -100px) rotate(90deg);
+		}
+	}
+	&__menuToggle a {
+		text-decoration: none;
+		color: $dark-color;
+		transition-delay: 0.4s;
+	}
+	&__menuToggle a:hover {
+		color: $out-color;
+	}
+	&__menuToggle input:checked~ul {
+		transform: none;
+	}
+	// &__menuToggle:hover > span {
+	// 	background-color: $out-color;
+	// 	transition-duration: 0.5s;
 	// }
-	// &__portfolio {
-	// 	color: $dark-color;
-	// 	text-decoration: none;
-	// 	@include text(16px, 600);
+	&__menu {
+		position: absolute;
+		margin: -52px 0 0 -50px;
+		width: 75vw;
+		padding: calc($PD-body);
+		padding-top: 100px;
+		background: $light-color;
+		list-style-type: none;
+		transform-origin: 0% 0%;
+		transform: translate(-100%, 0);
+		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+		box-shadow: 0px 2px 15px get-opacity($dark-color, .5);
+	}
+	&__menu li {
+		text-align: end;
+		padding: unit(2) 0;
+		@include text(20px, 700);
+	}
+	// &__menu li:hover {
+	// 	padding-left: 25px;
+	// 	transition-duration: 0.5s;
 	// }
-	&__medias {
-		display: flex;
-		align-items: center;
-		// justify-content: space-around;
-		gap: unit(2);
-		width: 100%;
-	}
-}
-
-#toggler {
-	display: none;
-	&:checked ~ .navbar__menu {
-		max-height: 100%;
-	}
+	// &__menu li:not(:hover) {
+	// 	transition-duration: 0.5s;
+	// }
 }

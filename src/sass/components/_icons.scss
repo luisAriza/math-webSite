@@ -8,21 +8,21 @@
 
 .small__icon {
 	@include icon-size( unit(3.5) );
-	&--burger {
-		@include icon-source("burger-nav");
-	}
-	&--media-linkedin {
-		@include icon-source("linkedin");
-	}
-	&--media-github {
-		@include icon-source("github");
-	}
-	&--media-instagram {
-		@include icon-source("instagram");
-	}
-	&--media-blog {
-		@include icon-source("blog");
-	}
+	// &--burger {
+	// 	@include icon-source("burger-nav");
+	// }
+	// &--media-linkedin {
+	// 	@include icon-source("linkedin");
+	// }
+	// &--media-github {
+	// 	@include icon-source("github");
+	// }
+	// &--media-instagram {
+	// 	@include icon-source("instagram");
+	// }
+	// &--media-blog {
+	// 	@include icon-source("blog");
+	// }
 }
 
 .medium__icon {

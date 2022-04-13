@@ -5,9 +5,9 @@
 //- ██║ ╚████║██║  ██║ ╚████╔╝ ██████╔╝██║  ██║██║  ██║
 //- ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
-nav.header__navbar.navbar
-	input#toggler(type="checkbox")
-	label(for="toggler")
-		figure.small__icon: i.small__icon--burger
-	.navbar__menu
+nav.header__navbar#navbar
+	#navbar__menuToggle
+		input(type="checkbox")
+		- for(var x = 0; x < 3; x++)
+			span
 		+medias
