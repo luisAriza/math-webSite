@@ -5,9 +5,13 @@
 //- ██████╔╝██║███████║╚██████╗╚██████╔╝╚██████╔╝██║ ╚████║   ██║   ███████║
 //- ╚═════╝ ╚═╝╚══════╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝
 
-section.sections.discounts#discounts-container
-	h2.discounts__title Descuentos
-	p.sections__description.discounts__description Calcula el #[strong descuento] de tus productos.
-	+discount-price-box
-	p.sections__description.discounts__description Averigua el precio con descuento del producto aplicando el #[strong código].
-	+discount-cupon-box
+extend components/template.pug
+
+block content
+	main.main
+		section.sections.discounts#discounts-container
+			h2.discounts__title Descuentos
+			p.sections__description.discounts__description Calcula el #[strong descuento] de tus productos.
+			+discount-price-box
+			p.sections__description.discounts__description Averigua el precio con descuento del producto aplicando el #[strong código].
+			+discount-cupon-box

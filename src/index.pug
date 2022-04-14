@@ -9,7 +9,13 @@ extend views/components/template.pug
 
 block content
 	main.main
-		include views/menu.pug
-		include views/shapes.pug
-		include views/discounts.pug
-		include views/statistics.pug
+		section.sections.menu
+			h1.menu__title Math Web Site
+			+themes
+			p.sections__description.menu__description Este proyecto fue diseñado y desarrollado por #[a(href="https://www.linkedin.com/in/luisariza-dev/" target="_blank") Luis Ariza]:
+			ul.menu__source
+				li: a(href="https://luis-ariza.notion.site/Math-Web-Site-f5ddd80128584af8a1c137c59f6e1bd1" target="_blank") Sistema de Diseño
+				li: a(href="https://www.figma.com/file/x3It880HnLYFLZs84EkiVn/Math-web-site-(mockup)" target="_blank") Maqueta
+				li: a(href="https://github.com/luisAriza/project_math_webSite" target="_blank") Código Fuente
+			p.sections__description.menu__description Tecnologías usadas:
+			+technologies

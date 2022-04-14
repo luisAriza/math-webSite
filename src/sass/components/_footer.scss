@@ -7,17 +7,18 @@
 //  ╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
 
 .footer {
-	display: flex;
-	place-content: center;
-	width: 100vw;
-	height: unit(10);
-	padding-top: unit(1);
-	padding-bottom: unit(1);
-	background-color: $light-color;
-	&__logo {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-	}
+	display: none;
+	// display: flex;
+	// place-content: center;
+	// width: 100vw;
+	// height: unit(10);
+	// padding-top: unit(1);
+	// padding-bottom: unit(1);
+	// background-color: $light-color;
+	// &__logo {
+	// 	display: flex;
+	// 	align-items: center;
+	// 	justify-content: center;
+	// 	width: 100%;
+	// }
 }

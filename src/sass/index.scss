@@ -5,6 +5,7 @@
 // ██║██║ ╚████║██████╔╝███████╗██╔╝ ██╗
 // ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 
+@import "components/breakpoints.scss";
 @import "components/globals.scss";
 @import "components/icons.scss";
 @import "components/header.scss";
@@ -15,4 +16,5 @@
 @import "components/cards.scss";
 @import "components/forms.scss";
 @import "components/buttons.scss";
+@import "components/animations.scss";
 @import "components/footer.scss";

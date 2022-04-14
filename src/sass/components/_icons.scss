@@ -8,6 +8,12 @@
 
 .small__icon {
 	@include icon-size( unit(3.5) );
+	&--home {
+		@include icon-source("home");
+	}
+	&--media-portfolio {
+		@include icon-source("portfolio");
+	}
 	&--media-linkedin {
 		@include icon-source("linkedin");
 	}
@@ -66,17 +72,17 @@
 		@include icon-source("git");
 	}
 	&--tech-github {
-		@include icon-source("github");
+		@include icon-source("github-2");
 		border-radius: 50%;
 		background-color: $light-color;
 	}
 }
 
 .big__icon {
-	@include icon-size( unit(6.5) );
-	&--footer {
-		@include icon-source();
-	}
+	@include icon-size( unit(6) );
+	// &--footer {
+	// 	@include icon-source();
+	// }
 }
 
 

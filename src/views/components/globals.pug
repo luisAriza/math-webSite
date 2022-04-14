@@ -5,7 +5,8 @@
 //- ╚██████╔╝███████╗╚██████╔╝██████╔╝██║  ██║███████╗███████║
 //-  ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 
-- var medias = ["linkedin", "github", "instagram", "blog"]
+// - var medias = ["portfolio", "linkedin", "github", "instagram", "blog"]
+- var medias = ["linkedin", "github"]
 - var themes = ["shapes", "discounts", "statistics"]
 - var technologies = ["figma", "html", "css", "js", "npm", "pug", "sass", "webpack", "git", "github"]
 
@@ -14,20 +15,31 @@
 
 mixin medias
 	ul#navbar__menu
-		a(href="https://luisariza.github.io/portfolio" target="_blank") #[li Portafolio]
+		a(href="index.html")
+			li Home
+			figure.small__icon: i(class="small__icon--home")
 		each item in medias
-			a(href="#")
-				li
-					case item
-						when "linkedin"
-							| Linkedin
-						when "github"
-							| Github
-						when "instagram"
-							| Instagram
-						when "blog"
-							| Blog
-				figure.small__icon: i(class="small__icon--media-" + item)
+			case item
+				//- when "portfolio"
+				//- 	a(href="#")
+				//- 		li Portafolio
+				//- 		figure.small__icon: i(class="small__icon--media-" + item)
+				when "linkedin"
+					a(href="https://www.linkedin.com/in/luisariza-dev/" target="_blank")
+						li Linkedin
+						figure.small__icon: i(class="small__icon--media-" + item)
+				when "github"
+					a(href="https://github.com/luisAriza" target="_blank")
+						li Github
+						figure.small__icon: i(class="small__icon--media-" + item)
+				//- when "instagram"
+				//- 	a(href="#")
+				//- 		li Instagram
+				//- 		figure.small__icon: i(class="small__icon--media-" + item)
+				//- when "blog"
+				//- 	a(href="#")
+				//- 		li Blog
+				//- 		figure.small__icon: i(class="small__icon--media-" + item)
 
 //- --------------------------------------------------------------------------------------
 //- Menu
@@ -35,7 +47,7 @@ mixin medias
 mixin themes(theme, title)
 	.menu__themes.themes
 		each item in themes
-			a.themes__bar.themes__bar--anime(href='#' + item + '-container')
+			a.themes__bar.themes__bar--anime(href= item + ".html")
 				figure.medium__icon: i(class="medium__icon--theme-" + item)
 				case item
 					when "shapes"
@@ -46,9 +58,10 @@ mixin themes(theme, title)
 						| Estadisticas
 
 mixin technologies
-	figure.menu__technologies
+	.menu__technologies
 		each item in technologies
-			.medium__icon: i(class="medium__icon--tech-" + item)
+			figure.medium__icon
+				i(class="medium__icon--tech-" + item)
 
 //- --------------------------------------------------------------------------------------
 //- Shapes

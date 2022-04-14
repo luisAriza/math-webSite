@@ -5,12 +5,16 @@
 //- ███████║██║  ██║██║  ██║██║     ███████╗███████║
 //- ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚══════╝╚══════╝
 
-section.sections.shapes#shapes-container
-	h2.shapes__title Figuras geométricas
-	p.sections__description.shapes__description Calcula el #[strong perimetro, area, altura, diagonal] y #[strong circunferencia] de las figuras.
-	.cards__container.shape
-		+shape-box("Cuadrado", "square")
-		+shape-box("Rectángulo", "rectangle")
-		+shape-box("Triángulo", "triangle")
-		+shape-box("Rombo", "diamond")
-		+shape-box("Circulo", "circle")
+extend components/template.pug
+
+block content
+	main.main
+		section.sections.shapes#shapes-container
+			h2.shapes__title Figuras geométricas
+			p.sections__description.shapes__description Calcula el #[strong perimetro, area, altura, diagonal] y #[strong circunferencia] de las figuras.
+			.cards__container.shape
+				+shape-box("Cuadrado", "square")
+				+shape-box("Rectángulo", "rectangle")
+				+shape-box("Triángulo", "triangle")
+				+shape-box("Rombo", "diamond")
+				+shape-box("Circulo", "circle")

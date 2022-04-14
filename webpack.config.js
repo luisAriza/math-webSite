@@ -3,10 +3,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: ["./src/app/index.js", "./src/app/assets.js"],
+  entry: {
+    index: "./src/app/index.js",
+    shapes: "./src/app/shape.js",
+    discounts: "./src/app/discount.js",
+    statistics: "./src/app/statistic.js",
+  },
   output: {
     path: path.join(__dirname, "dist/"),
-    filename: "js/bundle.js",
+    filename: "js/[name].js",
     assetModuleFilename: "assets/[hash][ext][query]",
   },
   devServer: {
@@ -20,6 +25,22 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src/index.pug"),
       filename: "index.html",
+      chunks: ["index"],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src/views/shapes.pug"),
+      filename: "shapes.html",
+      chunks: ["index", "shapes"],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src/views/discounts.pug"),
+      filename: "discounts.html",
+      chunks: ["index", "discounts"],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src/views/statistics.pug"),
+      filename: "statistics.html",
+      chunks: ["index", "statistics"],
     }),
     new MiniCssExtractPlugin({
       filename: "style/stylesheet.main.css",

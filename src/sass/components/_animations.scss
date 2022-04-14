@@ -6,3 +6,67 @@
 //  ██║  ██║██║ ╚████║██║██║ ╚═╝ ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║███████║
 //  ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
+#navbar {
+	&__menuToggle span:first-child {
+		transform-origin: 0% 0%;
+	}
+	&__menuToggle span:nth-last-child(2) {
+		transform-origin: 0% 100%;
+	}
+	&__menuToggle input:checked~span {
+		opacity: 1;
+		transform: rotate(45deg) translate(-2px, -1px);
+		// background: $out-color;
+	}
+	&__menuToggle input:checked~span:nth-last-child(2) {
+		transform: rotate(-45deg) translate(0, -1px);
+	}
+	&__menuToggle input:checked~span:nth-last-child(3) {
+		animation: moveFromPosition 0.4s forwards;
+	}
+	&__menuToggle input~span:nth-last-child(3) {
+		animation: backToPosition 0.4s forwards;
+	}
+	@keyframes backToPosition {
+		100% {
+			transform: translateX(0px);
+		}
+		70% {
+			transform: translateX(-40px);
+		}
+		30% {
+			transform: translate(-10px, -15px) rotate(90deg);
+		}
+		0% {
+			transform: translate(-10px, -100px) rotate(90deg);
+		}
+	}
+	@keyframes moveFromPosition {
+		0% {
+			transform: translateX(0px);
+		}
+		30% {
+			transform: translateX(-40px);
+		}
+		60% {
+			transform: translate(-10px, -15px) rotate(90deg);
+		}
+		100% {
+			transform: translate(-10px, -100px) rotate(90deg);
+		}
+	}
+	&__menuToggle input:checked~ul {
+		transform: none;
+	}
+	// &__menuToggle:hover > span {
+	// 	background-color: $out-color;
+	// 	transition-duration: 0.5s;
+	// }
+	// &__menu li:hover {
+	// 	padding-left: 25px;
+	// 	transition-duration: 0.5s;
+	// }
+	// &__menu li:not(:hover) {
+	// 	transition-duration: 0.5s;
+	// }
+}
