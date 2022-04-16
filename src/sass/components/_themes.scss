@@ -16,10 +16,11 @@
 		display: flex;
 		align-items: center;
 		gap: unit(2);
-		width: 260px;
+		width: 80vw;
 		padding: unit(1) $PD-body;
 		position: relative;
 		left: calc(-1 * $PD-body);
+		text-align: end;
 		text-decoration: none;
 		font-family: $head-font;
 		text-transform: uppercase;

@@ -16,30 +16,30 @@
 mixin medias
 	ul#navbar__menu
 		a(href="index.html")
-			li Home
 			figure.small__icon: i(class="small__icon--home")
+			li Home
 		each item in medias
 			case item
 				//- when "portfolio"
 				//- 	a(href="#")
-				//- 		li Portafolio
 				//- 		figure.small__icon: i(class="small__icon--media-" + item)
+				//- 		li Portafolio
 				when "linkedin"
 					a(href="https://www.linkedin.com/in/luisariza-dev/" target="_blank")
-						li Linkedin
 						figure.small__icon: i(class="small__icon--media-" + item)
+						li Linkedin
 				when "github"
 					a(href="https://github.com/luisAriza" target="_blank")
-						li Github
 						figure.small__icon: i(class="small__icon--media-" + item)
+						li Github
 				//- when "instagram"
 				//- 	a(href="#")
-				//- 		li Instagram
 				//- 		figure.small__icon: i(class="small__icon--media-" + item)
+				//- 		li Instagram
 				//- when "blog"
 				//- 	a(href="#")
-				//- 		li Blog
 				//- 		figure.small__icon: i(class="small__icon--media-" + item)
+				//- 		li Blog
 
 //- --------------------------------------------------------------------------------------
 //- Menu

@@ -52,9 +52,10 @@
 	}
 	&__menu {
 		position: absolute;
-		margin: -52px 0 0 -50px;
-		width: 108vw;
-		padding: 30px;
+		margin-top: -52px;
+		margin-left: calc(-1 * $PD-body);
+		width: 100vw;
+		padding: $PD-body;
 		padding-top: 100px;
 		background: $light-color;
 		list-style-type: none;
@@ -66,7 +67,7 @@
 	&__menu a {
 		display: flex;
 		align-items: center;
-		justify-content: end;
+		justify-content: start;
 		gap: unit(2);
 	}
 	&__menu li {

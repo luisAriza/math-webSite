@@ -6,17 +6,14 @@
 //  ╚██████╔╝███████╗╚██████╔╝██████╔╝██║  ██║███████╗███████║
 //   ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 
-// Estructura de bloque
+//Unidad de medida y espaciado
+@function unit($units) {
+	@return calc($units * 8px);
+}
 
-// Display
-// Medidas
-// Modelo de caja
-// Posición
-// Tipografía
-// Decoración
-// Variables
-// Extends
-// Mixins
+//Padding del body: para mantener la consistencia
+$PD-body: unit(3);
+$PD-BD-tablet: unit(5);
 
 $head-font: 'Poppins', sans-serif;
 $body-font: 'Raleway', sans-serif;
@@ -32,6 +29,10 @@ $border-line-color: #32444D;
 $background-color: #192C34;
 $shadow-form-color:#2C5A6C;
 $variation-color: #D6F2FC;
+
+@function get-opacity($color, $transparency) {
+	@return rgba($color, $transparency);
+}
 
 @mixin icon-size($size) {
 	display: flex;
@@ -54,15 +55,6 @@ $variation-color: #D6F2FC;
 	letter-spacing: calc($size * .04);
 }
 
-//Unidad de medida y espaciado
-@function unit($units) {
-	@return calc($units * 8px);
-}
-
-@function get-opacity($color, $transparency) {
-	@return rgba($color, $transparency);
-}
-
 @each $title, $size in (h1: 40px, h2: 32px, h3: 24px) {
 	#{$title} {
 		margin: 0 auto;
@@ -72,16 +64,13 @@ $variation-color: #D6F2FC;
 		text-shadow: 4px 4px 4px get-opacity($dark-color, .8);
 		@include text($size, 700, 120%);
 		@if $title == h1 {
-			width: 200px;
+			width: 220px;
 		}
-		@if $title == h3 {
-			width: 180px;
+		@include media(tablet) {
+			@include text( calc($size + 4px), 700, 130% );
 		}
 	}
 }
-
-//Padding del body: para mantener la consistencia
-$PD-body: unit(3);
 
 * {
 	margin: 0;
@@ -97,12 +86,21 @@ body {
 	color: $light-color;
 	background-color: $background-color;
 	@include text(16px, 400);
+	@include media(tablet) {
+		min-width: 480px;
+		max-width: 991px;
+		@include text(18px, 400);
+	}
 	.header {
 		@extend .main;
 	}
 	.main {
 		padding-left: $PD-body;
 		padding-right: $PD-body;
+		@include media(tablet) {
+			padding-left: $PD-BD-tablet;
+			padding-right: $PD-BD-tablet;
+		}
 	}
 	.theme__bar {
 		@extend .main;
