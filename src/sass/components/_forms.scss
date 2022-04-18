@@ -13,9 +13,13 @@
 	justify-items: center;
 	margin-bottom: unit(4);
 	text-align: center;
+	@include media(tablet) {
+		gap: unit(3);
+		margin-bottom: unit(5);
+	}
 	&--content-2 {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, auto);
 		grid-template-rows: repeat(2, auto);
 		align-items: end;
 		@extend .form;
@@ -25,7 +29,7 @@
 	}
 	&--content-3 {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, auto);
 		grid-template-rows: repeat(2, auto);
 		@extend .form;
 	}
@@ -34,7 +38,7 @@
 	}
 	&__input {
 		width: 100%;
-		height: unit(4);
+		height: unit(5);
 		margin-top: unit(.5);
 		padding: unit(.5) unit(1.5);
 		font-family: $body-font;
@@ -44,9 +48,15 @@
 		transition: all 0.2s ease-in-out;
 		outline: none;
 		border: none;
-		border-radius: unit(2);
+		border-radius: unit(3);
 		box-shadow: inset 2px 4px 4px get-opacity($shadow-form-color, 1), inset -2px -4px 4px get-opacity($variation-color, 1);
 		@include text(16px, 600);
+		@include media(tablet) {
+			height: unit(6);
+			margin-top: unit(1);
+			padding: unit(1) unit(2);
+			@include text(18px, 600);
+		}
 	}
 	&__input::placeholder {
 		color: get-opacity($variation-color, .25);
