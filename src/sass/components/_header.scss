@@ -8,13 +8,15 @@
 
 .header {
 	display: flex;
-	place-content: center space-between;
+	align-items: center;
+	justify-content: space-between;
 	width: 100vw;
 	height: unit(9);
 	padding-top: unit(1);
 	padding-bottom: unit(1);
-	background-color: $light-color;
-	@include media(mobile-landscape) {
+	background-color: $background-color;
+	// border-bottom: 1px solid $border-line-color;
+	@include media(tablet) {
 		height: unit(10);
 		padding-top: unit(1.5);
 		padding-bottom: unit(1.5);

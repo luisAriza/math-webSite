@@ -10,6 +10,7 @@ extend components/template.pug
 block content
 	main.main
 		section.sections.statistics#statistics-container
-			h2.statistics__title Estadísticas
+			.background-title
+				h2.statistics__title Estadísticas
 			p.sections__description.statistics__description Calcula el #[strong promedio], #[strong mediana] y #[strong moda] de una lista.
 			+statistic-box

@@ -16,7 +16,7 @@
 	&__menuToggle input:checked~span {
 		opacity: 1;
 		transform: rotate(45deg) translate(-2px, -1px);
-		// background: $out-color;
+		background: $dark-color;
 	}
 	&__menuToggle input:checked~span:nth-last-child(2) {
 		transform: rotate(-45deg) translate(0, -1px);

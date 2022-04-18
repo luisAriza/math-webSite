@@ -8,8 +8,14 @@
 
 @mixin media ($breakpoint) {
 
-	@if $breakpoint==mobile-landscape {
-		@media only screen and (min-width: 480px) {
+	@if $breakpoint==landscape {
+		@media only screen and (min-width: 480px) and (max-width: 767px) {
+			@content;
+		}
+	}
+
+	@else if $breakpoint==tablet {
+		@media only screen and (min-width: 768px) and (max-width: 991px) {
 			@content;
 		}
 	}
@@ -44,11 +50,6 @@
 		}
 	}
 
-	@else if $breakpoint==tablet-p-only {
-		@media only screen and (min-width: 768px) and (max-width: 992px) and (orientation : portrait) {
-			@content;
-		}
-	}
 
 	@else if $breakpoint==tablet-l-only {
 		@media only screen and (min-width: 768px) and (max-width: 992px) and (orientation : landscape) {

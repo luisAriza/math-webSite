@@ -10,7 +10,8 @@ extend components/template.pug
 block content
 	main.main
 		section.sections.shapes#shapes-container
-			h2.shapes__title Figuras geométricas
+			.background-title
+				h2.shapes__title Figuras geométricas
 			p.sections__description.shapes__description Calcula el #[strong perimetro, area, altura, diagonal] y #[strong circunferencia] de las figuras.
 			.cards__container.shape
 				+shape-box("Cuadrado", "square")

@@ -13,7 +13,7 @@
 
 //Padding del body: para mantener la consistencia
 $PD-body: unit(3);
-$PD-landscape: unit(5);
+$PD-landscape: unit(6);
 
 $head-font: 'Poppins', sans-serif;
 $body-font: 'Raleway', sans-serif;
@@ -55,18 +55,33 @@ $variation-color: #D6F2FC;
 	letter-spacing: calc($size * .04);
 }
 
-@each $title, $size in (h1: 40px, h2: 32px, h3: 24px) {
+@each $title, $size in (h1: 52px, h2: 36px, h3: 28px) {
+	.background-title {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100vw;
+		padding: unit(4) 0;
+		position: relative;
+		left: calc(-1 * $PD-body);
+		background: url("../assets/images/background-title.svg") no-repeat;
+		background-size: cover;
+		background-position: center;
+		@include media(landscape) {
+			left: calc(-1 * $PD-landscape);
+		}
+	}
 	#{$title} {
-		margin: 0 auto;
 		text-align: center;
 		font-family: $head-font;
 		text-transform: uppercase;
+		color: $light-color;
 		text-shadow: 4px 4px 4px get-opacity($dark-color, .8);
 		@include text($size, 700, 120%);
 		@if $title == h1 {
-			width: 220px;
+			width: 280px;
 		}
-		@include media(mobile-landscape) {
+		@include media(tablet) {
 			@include text( calc($size + 4px), 700, 130% );
 		}
 	}
@@ -86,9 +101,13 @@ body {
 	color: $light-color;
 	background-color: $background-color;
 	@include text(16px, 400);
-	@include media(mobile-landscape) {
+	@include media(landscape) {
 		min-width: 480px;
 		max-width: 767px;
+	}
+	@include media(tablet) {
+		min-width: 768px;
+		max-width: 991px;
 		@include text(18px, 400);
 	}
 	.header {
@@ -97,7 +116,7 @@ body {
 	.main {
 		padding-left: $PD-body;
 		padding-right: $PD-body;
-		@include media(mobile-landscape) {
+		@include media(landscape) {
 			padding-left: $PD-landscape;
 			padding-right: $PD-landscape;
 		}

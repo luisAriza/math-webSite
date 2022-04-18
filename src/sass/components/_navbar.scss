@@ -14,8 +14,12 @@
 	&__menuToggle {
 		display: block;
 		position: relative;
-		top: 18px;
 		z-index: 1;
+	}
+	&__menuToggle {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
 	}
 	&__menuToggle input {
 		display: block;
@@ -32,11 +36,11 @@
 		display: block;
 		width: 33.3px;
 		height: 4px;
-		margin-bottom: 5px;
 		position: relative;
 		border-radius: 4px;
 		z-index: 1;
-		background: $dark-color;
+		background: $light-color;
+		box-shadow: 1px 2px 4px $dark-color;
 		transform-origin: 4px 0px;
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
 								background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
@@ -52,22 +56,18 @@
 	}
 	&__menu {
 		position: absolute;
-		margin-top: -52px;
+		margin-top: -25px;
 		margin-left: calc(-1 * $PD-body);
 		width: 100vw;
-		padding: $PD-body;
-		padding-top: 100px;
+		padding-top: 71px;
 		background: $light-color;
 		list-style-type: none;
 		transform-origin: 0% 0%;
 		transform: translate(-100%, 0);
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 		box-shadow: 0px 2px 15px get-opacity($dark-color, .5);
-		@include media(mobile-landscape) {
-			margin-top: -56px;
+		@include media(landscape) {
 			margin-left: calc(-1 * $PD-landscape);
-			padding: $PD-landscape;
-			padding-top: 80px;
 		}
 	}
 	&__menu a {
@@ -75,11 +75,19 @@
 		align-items: center;
 		justify-content: start;
 		gap: unit(2);
+		padding-left: calc($PD-body * 1.5);
+		@include media(landscape) {
+			padding-left: calc($PD-landscape * 1.5);
+		}
+	}
+	&__menu a:first-child {
+		padding-top: unit(3);
+		border-top: 1px solid get-opacity($border-line-color, .33);
 	}
 	&__menu li {
 		padding: unit(2) 0;
 		@include text(20px, 700);
-		@include media(mobile-landscape) {
+		@include media(tablet) {
 			padding: unit(2.5) 0;
 		}
 	}

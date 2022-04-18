@@ -18,6 +18,9 @@
 	scroll-snap-type: both mandatory;
 	& .card {
 		scroll-snap-align: center;
+		@include media(landscape) {
+			max-width: 767px;
+		}
 	}
 // 	&::-webkit-scrollbar {
 // 		-webkit-appearance: none;
@@ -28,7 +31,7 @@
 	margin: 0;
 	@include text(16px, 300);
 	overflow-x: scroll;
-	@include media(mobile-landscape) {
+	@include media(tablet) {
 		@include text(18px, 300);
 	}
 	&::-webkit-scrollbar {

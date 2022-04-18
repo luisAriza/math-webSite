@@ -12,7 +12,7 @@
 	gap: unit(2.5);
 	padding-top: unit(4);
 	padding-bottom: unit(1.5);
-	@include media(mobile-landscape) {
+	@include media(tablet) {
 		gap: unit(3);
 		padding-top: unit(6);
 		padding-bottom: unit(2);
@@ -35,7 +35,12 @@
 		background-color: $primary-color;
 		box-shadow: 4px 8px 4px get-opacity($dark-color, 1);
 		@include text(20px, 700);
-		@include media(mobile-landscape) {
+		@include media(landscape) {
+			width: 65vw;
+			padding: unit(1) $PD-landscape;
+			left: calc(-1 * $PD-landscape);
+		}
+		@include media(tablet) {
 			gap: unit(3);
 			width: 60vw;
 			padding: unit(1.5) $PD-landscape;
