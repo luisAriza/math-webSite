@@ -28,7 +28,7 @@
 	margin: 0;
 	@include text(16px, 300);
 	overflow-x: scroll;
-	@include media(tablet) {
+	@include media(mobile-landscape) {
 		@include text(18px, 300);
 	}
 	&::-webkit-scrollbar {

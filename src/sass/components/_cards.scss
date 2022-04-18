@@ -16,10 +16,10 @@
 	border-radius: unit(2);
 	box-shadow: 4px 8px 4px get-opacity($dark-color, .8);
 	@include text(13px, 400);
-	@include media(tablet) {
+	@include media(mobile-landscape) {
 		margin: 0 auto;
-		width: calc( 100vw - ($PD-BD-tablet * 2) );
-		max-width: 991px;
+		width: calc( 100vw - ($PD-landscape * 2) );
+		max-width: 767px;
 		padding: unit(4) unit(4) unit(5);
 		@include text(15px, 400);
 	}
@@ -27,7 +27,7 @@
 		display: inline-block;
 		margin-top: unit(2);
 		margin-bottom: unit(1);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			margin-top: unit(2.5);
 			margin-bottom: unit(1.5);
 		}
@@ -35,7 +35,7 @@
 	&__info {
 		margin-left: unit(3);
 		margin-bottom: unit(2);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			margin-left: unit(4);
 			margin-bottom: unit(3);
 		}
@@ -44,7 +44,7 @@
 		text-align: center;
 		margin-bottom: unit(1);
 		@include text(16px, 700);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			@include text(18px, 700);
 		}
 	}
@@ -54,13 +54,13 @@
 		text-align: center;
 		list-style: none;
 		@include text(16px, 400);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			@include text(18px, 400);
 		}
 	}
 	&__results span {
 		@include text(13px, 400);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			@include text(15px, 400);
 		}
 	}
@@ -88,9 +88,9 @@
 		background: url("../assets/images/fender-stratocaster-guitar.jpg") no-repeat;
 		background-size: cover;
 		background-position: center;
-		@include media(tablet) {
-			width: calc( 100vw - ($PD-BD-tablet * 2) );
-			max-width: 991px;
+		@include media(mobile-landscape) {
+			width: calc( 100vw - ($PD-landscape * 2) );
+			max-width: 767px;
 			height: 260px;
 			margin-top: unit(3);
 			left: calc(-1 * unit(4));
@@ -99,7 +99,7 @@
 	&--title {
 		margin-top: unit(1);
 		@include text(16px, 700);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			margin-top: unit(2);
 			@include text(18px, 700);
 		}
@@ -107,7 +107,7 @@
 	&--price {
 		margin-bottom: unit(.5);
 		@include text(28px, 300);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			margin-bottom: unit(1);
 			@include text(32px, 300);
 		}
@@ -115,19 +115,19 @@
 	&--price-discount {
 		@include text(16px, 300);
 		@extend .card__product--price;
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			@include text(18px, 300);
 		}
 	}
 	&--price-discount span, &--price span {
 		@include text(16px, 300);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			@include text(18px, 300);
 		}
 	}
 	&--description {
 		margin-bottom: unit(1.5);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			margin-bottom: unit(2);
 		}
 	}
@@ -135,7 +135,7 @@
 		text-align: center;
 		color: $variation-color;
 		@include text(16px, 600);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			@include text(18px, 600);
 		}
 	}

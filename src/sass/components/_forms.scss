@@ -13,7 +13,7 @@
 	justify-items: center;
 	margin-bottom: unit(4);
 	text-align: center;
-	@include media(tablet) {
+	@include media(mobile-landscape) {
 		gap: unit(3);
 		margin-bottom: unit(5);
 	}
@@ -51,7 +51,7 @@
 		border-radius: unit(3);
 		box-shadow: inset 2px 4px 4px get-opacity($shadow-form-color, 1), inset -2px -4px 4px get-opacity($variation-color, 1);
 		@include text(16px, 600);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			height: unit(6);
 			margin-top: unit(1);
 			padding: unit(1) unit(2);

@@ -13,7 +13,7 @@
 
 //Padding del body: para mantener la consistencia
 $PD-body: unit(3);
-$PD-BD-tablet: unit(5);
+$PD-landscape: unit(5);
 
 $head-font: 'Poppins', sans-serif;
 $body-font: 'Raleway', sans-serif;
@@ -66,7 +66,7 @@ $variation-color: #D6F2FC;
 		@if $title == h1 {
 			width: 220px;
 		}
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			@include text( calc($size + 4px), 700, 130% );
 		}
 	}
@@ -86,9 +86,9 @@ body {
 	color: $light-color;
 	background-color: $background-color;
 	@include text(16px, 400);
-	@include media(tablet) {
+	@include media(mobile-landscape) {
 		min-width: 480px;
-		max-width: 991px;
+		max-width: 767px;
 		@include text(18px, 400);
 	}
 	.header {
@@ -97,9 +97,9 @@ body {
 	.main {
 		padding-left: $PD-body;
 		padding-right: $PD-body;
-		@include media(tablet) {
-			padding-left: $PD-BD-tablet;
-			padding-right: $PD-BD-tablet;
+		@include media(mobile-landscape) {
+			padding-left: $PD-landscape;
+			padding-right: $PD-landscape;
 		}
 	}
 	.theme__bar {

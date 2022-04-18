@@ -8,7 +8,7 @@
 
 @mixin media ($breakpoint) {
 
-	@if $breakpoint==tablet {
+	@if $breakpoint==mobile-landscape {
 		@media only screen and (min-width: 480px) {
 			@content;
 		}

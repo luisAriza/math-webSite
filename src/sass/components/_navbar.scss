@@ -63,10 +63,10 @@
 		transform: translate(-100%, 0);
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 		box-shadow: 0px 2px 15px get-opacity($dark-color, .5);
-		@include media(tablet) {
+		@include media(mobile-landscape) {
 			margin-top: -56px;
-			margin-left: calc(-1 * $PD-BD-tablet);
-			padding: $PD-BD-tablet;
+			margin-left: calc(-1 * $PD-landscape);
+			padding: $PD-landscape;
 			padding-top: 80px;
 		}
 	}
@@ -79,5 +79,8 @@
 	&__menu li {
 		padding: unit(2) 0;
 		@include text(20px, 700);
+		@include media(mobile-landscape) {
+			padding: unit(2.5) 0;
+		}
 	}
 }
