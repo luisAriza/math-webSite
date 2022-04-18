@@ -14,6 +14,11 @@
 	padding-top: unit(1);
 	padding-bottom: unit(1);
 	background-color: $light-color;
+	@include media(tablet) {
+		height: unit(10);
+		padding-top: unit(1.5);
+		padding-bottom: unit(1.5);
+	}
 	&__logo {
 		display: flex;
 		align-items: center;

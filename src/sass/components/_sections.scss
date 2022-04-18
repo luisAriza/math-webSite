@@ -9,10 +9,18 @@
 .sections {
 	padding-top: unit(6);
 	padding-bottom: unit(8);
+	@include media(tablet) {
+		padding-top: unit(8);
+		padding-bottom: unit(10);
+	}
 	&__description {
 		display: inline-block;
 		margin-top: unit(3);
 		margin-bottom: unit(2);
+		@include media(tablet) {
+			margin-top: unit(4);
+			margin-bottom: unit(3);
+		}
 	}
 	&__description a {
 		color: $variation-color;
@@ -22,9 +30,6 @@
 		color: $out-color;
 		text-decoration: none;
 	}
-	&:not(:last-child) {
-		border-bottom: 2px solid $border-line-color;
-	}
 }
 
 .menu {
@@ -33,6 +38,10 @@
 		flex-direction: column;
 		gap: unit(1.5);
 		padding-left: unit(4);
+		@include media(tablet) {
+			gap: unit(2);
+			padding-left: unit(5);
+		}
 	}
 	&__source a {
 		color: $variation-color;
@@ -52,5 +61,9 @@
 		margin-top: unit(1);
 		position: relative;
 		left: calc(-1 * $PD-body);
+		@include media(tablet) {
+			gap: unit(5);
+			left: calc(-1 * $PD-BD-tablet);
+		}
 	}
 }

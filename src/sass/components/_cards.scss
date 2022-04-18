@@ -16,6 +16,11 @@
 	border-radius: unit(2);
 	box-shadow: 4px 8px 4px get-opacity($dark-color, .8);
 	@include text(13px, 400);
+	@include media(tablet) {
+		margin: 0 auto;
+		width: calc( 100vw - ($PD-BD-tablet * 4) );
+		max-width: 991px;
+	}
 	&__description {
 		display: inline-block;
 		margin-top: unit(2);
