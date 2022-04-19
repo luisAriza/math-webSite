@@ -5,9 +5,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: {
     index: "./src/app/index.js",
-    shapes: "./src/app/shape.js",
-    discounts: "./src/app/discount.js",
-    statistics: "./src/app/statistic.js",
+    shapes: "./src/app/modules/shapes.js",
+    discounts: "./src/app/modules/discounts.js",
+    statistics: "./src/app/modules/statistics.js",
   },
   output: {
     path: path.join(__dirname, "dist/"),

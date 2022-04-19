@@ -15,22 +15,30 @@ const list = [];
  */
 const printList = () => (document.querySelector("#data").textContent = list);
 
-//----------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 const insert = () => {
   /** Valor de 'dataInput' guardado en la variable "data" */
   let data = getInput("#dataInput");
   /** Ingresar nuevo valor al final de la lista */
   list.push(data) && printList();
 };
-//----------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 
 const remove = () => list.pop() && printList();
 
-//----------------------------------------------------------------------------------------------------
-const statistic = () => {
+//------------------------------------------------------------------------------------------------
+const resultStatistic = () => {
   document.querySelector("#mean").textContent = mean(list);
   document.querySelector("#median").textContent = median(list);
   document.querySelector("#mode").textContent = mode(list);
 };
 
-export { insert, remove, statistic };
+document.querySelector(".insert").onclick = () => {
+  insert();
+};
+document.querySelector(".remove").onclick = () => {
+  remove();
+};
+document.querySelector(".statisticCalc").onclick = () => {
+  resultStatistic();
+};

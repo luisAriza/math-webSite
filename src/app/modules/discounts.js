@@ -19,7 +19,7 @@ const resultDiscount = () => {
     "#priceDiscount"
   ).innerHTML = `<span>$</span>${discount(input.price, input.discount)}`;
 };
-//----------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------
 const cupon = () => {
   /** Codigo del ID "inputCode" convertido en 'String' con .value */
   const inputCode = document.querySelector("#inputCode").value;
@@ -57,4 +57,9 @@ const cupon = () => {
   }
 };
 
-export { resultDiscount as discount, cupon };
+document.querySelector(".discountCalc").onclick = () => {
+  resultDiscount();
+};
+document.querySelector(".confirmCupon").onclick = () => {
+  cupon();
+};

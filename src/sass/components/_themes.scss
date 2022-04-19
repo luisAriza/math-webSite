@@ -34,6 +34,7 @@
 		border-radius: 0 unit(5) unit(5) 0;
 		background-color: $primary-color;
 		box-shadow: 4px 8px 4px get-opacity($dark-color, 1);
+		-webkit-tap-highlight-color: transparent;
 		@include text(20px, 700);
 		@include media(landscape) {
 			width: 65vw;
