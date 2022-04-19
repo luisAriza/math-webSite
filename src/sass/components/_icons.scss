@@ -34,7 +34,7 @@
 .medium__icon {
 	@include icon-size( unit(5) );
 	@include media(tablet) {
-		@include icon-size(unit(5.5));
+		@include icon-size(unit(6));
 	}
 	&--header {
 		@include icon-source();

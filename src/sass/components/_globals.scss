@@ -70,6 +70,9 @@ $variation-color: #D6F2FC;
 		@include media(landscape) {
 			left: calc(-1 * $PD-landscape);
 		}
+		@include media(tablet) {
+			left: calc(-1 * $PD-landscape);
+		}
 	}
 	#{$title} {
 		text-align: center;
@@ -82,12 +85,10 @@ $variation-color: #D6F2FC;
 			width: 280px;
 		}
 		@include media(tablet) {
-			@include text( calc($size + 4px), 700, 130% );
+			@include text( calc($size + 2px), 700, 120% );
 		}
 	}
 }
-
-
 
 * {
 	margin: 0;
@@ -115,10 +116,17 @@ body {
 	.header {
 		@extend .main;
 	}
+	.navbar__menu{
+		@extend .main;
+	}
 	.main {
 		padding-left: $PD-body;
 		padding-right: $PD-body;
 		@include media(landscape) {
+			padding-left: $PD-landscape;
+			padding-right: $PD-landscape;
+		}
+		@include media(tablet) {
 			padding-left: $PD-landscape;
 			padding-right: $PD-landscape;
 		}

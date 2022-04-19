@@ -21,6 +21,9 @@
 		@include media(landscape) {
 			max-width: 767px;
 		}
+		@include media(tablet) {
+			max-width: 991px;
+		}
 	}
 // 	&::-webkit-scrollbar {
 // 		-webkit-appearance: none;

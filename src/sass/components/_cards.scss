@@ -22,10 +22,10 @@
 		padding: unit(4) unit(4) unit(5);
 	}
 	@include media(tablet) {
+		width: calc(100vw - ($PD-landscape * 2));
+		max-width: 600px;
 		margin: 0 auto;
-		width: calc( 100vw - ($PD-landscape * 2) );
-		max-width: 768px;
-		padding: unit(4) unit(5) unit(5);
+		padding: unit(5) unit(4) unit(5);
 		@include text(15px, 400);
 	}
 	&__description {
@@ -102,8 +102,8 @@
 		}
 		@include media(tablet) {
 			width: calc( 100vw - ($PD-landscape * 2) );
-			max-width: 768px;
-			height: 260px;
+			max-width: 600px;
+			height: 280px;
 			margin-top: unit(3);
 			left: calc(-1 * unit(4));
 		}
