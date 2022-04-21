@@ -15,15 +15,18 @@
 	padding-top: unit(1);
 	padding-bottom: unit(1);
 	background-color: $background-color;
-	// border-bottom: 1px solid $border-line-color;
 	@include media(tablet) {
 		height: unit(10);
+	}
+	@include media(desktop-s) {
+		height: unit(12);
+		// padding-left: $PD-desktop;
+		// padding-right: $PD-desktop;
 	}
 	&__logo {
 		display: flex;
 		align-items: center;
 		justify-content: right;
 		width: 50%;
-		// -webkit-tap-highlight-color: transparent;
 	}
 }

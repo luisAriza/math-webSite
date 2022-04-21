@@ -14,6 +14,7 @@
 //Padding del body: para mantener la consistencia
 $PD-body: unit(3);
 $PD-landscape: unit(6);
+$PD-desktop: unit(8);
 
 $head-font: 'Poppins', sans-serif;
 $body-font: 'Raleway', sans-serif;
@@ -71,7 +72,17 @@ $variation-color: #D6F2FC;
 			left: calc(-1 * $PD-landscape);
 		}
 		@include media(tablet) {
+			padding: unit(6) 0;
 			left: calc(-1 * $PD-landscape);
+		}
+		@include media(desktop-s) {
+			width: 100%;
+			padding: unit(8) 0;
+			left: auto;
+			background-color: #192c34;
+			opacity: 0.9;
+			background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #192c34 11px),
+			repeating-linear-gradient(#2C5A6C55, #2C5A6C);
 		}
 	}
 	#{$title} {
@@ -86,6 +97,12 @@ $variation-color: #D6F2FC;
 		}
 		@include media(tablet) {
 			@include text( calc($size + 2px), 700, 120% );
+		}
+		@include media(desktop-s) {
+			@include text( calc($size + 8px), 700, 130% );
+			@if $title==h1 {
+				width: 300px;
+			}
 		}
 	}
 }
@@ -113,6 +130,12 @@ body {
 		max-width: 991px;
 		@include text(18px, 400);
 	}
+	@include media(desktop-s) {
+		width: 100%;
+		min-width: 992px;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 	.header {
 		@extend .main;
 	}
@@ -129,6 +152,13 @@ body {
 		@include media(tablet) {
 			padding-left: $PD-landscape;
 			padding-right: $PD-landscape;
+		}
+		@include media(desktop-s) {
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+			// padding-left: $PD-desktop;
+			// padding-right: $PD-desktop;
 		}
 	}
 	.theme__bar {

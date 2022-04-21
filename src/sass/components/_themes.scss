@@ -17,6 +17,11 @@
 		padding-top: unit(6);
 		padding-bottom: unit(2);
 	}
+	@include media(desktop-s) {
+		gap: unit(3.5);
+		padding-top: unit(8);
+		padding-bottom: unit(4);
+	}
 	&__bar {
 		display: flex;
 		align-items: center;
@@ -48,10 +53,17 @@
 			left: calc(-1 * $PD-landscape);
 			@include text(24px, 700);
 		}
+		@include media(desktop-s) {
+			gap: unit(4);
+			width: 75%;
+			padding: unit(2) $PD-desktop;
+			left: auto;
+			@include text(24px, 700);
+		}
 	}
-	// &__bar:hover {
-	// 	box-shadow: 2px 4px 4px get-opacity($dark-color, 1), -2px -1px 4px get-opacity($variation-color, 1);
-	// }
+	&__bar:hover {
+		box-shadow: 2px 4px 4px get-opacity($dark-color, 1), -2px -1px 4px get-opacity($variation-color, 1);
+	}
 	&__bar:active {
 		box-shadow: inset 0px 4px 4px get-opacity($dark-color, 1), inset 0px -2px 8px get-opacity($variation-color, 1);
 	}

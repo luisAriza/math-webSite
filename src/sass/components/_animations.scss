@@ -58,15 +58,24 @@
 	&__menuToggle input:checked~ul {
 		transform: none;
 	}
-	// &__menuToggle:hover > span {
-	// 	background-color: $out-color;
-	// 	transition-duration: 0.5s;
-	// }
-	// &__menu li:hover {
-	// 	padding-left: 25px;
-	// 	transition-duration: 0.5s;
-	// }
-	// &__menu li:not(:hover) {
-	// 	transition-duration: 0.5s;
-	// }
+	&__menuToggle a {
+		text-decoration: none;
+		color: $dark-color;
+		// transition-delay: 0.4s;
+		@include media(desktop-s) {
+			color: $light-color;
+		}
+	}
+	&__menu a:hover {
+		@include media(desktop-s) {
+			padding-top: 25px;
+			transition-duration: 0.5s;
+		}
+	}
+	&__menu a:not(:hover) {
+		@include media(desktop-s) {
+			padding-top: -25px;
+			transition-duration: 0.5s;
+		}
+	}
 }

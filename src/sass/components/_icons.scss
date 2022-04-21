@@ -8,8 +8,11 @@
 
 .small__icon {
 	@include icon-size( unit(3.5) );
-	@include media(tablet) {
+	@include media(tablet && desktop-s) {
 		@include icon-size( unit(4) );
+	}
+	@include media(desktop-s) {
+		@include icon-size( unit(3.5) );
 	}
 	&--home {
 		@include icon-source("home");
@@ -34,6 +37,9 @@
 .medium__icon {
 	@include icon-size( unit(5) );
 	@include media(tablet) {
+		@include icon-size(unit(6));
+	}
+	@include media(desktop-s) {
 		@include icon-size(unit(6));
 	}
 	&--header {
@@ -90,9 +96,12 @@
 	@include media(tablet) {
 		@include icon-size(unit(7));
 	}
-	// &--footer {
-	// 	@include icon-source();
-	// }
+	@include media(desktop-s) {
+		@include icon-size(unit(7));
+	}
+	&--footer {
+		@include icon-source();
+	}
 }
 
 

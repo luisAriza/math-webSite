@@ -8,21 +8,50 @@
 
 .footer {
 	display: none;
-	// display: flex;
-	// place-content: center;
-	// width: 100vw;
-	// height: unit(10);
-	// padding-top: unit(1);
-	// padding-bottom: unit(1);
-	// background-color: $light-color;
-	// @include media(mobile-landscape) {
-	// 	padding-top: unit(1.5);
-	// 	padding-bottom: unit(1.5);
-	// }
-	// &__logo {
-	// 	display: flex;
-	// 	align-items: center;
-	// 	justify-content: center;
-	// 	width: 100%;
-	// }
+	@include media(desktop-s) {
+		display: flex;
+		justify-content: center;
+		width: 100vw;
+		height: unit(18);
+		padding: unit(3) 0;
+		background-color: $light-color;
+		border-radius: unit(1) unit(1) 0 0;
+	}
+	& a {
+		color: $dark-color;
+		font-weight: bold;
+	}
+	& a:hover {
+		color: $secondary-color;
+	}
+	& a:active {
+		color: $out-color;
+		text-decoration: none;
+	}
+	&__logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 33%;
+	}
+	&__description {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 33%;
+		color: $dark-color;
+		@include text(16px, 600);
+	}
+	&__description p {
+		width: 260px;
+		text-align: center;
+	}
+	&__source {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: unit(1.5);
+		width: 33%;
+	}
 }

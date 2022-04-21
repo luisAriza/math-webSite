@@ -12,14 +12,11 @@
 	width: 50%;
 	position: relative;
 	&__menuToggle {
-		display: block;
-		position: relative;
-		z-index: 1;
-	}
-	&__menuToggle {
 		display: flex;
 		flex-direction: column;
 		gap: 5px;
+		position: relative;
+		z-index: 1;
 	}
 	&__menuToggle input {
 		display: block;
@@ -32,6 +29,9 @@
 		opacity: 0;
 		z-index: 2;
 		-webkit-tap-highlight-color: transparent;
+		@include media(desktop-s) {
+			display: none;
+		}
 	}
 	&__menuToggle span {
 		display: block;
@@ -46,26 +46,28 @@
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
 								background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
 								opacity 0.55s ease;
-	}
-	&__menuToggle a {
-		text-decoration: none;
-		color: $dark-color;
-		transition-delay: 0.4s;
+		@include media(desktop-s) {
+			display: none;
+		}
 	}
 	&__menuToggle a:hover {
 		color: $out-color;
+		@include media(desktop-s) {
+			color: $primary-color;
+		}
 	}
 	&__menu {
-		position: absolute;
+		width: 100vw;
+		height: 100vh;
 		margin-top: -25px;
 		margin-left: calc(-1 * $PD-body);
-		width: 100vw;
 		padding-top: 72px;
-		background: $light-color;
+		position: absolute;
 		list-style-type: none;
 		transform-origin: 0% 0%;
 		transform: translate(-100%, 0);
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+		background: $light-color;
 		box-shadow: 0px 2px 15px get-opacity($dark-color, .5);
 		@include media(landscape) {
 			margin-left: calc(-1 * $PD-landscape);
@@ -74,6 +76,17 @@
 			margin-top: -29px;
 			margin-left: calc(-1 * $PD-landscape);
 			padding-top: 80px;
+		}
+		@include media(desktop-s) {
+			display: flex;
+			width: 100%;
+			height: auto;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			transform: translate(0, 0);
+			box-shadow: 0 0 0;
+			background-color: transparent;
 		}
 	}
 	&__menu a {
@@ -93,12 +106,21 @@
 	&__menu a:first-child {
 		padding-top: unit(3);
 		border-top: 1px solid get-opacity($border-line-color, .33);
+		@include media(desktop-s) {
+			padding: 0;
+			border-top: 0px;
+		}
 	}
 	&__menu li {
 		padding: unit(2) 0;
 		@include text(20px, 700);
 		@include media(tablet) {
 			padding: unit(2.5) 0;
+		}
+	}
+	&__menu figure {
+		@include media(desktop-s) {
+			display: none;
 		}
 	}
 }

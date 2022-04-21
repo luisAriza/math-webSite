@@ -7,11 +7,15 @@
 //  ╚══════╝╚══════╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
 .sections {
-	// padding-top: unit(6);
+	margin-bottom: unit(5);
 	padding-bottom: unit(8);
 	@include media(tablet) {
-		// padding-top: unit(8);
 		padding-bottom: unit(10);
+	}
+	@include media(desktop-s) {
+		border: 1px solid $border-line-color;
+		border-radius: unit(1);
+		overflow: hidden;
 	}
 	&__description {
 		display: inline-block;
@@ -20,6 +24,12 @@
 		@include media(tablet) {
 			margin-top: unit(4);
 			margin-bottom: unit(3);
+		}
+		@include media(desktop-s) {
+			display: block;
+			margin-top: unit(5);
+			margin-bottom: unit(4);
+			text-align: center;
 		}
 	}
 	&__description a {
@@ -33,6 +43,11 @@
 }
 
 .menu {
+	&__description {
+		@include media(desktop-s) {
+			display: none;
+		}
+	}
 	&__source {
 		display: flex;
 		flex-direction: column;
@@ -42,6 +57,9 @@
 			gap: unit(2);
 			padding-left: unit(5);
 		}
+		@include media(desktop-s) {
+			display: none;
+		}
 	}
 	&__source a {
 		color: $variation-color;
@@ -50,6 +68,10 @@
 	&__source a:active {
 		color: $out-color;
 		text-decoration: none;
+	}
+	&__title-technologies {
+		margin: 52px 0 40px;
+		font-size: 24px;
 	}
 	&__technologies {
 		display: grid;
@@ -68,6 +90,11 @@
 		@include media(tablet) {
 			gap: unit(4);
 			left: calc(-1 * $PD-landscape);
+		}
+		@include media(desktop-s) {
+			width: 100%;
+			gap: unit(5);
+			left: auto;
 		}
 	}
 }
