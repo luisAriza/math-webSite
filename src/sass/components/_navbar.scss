@@ -11,6 +11,9 @@
 	justify-content: left;
 	width: 50%;
 	position: relative;
+	@include media(desktop-s) {
+		padding-left: $PD-desktop;
+	}
 	&__menuToggle {
 		display: flex;
 		flex-direction: column;
@@ -79,6 +82,7 @@
 		}
 		@include media(desktop-s) {
 			display: flex;
+			gap: unit(2);
 			width: 100%;
 			height: auto;
 			margin: 0;
@@ -102,12 +106,15 @@
 		@include media(tablet) {
 			padding-left: calc($PD-landscape * 1.5);
 		}
+		@include media(desktop-s) {
+			padding: 0 unit(2);
+		}
 	}
 	&__menu a:first-child {
 		padding-top: unit(3);
 		border-top: 1px solid get-opacity($border-line-color, .33);
 		@include media(desktop-s) {
-			padding: 0;
+			padding: 0 unit(2) 0 0;
 			border-top: 0px;
 		}
 	}

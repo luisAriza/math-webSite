@@ -20,13 +20,14 @@
 	}
 	@include media(desktop-s) {
 		height: unit(12);
-		// padding-left: $PD-desktop;
-		// padding-right: $PD-desktop;
 	}
 	&__logo {
 		display: flex;
 		align-items: center;
 		justify-content: right;
 		width: 50%;
+		@include media(desktop-s) {
+			padding-right: $PD-desktop;
+		}
 	}
 }

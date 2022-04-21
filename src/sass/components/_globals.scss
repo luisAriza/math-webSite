@@ -132,8 +132,7 @@ body {
 	}
 	@include media(desktop-s) {
 		width: 100%;
-		min-width: 992px;
-		max-width: 1200px;
+		max-width: 992px;
 		margin: 0 auto;
 	}
 	.header {
@@ -157,8 +156,6 @@ body {
 			width: 100%;
 			padding-left: 0;
 			padding-right: 0;
-			// padding-left: $PD-desktop;
-			// padding-right: $PD-desktop;
 		}
 	}
 	.theme__bar {
