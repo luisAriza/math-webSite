@@ -61,21 +61,45 @@
 	&__menuToggle a {
 		text-decoration: none;
 		color: $dark-color;
-		// transition-delay: 0.4s;
 		@include media(desktop-s) {
 			color: $light-color;
 		}
 	}
 	&__menu a:hover {
 		@include media(desktop-s) {
-			padding-top: 25px;
+			padding-top: unit(3);
 			transition-duration: 0.5s;
 		}
 	}
 	&__menu a:not(:hover) {
 		@include media(desktop-s) {
-			padding-top: -25px;
 			transition-duration: 0.5s;
 		}
 	}
 }
+
+.themes__bar {
+	&--anime:hover {
+		@include media(desktop-s) {
+			margin-top: unit(2);
+			box-shadow: 1px 1px 4px get-opacity($variation-color, 1), -1px -1px 4px get-opacity($variation-color, 1);
+			transition-duration: 0.2s;
+		}
+	}
+	&--anime:not(:hover) {
+		@include media(desktop-s) {
+			transition-duration: 0.4s;
+		}
+	}
+}
+
+// .button:hover {
+// 	@include media(desktop-s) {
+// 		box-shadow: 1px 1px 4px get-opacity($shadow-form-color, 1), 0px 0px 4px get-opacity($variation-color, 1);
+// 	}
+// }
+// .button:not(:hover) {
+// 	@include media(desktop-s) {
+// 		transition-duration: 0.4s;
+// 	}
+// }

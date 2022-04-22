@@ -12,7 +12,7 @@
 	width: 50%;
 	position: relative;
 	@include media(desktop-s) {
-		padding-left: $PD-desktop;
+		padding-left: $PD-landscape;
 	}
 	&__menuToggle {
 		display: flex;
@@ -123,6 +123,10 @@
 		@include text(20px, 700);
 		@include media(tablet) {
 			padding: unit(2.5) 0;
+		}
+		@include media(desktop-s) {
+			@include text(16px, 600);
+			letter-spacing: 1px;
 		}
 	}
 	&__menu figure {

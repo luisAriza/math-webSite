@@ -27,7 +27,7 @@
 		justify-content: right;
 		width: 50%;
 		@include media(desktop-s) {
-			padding-right: $PD-desktop;
+			padding-right: $PD-landscape;
 		}
 	}
 }

@@ -28,6 +28,9 @@
 		padding: unit(5) unit(4) unit(5);
 		@include text(15px, 400);
 	}
+	@include media(desktop-s) {
+		margin: 0 auto;
+	}
 	&__description {
 		display: inline-block;
 		margin-top: unit(2);

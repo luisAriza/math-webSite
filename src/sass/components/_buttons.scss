@@ -25,9 +25,6 @@
 		border-radius: unit(4);
 		@include text(20px, 700);
 	}
-	// &:hover {
-	// 	box-shadow: 2px 2px 4px get-opacity($shadow-form-color, 1), -1px -1px 4px get-opacity($variation-color, 1);
-	// }
 	&:active {
 		box-shadow: inset 2px 2px 4px get-opacity($shadow-form-color, 1), inset -1px -1px 8px get-opacity($variation-color, 1);
 	}

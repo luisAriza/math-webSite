@@ -11,11 +11,19 @@
 	grid-auto-flow: column;
 	gap: unit(3);
 	padding-bottom: unit(3);
-	align-items: center;
+	align-items: start;
 	overflow-x: scroll;
 	scroll-behavior: smooth;
 	overscroll-behavior-x: contain;
 	scroll-snap-type: both mandatory;
+	@include media(desktop-s) {
+		display: flex;
+		gap: unit(8);
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: center;
+		overflow-x: auto;
+	}
 	& .card {
 		scroll-snap-align: center;
 		@include media(landscape) {
@@ -24,20 +32,23 @@
 		@include media(tablet) {
 			max-width: 991px;
 		}
+		@include media(desktop-s) {
+			width: 40%;
+			margin: 0;
+		}
 	}
-// 	&::-webkit-scrollbar {
-// 		-webkit-appearance: none;
-// 	}
+	&::-webkit-scrollbar {
+		@include media(desktop-s) {
+			-webkit-appearance: none;
+		}
+	}
 }
 
 #data {
 	margin: 0;
 	@include text(16px, 300);
-	overflow-x: scroll;
+	overflow-wrap: break-word;
 	@include media(tablet) {
 		@include text(18px, 300);
-	}
-	&::-webkit-scrollbar {
-		-webkit-appearance: none;
 	}
 }
