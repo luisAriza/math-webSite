@@ -66,10 +66,12 @@ const shape = (calc) => {
     circleArea: `${circleArea(input.cR)}<span>cm<sup>2</sup></span>`,
   };
 
-  let outputValue = (document.querySelector("#" + calc).innerHTML =
-    result[calc]);
+  if (isNaN(input.sS) === false) {
+    var outputValue = (document.querySelector("#" + calc).innerHTML =
+      result[calc]);
 
-  return outputValue;
+    return outputValue;
+  }
 };
 
 //----------------------------------------------------------------------------------------------------
@@ -80,7 +82,7 @@ const shape = (calc) => {
  * @param {string} output 'Nombre de la salida' que se desea obtener
  * @return {number} EL valor del output ingresado
  */
-const shapeTriangule = (calc) => {
+const resultTriangule = (calc) => {
   /** Valores de los lados a, b y base del triangulo, guardadas en las propiedades del objeto */
   const side = {
     a: getInput("#triangleSideAInput"),
@@ -128,25 +130,25 @@ const shapeTriangule = (calc) => {
 
   if (triangle.equilateral) {
     height = equilateralTriangleHeight(side.a);
-    type("Equilatero acutángulo");
+    type("Equilatero - Acutángulo");
   } else if (triangle.isosAcute) {
     height = isoscelesTriangleHeight(side.a, side.base);
-    type("Isósceles acutángulo");
+    type("Isósceles - Acutángulo");
   } else if (triangle.isosRight) {
     height = isoscelesTriangleHeight(side.a, side.base);
-    type("Rectángulo isósceles");
+    type("Rectángulo - Isósceles");
   } else if (triangle.isosObtuse) {
     height = isoscelesTriangleHeight(side.a, side.base);
-    type("Isósceles obtusángulo");
+    type("Isósceles - Obtusángulo");
   } else if (triangle.escaAcute) {
     height = scaleneTriangleHeight(side.a, side.b, side.base, semiPerimeter);
-    type("Escaleno acutángulo");
+    type("Escaleno - Acutángulo");
   } else if (triangle.escaRight) {
     height = rightTriangleHeight(side.a, side.b, side.base);
-    type("Rectángulo escaleno");
+    type("Rectángulo - Escaleno");
   } else if (triangle.escaObtuse) {
     height = scaleneTriangleHeight(side.a, side.b, side.base, semiPerimeter);
-    type("Escaleno obtusángulo");
+    type("Escaleno - Obtusángulo");
   } else {
     //Si se ingresa un mal dato, mandar una alerta de verificación
     alert(`Ingresa correctamente todos los lados del triangulo, lee la guía`);
@@ -189,7 +191,7 @@ document.querySelector(".circleCalc").onclick = () => {
   shape("circleArea");
 };
 document.querySelector(".triangleCalc").onclick = () => {
-  shapeTriangule("triangleHeight");
-  shapeTriangule("trianglePerimeter");
-  shapeTriangule("triangleArea");
+  resultTriangule("triangleHeight");
+  resultTriangule("trianglePerimeter");
+  resultTriangule("triangleArea");
 };

@@ -20,7 +20,7 @@ const insert = () => {
   /** Valor de 'dataInput' guardado en la variable "data" */
   let data = getInput("#dataInput");
   /** Ingresar nuevo valor al final de la lista */
-  list.push(data) && printList();
+  isNaN(data) === false ? list.push(data) && printList() : "";
 };
 //------------------------------------------------------------------------------------------------
 
@@ -28,9 +28,11 @@ const remove = () => list.pop() && printList();
 
 //------------------------------------------------------------------------------------------------
 const resultStatistic = () => {
-  document.querySelector("#mean").textContent = mean(list);
-  document.querySelector("#median").textContent = median(list);
-  document.querySelector("#mode").textContent = mode(list);
+  if (isNaN(getInput("#dataInput")) === false) {
+    document.querySelector("#median").textContent = median(list);
+    document.querySelector("#mean").textContent = mean(list);
+    document.querySelector("#mode").textContent = mode(list);
+  }
 };
 
 document.querySelector(".insert").onclick = () => {

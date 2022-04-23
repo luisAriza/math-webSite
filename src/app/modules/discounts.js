@@ -14,10 +14,10 @@ const resultDiscount = () => {
     price: getInput("#priceInput"),
     discount: getInput("#discountInput"),
   };
-
-  document.querySelector(
-    "#priceDiscount"
-  ).innerHTML = `<span>$</span>${discount(input.price, input.discount)}`;
+  if (isNaN(input.price && input.discount) === false)
+    document.querySelector(
+      "#priceDiscount"
+    ).innerHTML = `<span>$</span>${discount(input.price, input.discount)}`;
 };
 //-----------------------------------------------------------------------------------------------
 const cupon = () => {
