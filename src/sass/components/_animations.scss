@@ -1,4 +1,3 @@
-
 //   █████╗ ███╗   ██╗██╗███╗   ███╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗
 //  ██╔══██╗████╗  ██║██║████╗ ████║██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
 //  ███████║██╔██╗ ██║██║██╔████╔██║███████║   ██║   ██║██║   ██║██╔██╗ ██║███████╗
@@ -7,90 +6,91 @@
 //  ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
 #navbar {
-	&__menuToggle span:first-child {
-		transform-origin: 0% 0%;
-	}
-	&__menuToggle span:nth-last-child(2) {
-		transform-origin: 0% 100%;
-	}
-	&__menuToggle input:checked~span {
-		opacity: 1;
-		transform: rotate(45deg) translate(-2px, -1px);
-		background: $dark-color;
-	}
-	&__menuToggle input:checked~span:nth-last-child(2) {
-		transform: rotate(-45deg) translate(0, -1px);
-	}
-	&__menuToggle input:checked~span:nth-last-child(3) {
-		animation: moveFromPosition 0.4s forwards;
-	}
-	&__menuToggle input~span:nth-last-child(3) {
-		animation: backToPosition 0.4s forwards;
-	}
-	@keyframes backToPosition {
-		100% {
-			transform: translateX(0px);
-		}
-		70% {
-			transform: translateX(-40px);
-		}
-		30% {
-			transform: translate(-10px, -15px) rotate(90deg);
-		}
-		0% {
-			transform: translate(-10px, -100px) rotate(90deg);
-		}
-	}
-	@keyframes moveFromPosition {
-		0% {
-			transform: translateX(0px);
-		}
-		30% {
-			transform: translateX(-40px);
-		}
-		60% {
-			transform: translate(-10px, -15px) rotate(90deg);
-		}
-		100% {
-			transform: translate(-10px, -100px) rotate(90deg);
-		}
-	}
-	&__menuToggle input:checked~ul {
-		transform: none;
-	}
-	&__menuToggle a {
-		text-decoration: none;
-		color: $dark-color;
-		@include media(desktop-s) {
-			color: $light-color;
-		}
-	}
-	&__menu a:hover {
-		@include media(desktop-s) {
-			padding-top: unit(3);
-			transition-duration: 0.5s;
-		}
-	}
-	&__menu a:not(:hover) {
-		@include media(desktop-s) {
-			transition-duration: 0.5s;
-		}
-	}
+  &__menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+  &__menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+  &__menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: $dark-color;
+  }
+  &__menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  &__menuToggle input:checked ~ span:nth-last-child(3) {
+    animation: moveFromPosition 0.4s forwards;
+  }
+  &__menuToggle input ~ span:nth-last-child(3) {
+    animation: backToPosition 0.4s forwards;
+  }
+  @keyframes backToPosition {
+    100% {
+      transform: translateX(0px);
+    }
+    70% {
+      transform: translateX(-40px);
+    }
+    30% {
+      transform: translate(-10px, -15px) rotate(90deg);
+    }
+    0% {
+      transform: translate(-10px, -100px) rotate(90deg);
+    }
+  }
+  @keyframes moveFromPosition {
+    0% {
+      transform: translateX(0px);
+    }
+    30% {
+      transform: translateX(-40px);
+    }
+    60% {
+      transform: translate(-10px, -15px) rotate(90deg);
+    }
+    100% {
+      transform: translate(-10px, -100px) rotate(90deg);
+    }
+  }
+  &__menuToggle input:checked ~ ul {
+    transform: none;
+  }
+  &__menuToggle a {
+    text-decoration: none;
+    color: $dark-color;
+    @include media(desktop-s) {
+      color: $light-color;
+    }
+  }
+  &__menu a:hover {
+    @include media(desktop-s) {
+      padding-top: unit(3);
+      transition-duration: 0.5s;
+    }
+  }
+  &__menu a:not(:hover) {
+    @include media(desktop-s) {
+      transition-duration: 0.5s;
+    }
+  }
 }
 
 .themes__bar {
-	&--anime:hover {
-		@include media(desktop-s) {
-			margin-top: unit(2);
-			box-shadow: 1px 1px 4px get-opacity($variation-color, 1), -1px -1px 4px get-opacity($variation-color, 1);
-			transition-duration: 0.2s;
-		}
-	}
-	&--anime:not(:hover) {
-		@include media(desktop-s) {
-			transition-duration: 0.4s;
-		}
-	}
+  &--anime:hover {
+    @include media(desktop-s) {
+      transform: scale(1.1);
+      box-shadow: 1px 1px 4px get-opacity($variation-color, 1),
+        -1px -1px 4px get-opacity($variation-color, 1);
+      transition-duration: 0.4s;
+    }
+  }
+  &--anime:not(:hover) {
+    @include media(desktop-s) {
+      transition-duration: 0.4s;
+    }
+  }
 }
 
 // .button:hover {

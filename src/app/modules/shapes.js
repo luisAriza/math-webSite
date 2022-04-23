@@ -31,23 +31,35 @@ import { circumference, circleArea } from "../calc/calcShapes/circle.js";
  * @param {string} calc nombre del calculo que se desea obtener
  * @return {number} Mostrar en pantalla el resultado del calculo
  */
-const shape = (calc) => {
-  /** Valores de las longitudes de las figuras, guardadas en las propiedades del objeto */
-  const input = {
-    sS: getInput("#squareInput"),
-    rH: getInput("#rectangleHeightInput"),
-    rB: getInput("#rectangleBaseInput"),
-    dS: getInput("#diamondSideInput"),
-    dD: getInput("#diamondDiagonalInput"),
-    cR: getInput("#circleInput"),
-  };
-  /** Segunda diagonal del rombo, para poder calcular su área */
-  const diagonalDiamond = diamondDiagonal(input.dS, input.dD);
-
+const resultSquare = (calc) => {
+  const inputSideSquare = getInput("#squareInput");
   /** Resultados del calculo de las figuras, guardadas en las propiedades del objeto */
   const result = {
-    squarePerimeter: `${squarePerimeter(input.sS)}<span>cm</span>`,
-    squareArea: `${squareArea(input.sS)}<span>cm<sup>2</sup></span>`,
+    squarePerimeter: `${squarePerimeter(inputSideSquare)}<span>cm</span>`,
+    squareArea: `${squareArea(inputSideSquare)}<span>cm<sup>2</sup></span>`,
+  };
+
+  if (isNaN(inputSideSquare) === false) {
+    let outputValue = (document.querySelector("#" + calc).innerHTML =
+      result[calc]);
+
+    return outputValue;
+  }
+};
+
+/**
+ * Imprime en el 'ID' del HTML el resultado del calculo
+ * @param {string} calc nombre del calculo que se desea obtener
+ * @return {number} Mostrar en pantalla el resultado del calculo
+ */
+const resultRectangle = (calc) => {
+  /** Valores de las longitudes de las figuras, guardadas en las propiedades del objeto */
+  const input = {
+    rH: getInput("#rectangleHeightInput"),
+    rB: getInput("#rectangleBaseInput"),
+  };
+  /** Resultados del calculo de las figuras, guardadas en las propiedades del objeto */
+  const result = {
     rectanglePerimeter: `${rectanglePerimeter(
       input.rB,
       input.rH
@@ -56,25 +68,17 @@ const shape = (calc) => {
       input.rB,
       input.rH
     )}<span>cm<sup>2</sup></span>`,
-    diamondDiagonal: `${diagonalDiamond}<span>cm</span>`,
-    diamondPerimeter: `${diamondPerimeter(input.dS)}<span>cm</span>`,
-    diamondArea: `${diamondArea(
-      diagonalDiamond,
-      input.dD
-    )}<span>cm<sup>2</sup></span>`,
-    circumference: `${circumference(input.cR)}<span>cm</span>`,
-    circleArea: `${circleArea(input.cR)}<span>cm<sup>2</sup></span>`,
   };
 
-  if (isNaN(input.sS) === false) {
-    var outputValue = (document.querySelector("#" + calc).innerHTML =
+  if (isNaN(input.rH && input.rB) === false) {
+    let outputValue = (document.querySelector("#" + calc).innerHTML =
       result[calc]);
 
     return outputValue;
   }
 };
 
-//----------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 
 /**
  * Filtrar el tipo de triangulo dependiendo de la longitud de sus lados, calcular y mostrar en HTML el
@@ -173,25 +177,78 @@ const resultTriangule = (calc) => {
   return outputValue;
 };
 
+/**
+ * Imprime en el 'ID' del HTML el resultado del calculo
+ * @param {string} calc nombre del calculo que se desea obtener
+ * @return {number} Mostrar en pantalla el resultado del calculo
+ */
+const resultDiamond = (calc) => {
+  /** Valores de las longitudes de las figuras, guardadas en las propiedades del objeto */
+  const input = {
+    dS: getInput("#diamondSideInput"),
+    dD: getInput("#diamondDiagonalInput"),
+  };
+  /** Segunda diagonal del rombo, para poder calcular su área */
+  const diagonalDiamond = diamondDiagonal(input.dS, input.dD);
+
+  /** Resultados del calculo de las figuras, guardadas en las propiedades del objeto */
+  const result = {
+    diamondDiagonal: `${diagonalDiamond}<span>cm</span>`,
+    diamondPerimeter: `${diamondPerimeter(input.dS)}<span>cm</span>`,
+    diamondArea: `${diamondArea(
+      diagonalDiamond,
+      input.dD
+    )}<span>cm<sup>2</sup></span>`,
+  };
+
+  if (isNaN(input.dS && input.dD) === false) {
+    let outputValue = (document.querySelector("#" + calc).innerHTML =
+      result[calc]);
+
+    return outputValue;
+  }
+};
+
+/**
+ * Imprime en el 'ID' del HTML el resultado del calculo
+ * @param {string} calc nombre del calculo que se desea obtener
+ * @return {number} Mostrar en pantalla el resultado del calculo
+ */
+const resultCircle = (calc) => {
+  const inputRadioCircle = getInput("#circleInput");
+  /** Resultados del calculo de las figuras, guardadas en las propiedades del objeto */
+  const result = {
+    circumference: `${circumference(inputRadioCircle)}<span>cm</span>`,
+    circleArea: `${circleArea(inputRadioCircle)}<span>cm<sup>2</sup></span>`,
+  };
+
+  if (isNaN(inputRadioCircle) === false) {
+    let outputValue = (document.querySelector("#" + calc).innerHTML =
+      result[calc]);
+
+    return outputValue;
+  }
+};
+
 document.querySelector(".squareCalc").onclick = () => {
-  shape("squarePerimeter");
-  shape("squareArea");
+  resultSquare("squarePerimeter");
+  resultSquare("squareArea");
 };
 document.querySelector(".rectangleCalc").onclick = () => {
-  shape("rectanglePerimeter");
-  shape("rectangleArea");
-};
-document.querySelector(".diamondCalc").onclick = () => {
-  shape("diamondDiagonal");
-  shape("diamondPerimeter");
-  shape("diamondArea");
-};
-document.querySelector(".circleCalc").onclick = () => {
-  shape("circumference");
-  shape("circleArea");
+  resultRectangle("rectanglePerimeter");
+  resultRectangle("rectangleArea");
 };
 document.querySelector(".triangleCalc").onclick = () => {
   resultTriangule("triangleHeight");
   resultTriangule("trianglePerimeter");
   resultTriangule("triangleArea");
+};
+document.querySelector(".diamondCalc").onclick = () => {
+  resultDiamond("diamondDiagonal");
+  resultDiamond("diamondPerimeter");
+  resultDiamond("diamondArea");
+};
+document.querySelector(".circleCalc").onclick = () => {
+  resultCircle("circumference");
+  resultCircle("circleArea");
 };
