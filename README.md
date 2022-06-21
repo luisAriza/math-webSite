@@ -1,22 +1,33 @@
-# Curso Practico de JavaScript
+# Math Web Site
 
-## Taller #1: figuras geométricas
+## Running and building on localhost
 
-- Primer paso: definir las fórmulas
-- Segundo paso: implementar la fórmulas en JavaScript 
-- Tercer paso: crear funciones
-- Cuarto paso: integrar JS con HTML
+First install dependencies:
 
-## Taller #2: porcentajes y descuentos
+```
+npm install
+```
 
-- Primer paso: definir las fórmulas
-- Segundo paso: implementar la fórmulas en JavaScript 
-- Tercer paso: crear funciones
-- Cuarto paso: integrar JS con HTML
+### Running
 
-## Taller #3: promedio, mediana y moda
+```sh
+npm run start
+```
 
-- Primer paso: definir las fórmulas
-- Segundo paso: implementar la fórmulas en JavaScript 
-- Tercer paso: crear funciones
-- Cuarto paso: integrar JS con HTML
+Now open http://localhost:9000/ in your browser to see the project.
+
+### Building
+
+To create a production build:
+
+```sh
+npm run build
+```
+
+### Deploy
+
+To deploy in **GitHub Pages** from production build:
+
+```sh
+npm run deploy
+```

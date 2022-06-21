@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -10,15 +9,22 @@ module.exports = {
     discounts: "./src/app/modules/discounts.js",
     statistics: "./src/app/modules/statistics.js",
   },
-  mode: "production",
+  mode: "development",
   output: {
     path: path.join(__dirname, "dist/"),
     filename: "js/[name].js",
     assetModuleFilename: "assets/[hash][ext][query]",
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist/"),
+    },
+    compress: true,
+    port: 9000,
+    open: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      inject: body,
       template: path.join(__dirname, "src/index.pug"),
       filename: "index.html",
       chunks: ["index"],
@@ -41,7 +47,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "style/stylesheet.main.css",
     }),
-    new CleanWebpackPlugin(),
   ],
   module: {
     rules: [
